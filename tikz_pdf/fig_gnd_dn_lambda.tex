@@ -1,0 +1,33 @@
+\documentclass[]{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% No page numbers and no paragraph indentation                                  
+\pagestyle{empty}                                                               
+\setlength{\parindent}{0bp}%
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing,shapes,shapes.multipart,arrows,shapes.misc,intersections,positioning}
+
+\begin{document}
+
+\begin{tikzpicture}[scale = 1]
+\draw (0,0)--(0,2);
+\draw (1.5,0)--++(0,2);
+\node () at (-0.5,1) {DN};
+\node () at (1.8,1) {$\lambda$};
+\draw[-stealth] (0.75,0.75)--++(0,0.5);
+\begin{scope}[shift={(5,0)}]
+\draw (0,0)--(0,2);
+\draw (3,0)--++(0,2);
+\draw[dashed] (1.5,0)--++(0,2);
+\node () at (-0.5,1) {N};
+\node () at (3.5,1) {D};
+\node () at (1.7,1) {$\lambda$};
+\end{scope}
+\end{tikzpicture}
+
+\end{document}
+
+%%% Local Variables: 
+%%% TeX-PDF-mode: t
+%%% End: 
