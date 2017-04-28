@@ -1,0 +1,14 @@
+auto/
+uto/
+*.aux
+*.log
+*.out
+_region_*
+*.blg
+*.bbl
+*.rel
+*.flt
+*.tar.gz
+flatex
+tikz_pic/
+*.pdf
