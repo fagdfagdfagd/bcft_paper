@@ -20,6 +20,8 @@
 \newcommand{\etal}{\textit{et al.} }
 \newcommand{\etc}{\textit{etc.} }
 
+\usepackage{comment}
+
 \begin{document}
 
 \title{Bipartite Fidelity and Loschmidt echo of bosonic conformal interface}
@@ -86,21 +88,23 @@
 \section{Numerical Computation of Bipartite Fidelity and Loschmidt Echo}
 % basis transformation, Bogoliubov state, overlap(master theorem)
 % Peschel_EE.pdf
+\label{app:comp_fid_echo}
+\input{comp_fid_echo}
 
 \section{A Determinant Identity for the Boundary State Amplitude}
 \label{app:pf_of_id}
 % copy notes app. C
 \input{pf_of_id}
 
-\section{$\lambda_1 \rightarrow \lambda_2$ Boundary State Amplitude}
-\label{app:lambda_12}
-% copy notes app. B
-\input{lambda_1_lambda_2}
-
 \section{Alternative Approach to ${\rm DN} \rightarrow \lambda$ Amplitude}
 \label{app:gnd_dn_lambda}
 % copy notes app. A
 \input{gnd_dn_lambda}
+
+\section{$\lambda_1 \rightarrow \lambda_2$ Boundary State Amplitude}
+\label{app:lambda_12}
+% copy notes app. B
+\input{lambda_1_lambda_2}
 
 \bibliographystyle{plain}
 \bibliography{bCFT}
