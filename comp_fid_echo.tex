@@ -53,7 +53,7 @@ J\equiv\left(\begin{array}{ccc}
 \end{array}\right)\right]S
 =S^T JS,
 \end{aligned}\end{eqnarray}
-where the commutator, for example, $\left[{\bf b},{\bf b}^\dagger\right]$ is understood as a matrix with component $\left[b_i,b_j^\dagger\right]=\delta_{ij}$. It is clear from Eq.(\ref{Preserve commutator}) that $S\in$Sp(2N,{\bf C}){\bf\color{red}Cite sth}. Further, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of S
+where the commutator, for example, $\left[{\bf b},{\bf b}^\dagger\right]$ is understood as a matrix with component $\left[b_i,b_j^\dagger\right]=\delta_{ij}$. It is clear from Eq.(\ref{Preserve commutator}) that $S\in$Sp(2N,{\bf C})\cite{fulton_representation_2004}. Further, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of S
 \begin{eqnarray}\begin{aligned}
 \label{Block of S}
 S=\left(\begin{array}{ccc}
@@ -97,12 +97,12 @@ where we have used Eq.(\ref{Constraint 1}) in the second line. From the followin
 \end{aligned}\end{eqnarray}
 one can easily check that the ground state in Eq.(\ref{Boson BCS gnd}) is correctly normalized. 
 
-{\bf\color{red} 1. Comment of BCS; 2. Say sth of deferment of the discussion of how to find S explicitly; 3. }
+{\bf\color{red} 1. Comment of BCS; 2. Say sth of deferment of the discussion of how to find S explicitly; 3. We will see similar construction of BCS in fidelity and echo.}
 
 \subsection{Boson fidelity} 
 \label{Boson fidelity}
 
-Fidelity is defined as the overlap of groundstates of two different bosonic Hamiltonians{\bf\color{red}cite sth}. We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in ${\bf b}$ basis, as in Eq.(\ref{Quadratic boson H}). From the discussion in App.{\bf\color{red}where}, we are able to diagonalize it in ${\bf a}$ basis. At $t=0$, the Hamiltonian becomes $\hat{H}_1$, which is still in ${\bf b}$ basis, but is diagonalized in a new ${\bf c}$ basis. The corresponding Bogoliubov transformations read
+Fidelity is defined as the overlap of groundstates of two different bosonic Hamiltonians{\bf\color{red}cite sth}. We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in ${\bf b}$ basis, as in Eq.(\ref{Quadratic boson H}). From the discussion in App.{\bf\color{red}where}, we are able to diagonalize it in ${\bf a}$ basis. At $t=0$, the Hamiltonian becomes $\hat{H}_1$, which is still written in ${\bf b}$ basis, but is diagonalized in a new ${\bf c}$ basis. The corresponding Bogoliubov transformations read
 \begin{eqnarray}\begin{aligned}
 \label{Two BdG}
 ({\bf b} , {\bf b}^\dagger)S_0=({\bf a} , {\bf a}^\dagger)\quad
@@ -146,7 +146,7 @@ It is evident that the evolved state $|0\rangle_{{\bf a}(t)}$ is related to the 
 \mathcal{L}(t)=|_{\bf a}\langle0|0\rangle_{{\bf a}(t)}|^2=\frac{1}{|\text{det}(u_1^\dagger e^{iEt}u_1-v_1^\dagger e^{-iEt}v_1)|}
 \end{aligned}\end{eqnarray}
 
-\subsection{Description on how to get S}
+\subsection{Explicit construction of symplectic Bogoliubov transformation}
 
 As demonstrated in App.{\bf\color{red}where}, the calculations of fidelity and echo boil down to calculate the Bogoliubov transformations in Eq.(\ref{Two BdG}). Here, for a quadratic bosonic Hamiltonian
 \begin{eqnarray}\begin{aligned}
@@ -219,7 +219,7 @@ in which the Hamiltonian reads
 \pi
 \end{array}\right)
 \end{aligned}\end{eqnarray}
-It is not hard to realize $\mathcal{M}$ is real and symmetric. We shall further assume that $\mathcal{M}$ is positive definite, and from Williamson's theorem{\bf\color{red}cite sth} we have
+It is not hard to realize $\mathcal{M}$ is real and symmetric. We shall further assume that $\mathcal{M}$ is positive definite, and from Williamson's theorem{\bf\color{red}cite sth} we have the decomposition
 \begin{eqnarray}\begin{aligned}
 \mathcal{M}=\tilde{S}\left(\begin{array}{ccc}
 d\\
@@ -240,7 +240,7 @@ S\equiv C\tilde{S}^TC^{-1}
 \end{aligned}\end{eqnarray*}
 as the desired Bogoliubov transformation that diagonalizes the Hamiltonian in Eq.(\ref{Quadratic boson H2}). 
 
-Notice in the above construction, we have assumed the Hamiltonian in the real basis to be positive definite. {\bf\color{red}This is not as restrictive as it may appear}, and in App.{\bf\color{red}where} we shall explicitly construct the matrix $\tilde{S}$ for the case of harmonic chain.
+Notice in the above construction, we have assumed the Hamiltonian $\mathcal{M}$ in the real basis to be positive definite. It is not hard find such a system, for example a harmonic chain, that meets the assumption. We shall explicitly construct the matrix $\tilde{S}$ for the case of harmonic chain in App.{\bf\color{red}where}.
 \subsection{Harmonic chain}
 
 {\bf\color{red}Say sth on harmonic chain}
@@ -270,7 +270,7 @@ In the real basis defined in Eq.(\ref{Real basis}), the Hamiltonian for 1D harmo
 \pi
 \end{array}\right)
 \end{aligned}\end{eqnarray}
-where $\mathcal{V}$ is real symmetric matrix that can be diagonalized as $\mathcal{V}=\mathcal{O}D^2\mathcal{O}^T$. We construct the following real symplectic matrix
+where $\mathcal{V}$ is real symmetric matrix that can be diagonalized as $\mathcal{V}=\mathcal{O}D^2\mathcal{O}^T$. The explicit form of $\mathcal{V}$ depends on the boundary condition which is not important in the following construction. We define the following real symplectic matrix
 \begin{eqnarray}\begin{aligned}
 \tilde{S}\equiv\left(\begin{array}{ccc}
 \mathcal{O}D^{1/2} \\
