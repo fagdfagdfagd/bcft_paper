@@ -1,0 +1,261 @@
+
+We write the quadratic bosonic Hamiltonian in the following form
+\begin{equation}
+H = \frac{1}{2} (b^{\dagger}, -b)
+M 
+\begin{pmatrix}
+b\\
+b^{\dagger} 
+\end{pmatrix} \qquad 
+M = 
+\begin{bmatrix}
+A & -B^* \\
+B & -A^* \\
+\end{bmatrix}
+\end{equation}
+where $A$ is Hermitian and $B$ is symmetric. The use of $(b^{\dagger}, -b)$ instead of $(b^{\dagger}, b)$ is intentional to facilitate intensive symplectic calculation. The Bogoliubov transformation that diagonalizes the Hamiltonian
+\begin{equation}
+(b, b^{\dagger}) S = ( a, a^{\dagger} ) 
+\end{equation}
+should preserve the commutation relation
+\begin{equation}
+J \equiv \begin{bmatrix}
+0 & \mathbb{I}\\
+-\mathbb{I} & 0 
+\end{bmatrix} =  
+[
+\begin{pmatrix}
+a \\
+a^{\dagger} 
+\end{pmatrix}, 
+\begin{pmatrix}
+a \, a^{\dagger}
+\end{pmatrix}]
+=
+S^{\top}
+[
+\begin{pmatrix}
+b \\
+b^{\dagger} 
+\end{pmatrix}, 
+\begin{pmatrix}
+b \, b^{\dagger}
+\end{pmatrix}]S
+ = S^{\top} J S 
+\end{equation}
+and it is therefore in ${\rm Sp}( 2n, \mathbb{C} ) $. On the other hand, the requirement that $a^{\dagger}$ still be the complex conjugation of $a$ leads to the block structure of $S$
+\begin{equation}
+S = 
+\begin{bmatrix}
+u & v^*\\
+v & u^*\\    
+\end{bmatrix}
+\end{equation}
+In turns of the new bosonic variable $a$,
+\begin{equation}
+\begin{aligned}
+H &= \frac{1}{2} ( b,  b^{\dagger} ) J^{-1} M 
+\begin{pmatrix}
+b\\
+b^{\dagger} 
+\end{pmatrix}
+ = \frac{1}{2} ( a,  a^{\dagger} ) S^{-1} J^{-1} M (S^{\top})^{-1} 
+\begin{pmatrix}
+a\\
+a^{\dagger} 
+\end{pmatrix}\\
+& = \frac{1}{2} ( a^{\dagger}, -a )  (S^{\top} M (S^{\top})^{-1} )
+\begin{pmatrix}
+a\\
+a^{\dagger} 
+\end{pmatrix}
+\end{aligned}
+\end{equation}
+Out goal is to find such a $S \in {\rm Sp}( 2n, \mathbb{C} )$ that diagonalize $M$\footnote{This particular diagonal form is dictated by the symmetric $P M^* P^{-1} = -M, P S P^{-1} = S $. This is also evident when one realizes the diagonal matrix $\in \mathfrak{sp}(2n, \mathbb{C} )$}
+\begin{equation}
+M = (S^{\top})^{-1} 
+  \begin{bmatrix}
+    d & 0\\
+    0 & -d \\
+  \end{bmatrix} S^{\top}  
+\end{equation}
+By matching to the standard form symplectic Lie algebra $\begin{bmatrix} a & b \\ c & -a^{\top} \end{bmatrix}$ where $b$ and $c$ are symmetric, we immediately see that $M \in \mathfrak{sp}( 2n, \mathbb{C} ) $. The adjoint action of $S^{\top}$ conjugates $M$ to the maximal torus. 
+
+In the real basis
+\begin{equation}
+\begin{bmatrix}
+b \\
+b^{\dagger} \\
+\end{bmatrix}
+=
+C
+\begin{bmatrix}
+\phi \\
+\pi \\
+\end{bmatrix}
+\end{equation}
+the Hamiltonian becomes
+\begin{equation}
+H = \frac{1}{2} ( b, b^{\dagger}) J^{-1} M 
+\begin{bmatrix}
+b \\
+b^{\dagger} 
+\end{bmatrix}
+= \frac{1}{2} ( \phi, \pi )
+\mathcal{M} 
+\begin{pmatrix}
+\phi \\
+\pi 
+\end{pmatrix}
+\end{equation}
+where
+\begin{equation}
+\mathcal{M} = C^{\top} J^{-1} M C = C^{\dagger} 
+\begin{bmatrix}
+A & - B^* \\
+-B & A^* \\                                             
+\end{bmatrix}C =
+\begin{bmatrix}
+{\rm Re}(A - B ) & -{\rm Im}( A ) + {\rm Im}( B  )\\
+{\rm Im}(A) + {\rm Im} B & {\rm Re}(A+ B ) 
+\end{bmatrix} 
+\end{equation}
+is a real symmetric matrix based on the symmetry of $A$ and $B$. If we can diagonalize the matrix $\mathcal{M}$ by a real symplectic matrix $\mathcal{S} \in \mathfrak{sp}( 2n, \mathbb{R} ) $
+\begin{equation}
+\mathcal{M} = \mathcal{S}
+\begin{bmatrix}
+d & 0 \\
+0 & d \\
+\end{bmatrix} \mathcal{S}^{\top}
+\end{equation}
+then in the $a$ basis
+\begin{equation}
+\begin{bmatrix}
+a \\
+a^{\dagger}\\
+\end{bmatrix}
+= C \mathcal{S}^{\top}
+\begin{bmatrix}
+\phi \\
+\pi 
+\end{bmatrix}
+\end{equation}
+the Hamiltonian is diagonal,
+\begin{equation}
+\begin{aligned}
+( \phi , \pi ) \mathcal{S}
+\begin{bmatrix}
+d & 0 \\
+0 & d \\ 
+\end{bmatrix} \mathcal{S}^{\top} 
+\begin{pmatrix}
+\phi \\
+\pi 
+\end{pmatrix}
+ &= ( a, a^{\dagger} ) C^*
+\begin{bmatrix}
+d & 0 \\
+0 & d \\ 
+\end{bmatrix}
+C^{\dagger}
+\begin{pmatrix}
+a \\
+a^{\dagger} 
+\end{pmatrix} 
+=( a^{\dagger}, a )J 
+\begin{bmatrix}
+0 & d \\
+d & 0 \\ 
+\end{bmatrix}
+\begin{pmatrix}
+a \\
+a^{\dagger} 
+\end{pmatrix}\\
+&=( a^{\dagger}, -a )
+\begin{bmatrix}
+d & 0 \\
+0 & -d \\ 
+\end{bmatrix}
+\begin{pmatrix}
+a \\
+a^{\dagger} 
+\end{pmatrix}
+\end{aligned}
+\end{equation}
+Tracing back to the complex basis, we have
+\begin{equation}
+\begin{bmatrix}
+d & 0 \\
+0 & -d \\ 
+\end{bmatrix}
+ = J C^* \mathcal{S}^{-1} C^{\top} J^{-1} M C (\mathcal{S}^{\top})^{-1} C^{\dagger} 
+\end{equation}
+or equivalently
+\begin{equation}
+\label{eq:M-diag}
+M = J C^* \mathcal{S} C^{\top} J^{-1}
+\begin{bmatrix}
+d & 0 \\
+0 & -d \\
+\end{bmatrix} C \mathcal{S}^{\top} C^{\dagger}
+\end{equation}
+One then identifies
+\begin{equation}
+C \mathcal{S}^{\top} C^{\dagger} = S^{\top} 
+\end{equation}
+Let's check this is the wanted $S^{\top}$: 
+\begin{enumerate}
+\item $S^{\top}$ so constructed has the correct block structure $[u, v^*; v, u^*]$. The computation to verify this is similar to the fermionic case where $U = C \mathcal{O} C^{\dagger} $ has the correct block structure for a real orthogonal matrix $\mathcal{O}$. 
+\item $C \mathcal{S}^{\top} C^{\dagger}  \in {\rm Sp}(2n, \mathbb{C} )$. It is easily verified that $C^{\dagger} J C^* = iJ$ and $C J C^{\top} = - i J$, so
+\begin{equation}
+C\mathcal{S}^{\top} C^{\dagger} J (C\mathcal{S}^{\top} C^{\dagger})^{\top} = i C\mathcal{S}^{\top} J (C\mathcal{S}^{\top})^{\top} = i C J C^{\top} = J 
+\end{equation}
+\item Eq.~\eqref{eq:M-diag} is a similarity transformation. 
+\begin{equation}
+J C^* \mathcal{S} C^{\top} J^{-1} = J C^* J (\mathcal{S}^{\top})^{-1} J C^{\top} J = C(\mathcal{S}^{\top})^{-1}  C^{\dagger} 
+\end{equation}
+\end{enumerate}
+
+Now we come back to the case when the symplectic diagonalization is possible. It is the Williamson theorem\footnote{\cite{simon_congruences_1999,pirandola_correlation_2009} and the Stackexchange post \cite{_linear_stexg} contains the same simple constructive proof. \cite{xiao_theory_2009} was inspired from solving the dynamics(which is a canonical transformation). Chapter 3 of \cite{gosson_symplectic_2006} contains a basis independent proof. Also see a complete classification of Williamson theorem in Appendix 6 of Arnold\cite{arnold_mathematical_1997}}: for a real symmetric and positive definite matrix $\mathcal{M}$, there exist $\mathcal{S} \in \mathfrak{sp}( 2n, \mathbb{R} )$, such that
+\begin{equation}
+\label{eq:M-diag2}
+\mathcal{M}  = \mathcal{S}
+\begin{bmatrix}
+d & 0 \\
+0 & d \\
+\end{bmatrix} \mathcal{S}^{\top}
+\end{equation}
+where the diagonal matrix is positive and contains positive eigenvalues of $i J\mathcal{M}$. I here present a constructive proof[Appendix A of \cite{pirandola_correlation_2009}]. The general solution of Eq.~\eqref{eq:M-diag2} is 
+\begin{equation}
+ \mathcal{S} = \mathcal{M}^{\frac{1}{2}} O 
+\begin{bmatrix}
+d^{-\frac{1}{2}} & 0 \\
+0 & d^{-\frac{1}{2}}\\
+\end{bmatrix}
+\end{equation}
+where $O$ is an orthogonal matrix to be fixed. Since $\mathcal{S}$ is symplectic, we have
+\begin{equation}
+O^{\top} \mathcal{M}^{\frac{1}{2}} J \mathcal{M}^{\frac{1}{2}} O  = 
+\begin{bmatrix}
+d^{\frac{1}{2}} & 0 \\
+0 & d^{\frac{1}{2}} \\
+\end{bmatrix}
+J
+\begin{bmatrix}
+d^{\frac{1}{2}} & 0 \\
+0 & d^{\frac{1}{2}} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & d\\
+-d & 0 \\
+\end{bmatrix}
+\end{equation}
+Hence matrix $O$ actually diagonalize the anti-symmetric $ \mathcal{M}^{\frac{1}{2}} J \mathcal{M}^{\frac{1}{2}}$. The eigenvalues of $ \mathcal{M}^{\frac{1}{2}} J \mathcal{M}^{\frac{1}{2}}$ are $\pm i d$, which are also the eigenvalues of $  J \mathcal{M}$. And since $\mathcal{S}$ uses $d^{-\frac{1}{2}}$, $d$ should be the positive eigenvalues of  $iJ \mathcal{M}$. 
+
+
+
+%%% Local Variables:
+%%% TeX-master: "Peschel_EE"
+%%% TeX-PDF-mode: t
+%%% End:

@@ -1,6 +1,5 @@
-% flatex input: [comp_fid_echo.tex]
 
-In this appendix, we provide the technical details on numerical calculation of bipartite fidelity and Loschmidt echo. We first demonstrate the symplectic character of the bosonic Bogoliubov transformation, for which the ground state will take a form similar to the superconducting ground state. It is explicitly shown that fidelity and Loschmidt echo take simple form in such construction. We note that this is different from the method in \onlinecite{vasseur_universal_2014,stephan_local_2011}. With slight modification, the similar technique can be applied to the fermionic case. 
+In this appendix, we provide technical details about the numerical calculation of the bipartite fidelity and Loschmidt echo. It is different from the method for fermionic cases used in Ref.~\onlinecite{vasseur_universal_2014,stephan_local_2011} but can by applied to with slight modification. What we do takes advantage of the symplectic structure of the bosonic Bogoliubov transformation, which gives the explicit form of ground state that similar to that of the superconductor. 
 
 \subsection{Boson Bogoliubov transformation}
 \label{app: Boson BdG}
@@ -8,7 +7,19 @@ We consider the following quadratic bosonic Hamiltonian
 \begin{eqnarray}\begin{aligned}
 \label{Quadratic boson H}
 \hat{H}&=b_i^\dagger H_{ij}b_j+\frac{1}{2}b^\dagger_i\Delta_{ij}b_j^\dagger+\frac{1}{2}b_i\Delta^\dagger_{ij}b_j\\
-&=\frac{1}{2}
+&=
+\frac{1}{2} (b^{\dagger}, -b)
+M 
+\begin{pmatrix}
+b\\
+b^{\dagger} 
+\end{pmatrix} \qquad 
+M = 
+\begin{bmatrix}
+A & -B^* \\
+B & -A^* \\
+\end{bmatrix}
+\frac{1}{2}
 \left(\begin{array}{ccc}
 {\bf b}^\dagger & -{\bf b}
 \end{array}\right)
@@ -21,7 +32,7 @@ H & \Delta\\
 {\bf b}^\dagger
 \end{array}\right)-\frac{1}{2}\text{tr}H,
 \end{aligned}\end{eqnarray}
-where ${\bf b}\equiv(b_{1},...,b_{N})$ is a vector of annihilation operators. Notice $H$ is a $N\times N$ single-particle Hamiltonian, and $\Delta$ is a symmetric paring matrix. The use of $({\bf b}^\dagger , -{\bf b})$ rather than $({\bf b}^\dagger , {\bf b})$ is due to the Sp(2N,{\bf C}) character of the bosonic Bogoliubov transformation, as we now demonstrate. 
+where ${\bf b}\equiv(b_{1},...,b_{N})$ is a vector of bosonic annihilation operators. Notice $H$ is a $N\times N$ single-particle Hamiltonian, and $\Delta$ is a symmetric pairing matrix. The use of $({\bf b}^\dagger , -{\bf b})$ rather than $({\bf b}^\dagger , {\bf b})$ is due to the Sp(2N,{\bf C}) character of the bosonic Bogoliubov transformation, as we now demonstrate. 
 
 The Bogoliubov transformation that diagonalizes the Hamiltonian
 \begin{eqnarray}\begin{aligned}
@@ -53,7 +64,7 @@ J\equiv\left(\begin{array}{ccc}
 \end{array}\right)\right]S
 =S^T JS,
 \end{aligned}\end{eqnarray}
-where the commutator, for example, $\left[{\bf b},{\bf b}^\dagger\right]$ is understood as a matrix with component $\left[b_i,b_j^\dagger\right]=\delta_{ij}$. It is clear from Eq.~\eqref{Preserve commutator} that $S\in$Sp(2N,{\bf C})\cite{fulton_representation_2004}. Further, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of S
+where the commutator, for example, $\left[{\bf b},{\bf b}^\dagger\right]$ is understood as a matrix with component $[b_i,b_j^\dagger]=\delta_{ij}$. It is clear from Eq.~\eqref{Preserve commutator} that $S\in$Sp(2N,{\bf C})\cite{fulton_representation_2004}. Further, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of S
 \begin{eqnarray}\begin{aligned}
 \label{Block of S}
 S=\left(\begin{array}{ccc}
@@ -304,3 +315,7 @@ O(D^{1/2}-D^{-1/2}) & O(D^{1/2}+D^{-1/2})
 \end{aligned}\end{eqnarray}
 
 
+%%% Local Variables:
+%%% TeX-master: "bCFT_paper"
+%%% TeX-PDF-mode: t
+%%% End:
