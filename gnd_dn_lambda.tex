@@ -4,27 +4,27 @@
 \centering
 \includegraphics{fig_gnd_dn_lambda.pdf}
 \caption{Partition function of Hamiltonian with DN and $\lambda$ boundary conditions. The width of the strip is $\pi$ due to folding. We unfold the cylinder and the new stripe have $N$ and $D$ boundary conditions on the left and right plus a $\lambda$ junction in the middle. }
-\label{Fig in gnd_dn_lambda}
+\label{fig:Fig_gnd_dn_lambda}
 \end{figure}
 
-In this appendix, we would like to calculate the amplitude for the setup shown in Fig.~\ref{Fig in gnd_dn_lambda}. In particular, the unfolded configuration has D/N boundary conditions at $x = \pm \frac{L}{2}$ and linking boundary condition at $x = 0$. The general solutions can be written as
+In this appendix, we would like to calculate the amplitude for the setup shown in Fig.~\ref{fig:Fig_gnd_dn_lambda}. In particular, the unfolded configuration has D/N boundary conditions at $x = \pm \frac{L}{2}$ and linking boundary condition at $x = 0$. The general solutions can be written as
 \begin{equation}
-\label{Normalized f in gnd_dn_lambda}
+\label{eq:normalized_f}
 f(k, x) = 
 \left\lbrace
 \begin{aligned}
-  A_1 e^{i kt} \cos(kx +\frac{1}{2}kL ) &  \quad x < 0  \\
-  A_2 e^{ikt}  \sin(kx - \frac{1}{2}kL ) & \quad x > 0   \\
+  A_1 e^{i kt} \cos\left(kx +\frac{1}{2}kL \right) &  \quad x < 0  \\
+  A_2 e^{ikt}  \sin\left(kx - \frac{1}{2}kL \right) & \quad x > 0   \\
 \end{aligned} \right. 
 \end{equation}
 As demonstrated in the {\bf\color{red}main text}, if we denote $f(k,x<0)\equiv\phi_1$ and $f(k,x>0)\equiv\phi_2$, the boundary condition at the junction reads
 \begin{eqnarray}\begin{aligned}
-\frac{\partial_x \phi_1}{ \partial_t \phi_1} = \lambda^2 \frac{\partial_x \phi_2}{ \partial_t \phi_2} = \tan^2 \theta\frac{\partial_x \phi_2}{ \partial_t \phi_2} \quad \theta \in [0,\frac{\pi}{2} ]  
+\frac{\partial_x \phi_1}{ \partial_t \phi_1} = \lambda^2 \frac{\partial_x \phi_2}{ \partial_t \phi_2} = \tan^2 \theta\frac{\partial_x \phi_2}{ \partial_t \phi_2} \quad \theta \in \left[0,\frac{\pi}{2} \right]  
 \end{aligned}\end{eqnarray}
 which implies
 \begin{equation}
-\label{Momentum in gnd_dn_lambda}
-k = \frac{2\pi}{L}( n \pm \frac{\theta}{\pi} )  \quad n\in{\bf Z}
+\label{eq:momentum_gnd_dn_lambda}
+k = \frac{2\pi}{L}\left( n \pm \frac{\theta}{\pi} \right)  \quad n\in\mathbb{Z}
 \end{equation}
 It is evident that the momentum $k$ is shifted from integer multiple of $2\pi/L$ due to the $\lambda$ boundary condition in the middle. 
 \begin{comment}
@@ -37,7 +37,7 @@ f_n(x) = \sqrt{\frac{2}{L}}
   \pm \sin(kx - \frac{1}{2}kL ) & \quad x > 0   \\
 \end{aligned} \right. 
 \qquad 
-k = \frac{2\pi}{L}( n \pm  \frac{\theta}{\pi} )  \quad n \in \mathbb{Z} 
+k = \frac{2\pi}{L}\left( n \pm  \frac{\theta}{\pi} \right)  \quad n \in \mathbb{Z} 
 \end{equation}
 Expand the field $\phi = \sum_n \phi_n f_n(x) $, the action and Hamiltonian becomes
 \begin{equation}
@@ -46,26 +46,26 @@ Expand the field $\phi = \sum_n \phi_n f_n(x) $, the action and Hamiltonian beco
 \end{equation}
 \end{comment}
 
-It is clear that the normalized eigenfunctions in Eq.~\eqref{Normalized f in gnd_dn_lambda} serves as orthonormal basis in mode expansion. Following the same procedure in \onlinecite{di_francesco_conformal_1997}, we have the Hamiltonian as
+It is clear that the normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as orthonormal basis in mode expansion. Following the same procedure in \onlinecite{di_francesco_conformal_1997}, we have the Hamiltonian as
 \begin{equation}
-\label{H in gnd_dn_lambda}
-H = \frac{1}{2} \sum_{n \in \mathbb{Z} } |k|  (a^{\dagger}_n a_n + \frac{1}{2} )
+\label{eq:H_in_gnd_dn_lambda}
+H = \frac{1}{2} \sum_{n \in \mathbb{Z} } |k|  \left(a^{\dagger}_n a_n + \frac{1}{2} \right)
 \end{equation}
-where the momentum $k$ is defined in Eq.~\eqref{Momentum in gnd_dn_lambda}, and the creation and annihilation operators defined as usual
+where the momentum $k$ is defined in Eq.~\eqref{eq:momentum_gnd_dn_lambda}, and the creation and annihilation operators defined as usual
 \begin{equation}
 \begin{aligned}
-a_n = \frac{1}{\sqrt{2}} ( \sqrt{ |k|g} \phi_n + \frac{i }{\sqrt{|k|g} }\pi_n  ) \\
-a^{\dagger}_n = \frac{1}{\sqrt{2}} ( \sqrt{ |k|g} \phi_n - \frac{i }{\sqrt{|k|g} }\pi_n  ) \\
+a_n = \frac{1}{\sqrt{2}} \left( \sqrt{ |k|g} \phi_n + \frac{i }{\sqrt{|k|g} }\pi_n  \right) \\
+a^{\dagger}_n = \frac{1}{\sqrt{2}} \left( \sqrt{ |k|g} \phi_n - \frac{i }{\sqrt{|k|g} }\pi_n  \right) \\
 \end{aligned}
 \end{equation}
 
-The Casimir energy is the vacuum energy brought by the finite size of the setup. From Eq.~\eqref{H in gnd_dn_lambda} and define $x\equiv\theta/\pi$ in Eq.~\eqref{Momentum in gnd_dn_lambda}, we have
+The Casimir energy is the vacuum energy brought by the finite size of the setup. From Eq.~\eqref{eq:H_in_gnd_dn_lambda} and define $x\equiv\theta/\pi$ in Eq.~\eqref{eq:momentum_gnd_dn_lambda}, we have
 \begin{equation}
 \begin{aligned}
-E_c &= \frac{1}{4} \sum_{n \in \mathbb{Z}} | k| = \frac{\pi}{2L} ( \sum_{n \in \mathbb{Z}}  | n + x | + \sum_{n \in \mathbb{Z}}  | n - x |  ) \\  
+E_c &= \frac{1}{4} \sum_{n \in \mathbb{Z}} | k| = \frac{\pi}{2L} \left( \sum_{n \in \mathbb{Z}}  | n + x | + \sum_{n \in \mathbb{Z}}  | n - x |  \right) \\  
 &= \frac{\pi}{L} \Big[\sum_{n \ge 0 } ( n + x )^{-s} + \sum_{n \ge 0 }  ( n - x)^{-s}  +   x^{-s} \Big]\Big|_{s = -1} \\
 &= \frac{\pi}{L} \left[ \zeta_{\rm H}( -1, x ) + \zeta_{\rm H}( -1, x ) +  x \right] \\
-&= \frac{1}{2} ( - x^2 + x - \frac{1}{6})
+&= \frac{1}{2} \left( - x^2 + x - \frac{1}{6}\right)
 \end{aligned}
 \end{equation}
 where we used the fact that the unfolded geometry has length $L=2\pi$. Thus the free energy reads
