@@ -1,34 +1,44 @@
 
 In this appendix, we provide technical details about the numerical calculation of the bipartite fidelity and Loschmidt echo. It is different from the method for fermionic cases used in Ref.~\onlinecite{vasseur_universal_2014,stephan_local_2011} but can by applied to with slight modification. What we do takes advantage of the symplectic structure of the bosonic Bogoliubov transformation, which gives the explicit form of ground state that similar to that of the superconductor. 
 
+During the course of derivation in this and other appendices, we will repeatedly use the combinatorial identity called McMahon Master theorem
+\begin{equation}
+\label{eq:bosonic_McMahon}
+\langle0|\exp\left\{\frac{1}{2}b_iX_{ij}b_j\right\}\exp\left\{\frac{1}{2}b^\dagger_iY_{ij}b^\dagger_j\right\}|0\rangle=\text{det}^{-\frac{1}{2}}(1-XY)
+\end{equation}
+for symmetric matrix $X$ and $Y$ and set of independent Bosonic creation operators $b_i^{\dagger}$. One can prove its legitimacy for (simultaneously) diagonalizable matrices and then claim it's true for its combinatorial nature. 
+
 \subsection{Boson Bogoliubov transformation}
 \label{app_sub:boson_BdG}
 We consider the following quadratic bosonic Hamiltonian
 \begin{eqnarray}\begin{aligned}
 \label{eq:quadratic_boson_H}
-\hat{H}%&=b_i^\dagger H_{ij}b_j+\frac{1}{2}b^\dagger_i\Delta_{ij}b_j^\dagger+\frac{1}{2}b_i\Delta^\dagger_{ij}b_j\\
+%&=b_i^\dagger H_{ij}b_j+\frac{1}{2}b^\dagger_i\Delta_{ij}b_j^\dagger+\frac{1}{2}b_i\Delta^\dagger_{ij}b_j\\
+\hat{H}
 &=
-\frac{1}{2} (b^{\dagger}, -b)
+\frac{1}{2} (\vec{b}^{\dagger}, -\vec{b})
 M 
 \begin{pmatrix}
-b\\
-b^{\dagger} 
-\end{pmatrix}-\frac{1}{2}\text{tr}H, \qquad 
+\vec{b}\\
+\vec{b}^{\dagger} 
+\end{pmatrix},  \qquad 
 M = 
 \begin{bmatrix}
 A & -B^* \\
 B & -A^* \\
 \end{bmatrix}
 \end{aligned}\end{eqnarray}
-where ${\bf b}\equiv(b_{1},...,b_{N})$ is a vector of bosonic annihilation operators. Notice $A$ is a $N\times N$ single-particle Hamiltonian, and $B$ is a symmetric pairing matrix. The use of $({\bf b}^\dagger , -{\bf b})$ rather than $({\bf b}^\dagger , {\bf b})$ is due to the Sp(2N,$\mathbb{C}$) character of the bosonic Bogoliubov transformation, as we now demonstrate. 
+where ${\bf b}\equiv(b_{1},...,b_{n})^T$ is a vector of bosonic annihilation operators. The matrix $M$ consists of a $n\times n$ Hermitian block $A$ which plays the role of single particle Hamiltonian in the fermionic case and symmetric block $B$ for the pairing interaction. 
 
-The Bogoliubov transformation that diagonalizes the Hamiltonian
+We want to use a Bogoliubov transformation, which utilizes a $2n \times 2n$ matrix $S$ to define a diagonal basis 
 \begin{eqnarray}\begin{aligned}
 \label{eq:def_a}
 ({\bf a} , {\bf a}^\dagger)\equiv({\bf b} , {\bf b}^\dagger)S
 \end{aligned}\end{eqnarray}
-should preserve the commutation relation
-\begin{eqnarray}\begin{aligned}
+of the Hamiltonian. The transformation is canonical, meaning that it preserves the commutation relation 
+
+\begin{eqnarray}
+\begin{aligned}
 \label{eq:preserve_commutator}
 J\equiv\begin{bmatrix}
 0 & \mathbb{I}\\
@@ -50,78 +60,83 @@ J\equiv\begin{bmatrix}
 \begin{pmatrix}
 {\bf b} & {\bf b}^\dagger
 \end{pmatrix}]S
-=S^T JS,
-\end{aligned}\end{eqnarray}
-where the commutator, for example, $\left[{\bf b},{\bf b}^\dagger\right]$ is understood as a matrix with component $[b_i,b_j^\dagger]=\delta_{ij}$. It is clear from Eq.~\eqref{eq:preserve_commutator} that $S\in$Sp(2N,$\mathbb{C}$)\cite{fulton_representation_2004}. Further, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of S
+=S^T JS.
+\end{aligned}
+\end{eqnarray}
+where we have used the compact notation of the sort $([\vec{b}, \vec{b}^{\dagger}])_{ij} =  [b_i, b_j^\dagger]$ to denote the commutator matrix. Consequently, $S$ is in the symplectic group ${\rm Sp}( 2n, \mathbb{C} ) $\cite{blaizot_quantum_1986,fulton_representation_2004}. Furthermore, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of $S$
 \begin{eqnarray}
 \label{eq:block_S}
 S=
 \begin{bmatrix}
 u & v^*\\
 v & u^*
-\end{bmatrix}
+\end{bmatrix}.
 \end{eqnarray}
-The symplectic property of S implies the following constraints 
+and the symplectic property of $S$ implies the following constraints on the blocks 
 \begin{eqnarray}
-u^\dagger u-v^\dagger v&=\mathbb{I}\label{eq:constraint_1}\\
-u^T u-v^T v&=0\label{eq:constraint_2}
+  u^\dagger u-v^\dagger v&=\mathbb{I}\label{eq:constraint_1}\\
+  u^T u-v^T v&=0\label{eq:constraint_2}
 \end{eqnarray}
-which will be important for calculation of the ground state. 
+With these conditions, the Hamiltonian in basis $a$ becomes (the use of $({\bf b}^\dagger , -{\bf b})$ rather than $({\bf b}^\dagger , {\bf b})$ can be appreciated in this step)
+\begin{equation}
+H = \frac{1}{2} ( a^{\dagger}, -a )  (S^{\top} M (S^{\top})^{-1} )
+\begin{pmatrix}
+a\\
+a^{\dagger} 
+\end{pmatrix}.
+\end{equation}
+A symplectic matrix $S$ solves the problem if it diagonalizes $M$. 
 
-For the ground state of the quadratic Hamiltonian in Eq.~\eqref{eq:quadratic_boson_H}, it is the vacuum of the annihilation operators defined in Eq.~\eqref{eq:def_a} and satisfies
+The solution depend on the types of $M$. For the positive definite matrix $M$, one can rewrite the Hamiltonian in the position and momentum basis and invoke the Williamson theorem\cite{arnold_mathematical_2010}, which address the existence, uniqueness and construction of the matrix $S$. We defer the derivation in this route in App.~\ref{app_sub:construction_Bogoliubov}, but will not elaborate the theorem and its proof there (see proofs in Ref.~\onlinecite{xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006} and also a recent application in entanglement entropy context\cite{coser_contour_2017}). Instead we will show in App.~\ref{app_sub:harmonic_chain} that for the problem of harmonic chain we are interested in, the diagonalization can be easily done without using the general recipe in the Williamson theorem. 
+
+It is nevertheless nice to know that the formalism works for the all positive definite matrix $M$. And granted that we have obtained the required matrix $S$, the ground state will be the vacuum of the annihilation operators defined in Eq.~\eqref{eq:def_a} and satisfies
 \begin{eqnarray}\begin{aligned}
 \label{eq:a_vacuum_condition}
 (b_iu_{ij}+b_i^\dagger v_{ij})|0\rangle_{{\bf a}}=0.
 \end{aligned}\end{eqnarray}
-If the matrix $u$ is invertible, then we can introduce a matrix
+If the matrix $u$ is invertible, then we can introduce a matrix $T=vu^{-1}$ to rewrite Eq.~\eqref{eq:a_vacuum_condition} as
 \begin{eqnarray}\begin{aligned}
-T=vu^{-1}
+(b_i+b_j^\dagger T_{ji})|0\rangle_{{\bf a}}=0. 
 \end{aligned}\end{eqnarray}
-such that Eq.~\eqref{eq:a_vacuum_condition} reduces to
-\begin{eqnarray}\begin{aligned}
-(b_i+b_j^\dagger T_{ji})|0\rangle_{{\bf a}}=0,
-\end{aligned}\end{eqnarray}
-One can use Eq.~\eqref{eq:constraint_2} to show that $T$ is symmetric, and observe that
+The constraint Eq.~\eqref{eq:constraint_2} on the blocks of $u$ and $v$ (followed by the symplectic constraint of $S$) implies that $T$ is a symmetric matrix, 
 \begin{eqnarray}\begin{aligned}
 \exp\left\{-\frac{1}{2}b_j^\dagger T_{jk}b_k^\dagger\right\}b_i\exp\left\{\frac{1}{2}b_j^\dagger T_{jk}b_k^\dagger\right\}=b_i+T_{ij}b^\dagger_j.
 \end{aligned}\end{eqnarray}
-Thus we conclude that 
+we therefore solve the vacuum state
 \begin{eqnarray}\begin{aligned}
 \label{eq:boson_BCS_gnd}
 |0\rangle_{{\bf a}}&=\text{det}^{\frac{1}{4}}(1-T^\dagger T)\exp\left\{-\frac{1}{2}b_j^\dagger T_{jk}b_k^\dagger\right\}|0\rangle_{\bf b}\\
-&=|\text{det}(u)|^{-\frac{1}{2}}\exp\left\{-\frac{1}{2}b_j^\dagger T_{jk}b_k^\dagger\right\}|0\rangle_{\bf b}.
 \end{aligned}\end{eqnarray}
-where we have used Eq.~\eqref{eq:constraint_1} in the second line. From the following McMahon master theorem
-\begin{eqnarray}\begin{aligned}
-\label{eq:bosonic_McMahon}
-\langle0|\exp\left\{\frac{1}{2}b_iX_{ij}b_j\right\}\exp\left\{\frac{1}{2}b^\dagger_iY_{ij}b^\dagger_j\right\}|0\rangle=\text{det}^{-\frac{1}{2}}(1-XY)
-\end{aligned}\end{eqnarray}
-one can easily check that the ground state in Eq.~\eqref{eq:boson_BCS_gnd} is correctly normalized. 
-
-Eq.~\eqref{eq:boson_BCS_gnd} takes a similar form as the superconducting ground state, with the pairing wavefunction $T_{ij}$ determined by the Bogoliubov transformation. We shall defer the explicit construction of Bogoliubov transformation until App.~\ref{app_sub:construction_Bogoliubov}. Before that, we shall see that similar constructions of superconducting ground state greatly simplify the expressions for fidelity and Loschmidt echo.
+where the normalization is given by the McMahon Master theorem Eq.~\ref{eq:bosonic_McMahon}. Apply constrain in Eq.~\eqref{eq:constraint_1}, it simplifies to
+\begin{equation}
+\text{det}^{\frac{1}{4}}(1-T^\dagger T) =|\text{det}(u)|^{-\frac{1}{2}}
+\end{equation}
+Eq.~\eqref{eq:boson_BCS_gnd} takes a similar form as the superconducting ground state, with the pairing wavefunction $T_{ij}$ determined by the Bogoliubov transformation. We will see that the normalization factor gives the fidelity and Loschmidt echo.
 
 \subsection{Boson fidelity} 
 \label{app_sub:boson_fidelity}
 
-Fidelity is defined as the overlap of groundstates of two different bosonic Hamiltonians. We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in ${\bf b}$ basis, as in Eq.\eqref{eq:quadratic_boson_H}. From the discussion in App.~\ref{app_sub:boson_BdG}, we are able to diagonalize it in ${\bf a}$ basis. At $t=0$, the Hamiltonian becomes $\hat{H}_1$, which is still written in ${\bf b}$ basis, but is diagonalized in a new ${\bf c}$ basis. The corresponding Bogoliubov transformations read
+Fidelity is defined as the (squared) overlap of groundstates of two different bosonic Hamiltonians. 
+
+We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in ${\bf b}$ basis, as in Eq.\eqref{eq:quadratic_boson_H}. From the discussion in App.~\ref{app_sub:boson_BdG}, we are able to diagonalize it in ${\bf a}$ basis. At $t=0$, the Hamiltonian becomes $\hat{H}_1$, which is still written in ${\bf b}$ basis, but is diagonalized in a new ${\bf c}$ basis. The corresponding Bogoliubov transformations read
 \begin{eqnarray}\begin{aligned}
 \label{eq:two_BdG}
 ({\bf b} , {\bf b}^\dagger)S_0=({\bf a} , {\bf a}^\dagger)\quad
 ({\bf b} , {\bf b}^\dagger)S_1=({\bf c} , {\bf c}^\dagger)
 \end{aligned}\end{eqnarray}
-such that
+and so
 \begin{eqnarray}\begin{aligned}
 \label{eq:S0invS}
 ({\bf a} , {\bf a}^\dagger)S_0^{-1}S_1=({\bf c} , {\bf c}^\dagger)
 \end{aligned}\end{eqnarray}
-One immediately realizes Eq.~\eqref{eq:S0invS} takes the same form as Eq.~\eqref{eq:def_a} such that $S_0^{-1}S_1$ is in the same symplectic group, and takes the following block form
+One realizes Eq.~\eqref{eq:S0invS} is another Bogoliubov transformation and so the corresponding matrix has the block structure
 \begin{eqnarray}
 S_0^{-1}S_1=\begin{bmatrix}
 u_1 & v_1^*\\
 v_1 & u_1^*
 \end{bmatrix}.
 \end{eqnarray}
-Thus $|0\rangle_{\bf c}$ is related to the $|0\rangle_{{\bf a}}$ in the same way as in Eq.~\eqref{eq:boson_BCS_gnd}, and their overlap, which is the fidelity, reads
+Thus $|0\rangle_{\bf c}$ is related to the $|0\rangle_{{\bf a}}$ in the same way as in Eq.~\eqref{eq:boson_BCS_gnd}. Their overlap is therefore given by the normalization factor
 \begin{eqnarray}\begin{aligned}
 |_{\bf a}\langle0|0\rangle_{\bf c}|^2=\frac{1}{|\text{det}(u_1)|}
 \end{aligned}\end{eqnarray}
@@ -129,29 +144,31 @@ Thus $|0\rangle_{\bf c}$ is related to the $|0\rangle_{{\bf a}}$ in the same way
 \subsection{Boson Loschmidt echo}
 \label{app_sub:boson_Loschmidt_echo}
 
-The Loschmidt echo is defined as the overlap of the evolved state
+The Loschmidt echo is defined as the (squared) overlap of the evolved state
 \begin{eqnarray}\begin{aligned}
 |0\rangle_{{\bf a}(t)}\equiv e^{-i\hat{H}_1t}|0\rangle_{\bf a}
 \end{aligned}\end{eqnarray}
-with the $\hat{H}_0$ ground state $|0\rangle_{\bf a}$. We introduce the third dynamical basis
+with $|0\rangle_{\bf a}$ the ground state of the Hamiltonian $\hat{H}_0$ before the quench. We introduce a dynamical basis
 \begin{eqnarray}\begin{aligned}
 a_i(t)&=e^{-i\hat{H}_1t}a_ie^{i\hat{H}_1t}
 \end{aligned}\end{eqnarray}
-which annihilate the evolved state at time t: $a_i(t)|0\rangle_{{\bf a}(t)}=0$. Upon using the expression $\hat{H}_1=\sum_iE_ic_i^\dagger c_i$, the Bogoliubov transformation at time t can be represented as a chain of symplectic transformation
+which annihilate the evolved state at time t: $a_i(t)|0\rangle_{{\bf a}(t)}=0$. Upon using the expression $\hat{H}_1=\sum_iE_ic_i^\dagger c_i$, the Bogoliubov transformation at time $t$ can be represented as a chain of symplectic transformation
 \begin{eqnarray}\begin{aligned}
 \label{eq:BdG_transformation_echo}
 ({\bf a}(t),{\bf a}^\dagger(t))=e^{-iHt}
 ({\bf a} , {\bf a}^\dagger)e^{iHt}=({\bf a},{\bf a}^\dagger)S_0^{-1}S_1\text{diag}(e^{iEt},e^{-iEt})S_1^{-1}S_0
 \end{aligned}\end{eqnarray}
-It is evident that the evolved state $|0\rangle_{{\bf a}(t)}$ is related to the $|0\rangle_{{\bf a}}$ via the same way as in Eq.~\eqref{eq:boson_BCS_gnd}. In order to calculate the Loschmidt echo, we simply take the left top corner of the Bogoliubov transformation in Eq.~\eqref{eq:BdG_transformation_echo}, and it {\bf\color{red}reads}
+It is evident that the evolved state $|0\rangle_{{\bf a}(t)}$ is related to the $|0\rangle_{{\bf a}}$ through the same way as in Eq.~\eqref{eq:boson_BCS_gnd}. The overlap, as we have seen in the fidelity case, is the normalization factor of the "BCS" ground state. It is related to the top left block of the Bogoliubov transformation in Eq.~\eqref{eq:BdG_transformation_echo},
+\todo[inline]{Mao: you have highlights "it reads", anything wrong here?}
 \begin{eqnarray}\begin{aligned}
 \label{eq:echo_t}
 \mathcal{L}(t)=|_{\bf a}\langle0|0\rangle_{{\bf a}(t)}|^2=|\text{det}(u_1^\dagger e^{iEt}u_1-v_1^\dagger e^{-iEt}v_1)|^{-1}
 \end{aligned}\end{eqnarray}
 
-\subsection{Explicit construction of symplectic Bogoliubov transformation}
+\subsection{Explicit Construction of Symplectic Bogoliubov Transformation}
 \label{app_sub:construction_Bogoliubov}
-As demonstrated in App.~\ref{app_sub:boson_fidelity} and \ref{app_sub:boson_Loschmidt_echo}, the calculations of fidelity and echo boil down to calculate the Bogoliubov transformations in Eq.~\eqref{eq:two_BdG}. Here, we shall describe how to find such a Bogoliubov transformation S$\in$Sp(2N,$\mathbb{C}$) that diagonalizes the quadratic bosonic Hamiltonian in Eq.~\eqref{eq:quadratic_boson_H}. 
+
+As demonstrated in App.~\ref{app_sub:boson_fidelity} and \ref{app_sub:boson_Loschmidt_echo}, the calculations of fidelity and echo boil down to calculate the Bogoliubov transformations in Eq.~\eqref{eq:two_BdG}. Here, we shall describe how to find such a Bogoliubov transformation $S \in {\rm Sp}(2n, \mathbb{C})$ that diagonalizes the quadratic bosonic Hamiltonian in Eq.~\eqref{eq:quadratic_boson_H}. 
 
 We introduce the real basis 
 \begin{eqnarray}\begin{aligned}
@@ -197,7 +214,7 @@ in which the Hamiltonian reads
 \pi
 \end{pmatrix}
 \end{aligned}\end{eqnarray}
-It is not hard to realize $\mathcal{M}$ is real and symmetric. We shall further assume that $\mathcal{M}$ is positive definite, and from Williamson's theorem\cite{arnold_mathematical_2010} we have the decomposition
+It is not hard to check that $\mathcal{M}$ is real and symmetric. We shall further assume that $\mathcal{M}$ is positive definite. From Williamson's theorem\cite{arnold_mathematical_2010,xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006} we have the decomposition
 \begin{eqnarray}\begin{aligned}
 \mathcal{M}=\mathcal{S}
 \begin{bmatrix}
@@ -206,7 +223,7 @@ d\\
 \end{bmatrix}
 \mathcal{S}^T
 \end{aligned}\end{eqnarray}
-where $\mathcal{S}\in$Sp(2N,$\mathbb{R}$) and the diagonal matrix $d$ are positive eigenvalues of $iJ\mathcal{M}$. After some algebra, we have
+where $\mathcal{S}\in$Sp(2n,$\mathbb{R}$) and the diagonal matrix $d$ are positive eigenvalues of $iJ\mathcal{M}$. After some algebra, we have
 \begin{eqnarray}\begin{aligned}
 \label{eq:diagonalization_M}
 M=J(C^{-1})^T\mathcal{S}C^TJ^{-1}
@@ -216,18 +233,18 @@ d\\
 \end{bmatrix}
 C\mathcal{S}^TC^{-1}.
 \end{aligned}\end{eqnarray}
-Using the fact that $\mathcal{S}$ is an element of real symplectic group and the explicit form of C-matrix, one can show that Eq.~\eqref{eq:diagonalization_M} is a similarity transformation, and $C\mathcal{S}^TC^{-1}$, which takes the block form in Eq.~\eqref{eq:block_S}, is an element of complex symplectic group. Thus we identify 
+Using the fact that $\mathcal{S}$ is an element of real symplectic group and the explicit form of $C$-matrix, one can show that Eq.~\eqref{eq:diagonalization_M} is a similarity transformation, and $C\mathcal{S}^TC^{-1}$, which takes the block form in Eq.~\eqref{eq:block_S}, is an element of complex symplectic group. Thus we identify 
 \begin{eqnarray*}\begin{aligned}
 S\equiv C\mathcal{S}^TC^{-1}
 \end{aligned}\end{eqnarray*}
 as the desired Bogoliubov transformation that diagonalizes the Hamiltonian in Eq.~\eqref{eq:quadratic_boson_H}. 
 
-We note that Majorana basis will play the role of real basis for the fermionic case. The Hamiltonian can be further decomposed via real Schur decomposition. Similar expression for Loschmidt echo holds with exponent replaced by $+1$ in Eq.~\eqref{eq:echo_t}, and the results in Ref.~\onlinecite{vasseur_universal_2014} can be reproduced.  
+The analogous situation for the quadratic fermion Hamiltonian is write the problem in the Majorana basis. The real symplectic matrix $\mathcal{S}$ becomes a real orthogonal matrix and can be found by a real Schur decomposition. In the complex basis, it is the unitary matrix in place of the complex symplectic matrix. The Loschmidt echo will become $|\det ( u )|$ as opposite to the Bosonic $\frac{1}{|\det u|}$ in Eq.~\eqref{eq:echo_t}, where $u$ is the top left corner of the unitary matrix $U$. The results in Ref.~\onlinecite{vasseur_universal_2014} can be reproduced.  
 
-\subsection{Harmonic chain}
+\subsection{Harmonic chain} 
 \label{app_sub:harmonic_chain}
 
-We notice in the above construction, the Hamiltonian $\mathcal{M}$ in the real basis is assumed to be positive definite. It is not hard find such a system that meets the assumption. Here we shall explicitly construct the matrix $\mathcal{S}$ for the case of harmonic chain. In the basis defined in Eq.~\eqref{eq:real_basis}, the Hamiltonian for 1D harmonic chain reads
+In this section, we explicitly construct the matrix $\mathcal{S}$ for the case of harmonic chain. In the basis defined in Eq.~\eqref{eq:real_basis}, the Hamiltonian for 1D harmonic chain reads
 \begin{eqnarray}\begin{aligned}
 \hat{H}
 =\frac{1}{2}
@@ -252,7 +269,20 @@ We notice in the above construction, the Hamiltonian $\mathcal{M}$ in the real b
 \pi
 \end{pmatrix}
 \end{aligned}\end{eqnarray}
-where $\mathcal{V}$ is real symmetric matrix that can be diagonalized as $\mathcal{V}=\mathcal{O}D^2\mathcal{O}^T$. The explicit form of $\mathcal{V}$ depends on the boundary condition which is not important in the following construction. We define the following real symplectic matrix
+where $\mathcal{V}$ is real symmetric matrix that can be diagonalized as $\mathcal{V}=\mathcal{O}D^2\mathcal{O}^T$. The explicit form of $\mathcal{V}$ depends on the boundary condition, but positive definiteness is the only requirement here. 
+
+The matrix $\mathcal{S}$ that appears in Williamson theorem
+\begin{eqnarray}
+\begin{aligned}
+\mathcal{M}=\mathcal{S}
+\begin{bmatrix}
+D \\ 
+& D
+\end{bmatrix}
+\mathcal{S}^T
+\end{aligned}
+\end{eqnarray}
+is given by the following real symplectic matrix
 \begin{eqnarray}\begin{aligned}
 \mathcal{S}\equiv
 \begin{bmatrix}
@@ -260,16 +290,9 @@ where $\mathcal{V}$ is real symmetric matrix that can be diagonalized as $\mathc
 & \mathcal{O}D^{-1/2}
 \end{bmatrix}
 \end{aligned}\end{eqnarray}
-such that 
-\begin{eqnarray}\begin{aligned}
-\mathcal{M}=\mathcal{S}
-\begin{bmatrix}
-D \\ 
-& D
-\end{bmatrix}
-\mathcal{S}^T
-\end{aligned}\end{eqnarray}
-in accordance with Williamson's theorem. Thus the second quantized Hamiltonian will be diagonalized as
+
+
+Thus the second quantized Hamiltonian is therefore diagonalized as
 \begin{eqnarray}\begin{aligned}
 M=S^{-1}
 \begin{bmatrix}
