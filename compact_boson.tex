@@ -1,7 +1,139 @@
 {\bf\color{red}Remember to mention in the main text, winding sectors have no contribution}
 
-{\bf\color{red} say motivation: Winding sectors cannot be determined from above. Extension of constraint to zero mode. Conformal invariance is intact. Say linear combination and constraints }
+We have introduced the general formulation of bosonic conformal interface in Sec.~\ref{sec_sub:general_formulation}, and calculate various partition functions from the boundary state approach in Sec.~\ref{app:gnd_dn_lambda}-\ref{app:lambda_12}. We have not talk about the winding mode for compact bosons. In this appendix, we shall show that winding modes will not contribute to the free energy, at least in the leading order. In fact the gluing condition in Eq.~\eqref{eq:def_M} can be derived from the variational approach\cite{blumenhagen_introduction_2009,bachas_permeable_2002}, from which it is clear that conformal invariance provides no constraint for the winding mode. This is expected since winding is a global property of the boson configuration. Thus one needs a general treatment for the winding modes. This is first illustrated for the simple cases of Dirichlet and Neumann boundary conditions in Sec.~\ref{app_sub:compact_DN_boundary} and generalized to gluing condition in Sec.~\ref{app_sub:compact_gluing_boundary}. We demonstrate that winding mode does not contribute to the free energy in Sec.~\ref{app_sub:winding_contribution}. 
 
-{\bf\color{red} say objective: Has only $\ln\beta$ contribution}
+%\subsection{Free Boson with Different Compactification Radii}
 
+\subsection{Winding Mode with Dirichlet and Neumann Boundary Conditions}
+\label{app_sub:compact_DN_boundary}
+
+We consider the following boson configuration
+\begin{eqnarray}\begin{aligned}
+\phi(x+L,t)=\phi(x,t)+2\pi mR
+\end{aligned}\end{eqnarray}
+where $m$ is the winding number of the field. Since the field is compactified on a circle, its momentum $\pi_0$ takes discrete eigenvalues $\pi_0\equiv\frac{n}{R}$. Thus the mode expansion reads
+\begin{eqnarray}\begin{aligned}
+\label{eq:mode_expand_compact}
+\phi(x,t)&=\phi_0-\frac{2\pi Rm}{L}x+\frac{\pi_0}{gL}t+\frac{i}{\sqrt{4\pi g}}\sum_{n\neq0}\frac{1}{n}(a_ne^{2\pi i n(x-t)/L}+\bar{a}_{n}e^{2\pi i n(x+t)/L})\\ 
+&={\phi}_0-\frac{2\pi Rm}{L}x+\frac{n}{gRL}t+\frac{i}{\sqrt{4\pi g}}\sum_{n\neq0}\frac{1}{n}(a_ne^{2\pi i n(x+i\tau)/L}+\bar{a}_{n}e^{2\pi i n(x-i\tau)/L})
+\end{aligned}\end{eqnarray}
+Further, the holomorphic coordinates are introduced as
+\begin{eqnarray}\begin{aligned}
+z=\exp\left(2\pi i\frac{t-x}{L}\right)\qquad\bar{z}=\exp\left(2\pi i\frac{t+x}{L}\right)
+\end{aligned}\end{eqnarray}
+which leads to 
+\begin{eqnarray}\begin{aligned}
+\label{eq:phi_in_z}
+\phi(z,\bar{z})=\phi_0-i\left(\frac{n}{4\pi gR}+\frac{mR}{2}\right)\ln z-i\left(\frac{n}{4\pi gR}-\frac{mR}{2}\right)\ln z+\frac{i}{\sqrt{4\pi g}}\sum_{n\neq0}\frac{1}{n}(a_nz^{n}+\bar{a}_{n}\bar{z}^{-n})
+\end{aligned}\end{eqnarray}
+The key observation is that if one defines
+\begin{eqnarray}\begin{aligned}
+a_0=\sqrt{4\pi g}\left(\frac{n}{4\pi gR}+\frac{mR}{2}\right)\qquad\bar{a}_0=\sqrt{4\pi g}\left(\frac{n}{4\pi gR}-\frac{mR}{2}\right)\frac{mR}{2}
+\end{aligned}\end{eqnarray}
+then the holomorphic and anti-holomorphic derivatives can be written compactly as
+\begin{eqnarray}\begin{aligned}
+i\partial\phi(z)=\frac{1}{\sqrt{4\pi g}}\sum_{n\in\mathbb{Z}}a_{n}z^{-n-1}\qquad i\bar{\partial}\phi(\bar{z})=\frac{1}{\sqrt{4\pi g}}\sum_{n\in\mathbb{Z}}\bar{a}_{n}\bar{z}^{-n-1}
+\end{aligned}\end{eqnarray}
+The Virasoro algebra takes the same form as before
+\begin{eqnarray}\begin{aligned}
+L_n=\frac{1}{2}\sum_{m\in\mathbb{Z}}:a_{n-m}a_m:\qquad n\in\mathbb{Z}
+\end{aligned}\end{eqnarray}
+In particular for the conformal boundary state $|B\rangle$, the condition
+\begin{eqnarray}\begin{aligned}
+(L_n-\bar{L}_{-n})|B\rangle=0
+\end{aligned}\end{eqnarray}
+reduces to 
+\begin{eqnarray}\begin{aligned}
+\label{eq:DN_a}
+\text{Dirichlet}&:a_0-\bar{a}_0=0\rightarrow m=0 \\
+\text{Neumann}&:a_0+\bar{a}_0=0\rightarrow n=0
+\end{aligned}\end{eqnarray}
+The conformal boundary state for Dirichlet and Neumann are respectively
+\begin{eqnarray}\begin{aligned}
+\label{eq:DN_state}
+|{\rm D} \rangle  &= g_{\,\!_\text{D}}  \prod_{n > 0 } \exp(\frac{1}{k} a_k^{\dagger} \bar{a}_{-k}^{\dagger} )| \phi_0 \rangle \quad | \phi_0 \rangle = \sum_{n \in \mathbb{Z}} e^{-i \frac{n}{R}\phi_0 } | n, m = 0 \rangle \\
+| {\rm N} \rangle &= g_{\,\!_\text{N}} \prod_{n > 0 } \exp(\frac{1}{k} a_k^{\dagger} \bar{a}_{-k}^{\dagger} )| \bar{\phi}_0 \rangle \quad | \bar{\phi}_0 \rangle = \sum_{n \in \mathbb{Z}} e^{i m \bar{\phi}_0 } | n = 0, m \rangle 
+\end{aligned}\end{eqnarray}
+It is clear that the desired boundary conditions are satisfied
+\begin{eqnarray}\begin{aligned}
+\phi(x,t=0)|{\rm D} \rangle=\phi_0|{\rm D} \rangle\qquad \partial_t \phi( x, t = 0 ) | {\rm N } \rangle = 0
+\end{aligned}\end{eqnarray}
+
+\subsection{Winding mode with Gluing Condition}
+\label{app_sub:compact_gluing_boundary}
+We recall that the conformal boundary condition can be written as
+\begin{eqnarray}\begin{aligned}
+\label{eq:def_S_in_app}
+\begin{pmatrix}
+\partial_+\phi^1\\
+\partial_-\phi^2
+\end{pmatrix}
+=S(\theta)
+\begin{pmatrix}
+\partial_-\phi^1\\
+\partial_+\phi^2
+\end{pmatrix}
+\end{aligned}\end{eqnarray}
+where the scattering matrices are given in Eq.~\eqref{eq:S1_S2}. We shall specialize to the case $S=S_1$ first. The folding sends $\phi^2(x)\rightarrow\phi^2(-x)$ for $x<0$, and the $\partial_x\phi^2$ term changes sign, we therefore have 
+\begin{eqnarray}\begin{aligned}
+\label{eq:def_S_in_app_2}
+\begin{pmatrix}
+\partial_+\phi^1\\
+\partial_+\phi^2
+\end{pmatrix}
+=S_1(\theta)
+\begin{pmatrix}
+\partial_-\phi^1\\
+\partial_-\phi^2
+\end{pmatrix}
+\end{aligned}\end{eqnarray}
+Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:phi_in_z}, we have{\bf\color{red} I will re-check this one}
+\begin{eqnarray}\begin{aligned}
+\label{eq:def_S_in_app_2}
+\sum_{n\in\mathbb{Z}}\begin{pmatrix}
+\bar{a}_n^1\bar{z}^{-n}\\
+\bar{a}_n^2\bar{z}^{-n}
+\end{pmatrix}
+=S_1(\theta)
+\sum_{n\in\mathbb{Z}}
+\begin{pmatrix}
+a_n^1{z}^{-n}\\
+a_n^2{z}^{-n}
+\end{pmatrix}
+\end{aligned}\end{eqnarray}
+{\bf\color{red}The boundary condition is imposed at $t=0$, where $\bar{z}=z^{-1}$}, therefore we have
+\begin{eqnarray}\begin{aligned}
+a^i_n-(S^{-1}_{ij})\bar{a}^j_{-n}=0
+\end{aligned}\end{eqnarray}
+This is clearly a generalization of Dirichlet and Neumann boundary conditions which correspond to Eq.~\eqref{eq:DN_a}. We therefore expect that the conformal boundary state is a generalization of Eq.~\eqref{eq:DN_state}, subject to the more general constraint {\bf\color{red}check this one in the note}
+\begin{eqnarray}\begin{aligned}
+\label{eq:S_1_constraint}
+\tan\theta=\frac{n_2R_1}{n_1R_2}=-\frac{m_1R_1}{m_2R_2}
+\end{aligned}\end{eqnarray}
+Thus we conclude that the conformal boundary state reads
+\begin{eqnarray}\begin{aligned}
+g_{S_1}\sum_{S_1}e^{in_1\phi_0-im_1\bar{\phi}_0}|n_1,m_1\rangle|n_2,m_2\rangle
+\end{aligned}\end{eqnarray}
+where $\sum_{S_1}$ is the summation consistent with the constraint in Eq.~\eqref{eq:S_1_constraint}. 
+
+{\bf\color{red}comment of S2, g factor}
+
+\subsection{Winding Mode Contribution to the Partition Function}
+\label{app_sub:winding_contribution}
+We are ready to demonstrate that the winding mode will have no contribution to the leading order of $\beta$. We shall reconsider the partition function as shown in Fig.~\ref{fig:fig_lambda_1_lambda_2}
+\begin{eqnarray}\begin{aligned}
+Z=\langle\lambda_2|e^{-\pi H}|\lambda_1\rangle\qquad H=\frac{2\pi}{\beta}(L_0+\bar{L}_0)
+\end{aligned}\end{eqnarray}
+For the winding mode contribution, we simply replace $L_0$($\bar{L}_0$) with $a_0$($\bar{a}_0$). For the same boundary state, we have the winding mode contribution as
+\begin{eqnarray}\begin{aligned}
+\label{eq:Z0}
+Z_0 = \sum_{S_1 } g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} } \exp\Big\{- \frac{4\pi}{\beta} 2 \pi g ( \frac{n_1}{ 4 \pi R_1 g} + \frac{m_1 R_1 }{ 2} )^2 \Big\}
+\end{aligned}\end{eqnarray}
+In the $\beta\rightarrow\infty$ limit, Eq.~\eqref{eq:Z0} reduces to a simple two dimensional integral
+\begin{eqnarray}\begin{aligned}
+Z_0\approx g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} } (\sqrt{\beta})^2\int dxdy\exp\Big\{-8 \pi^2 g ( \frac{x}{ 4 \pi R_1 g} + \frac{y R_1 }{ 2} )^2 \Big\}\propto\beta
+\end{aligned}\end{eqnarray}
+Thus the winding mode will contribute at most a $\ln\beta$ term to the free energy, and thus negligible. 
+
+{\bf\color{red}comment of S2, different boundary state}
 
