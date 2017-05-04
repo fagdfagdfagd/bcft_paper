@@ -25,7 +25,7 @@ M_2(\theta)=\pm
 \end{aligned}\end{eqnarray}
 where $\lambda=\tan\theta$ for $\theta\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$. 
 
-We note the following special cases. For $\theta=0,\pm\pi/2$, $\lambda$ appears to be singular and the fields on either side of the defect do not communicate to each other. For example, $M_1(0)$ implies $\partial_x\phi(0^+)=\partial_t\phi(0^-)=0$. For the two CFTs, this corresponds to Dirichlet boundary condition on the left, and Neumann condition on the right. Hereafter we shall denote it as `DN'. Similarly one can check that $M_1(\pm\pi/2),M_2(0),M_2(\pm\pi/2)$ correspond to ND, NN, DD respectively. For $\theta=\pm\pi/4$, on the other hand, characterizes a perfectly transmitting defect. For example, there is effectively no defect in the case $M(\pi/4)$. For the other three cases, although the field $\phi$ may pick up a phase across the defect, the two counter propagating waves are still fully transmitted.
+We note the following special cases. For $\theta=0,\pm\pi/2$, $\lambda$ (or $\lambda^{-1}$) appears to be singular and the fields on either side of the defect cannot transmit to the other side. For example, $M_1(0)$ implies $\partial_x\phi(0^+)=\partial_t\phi(0^-)=0$ which correspond to Dirichlet boundary condition on the left, and Neumann condition on the right. Hereafter we shall denote it as `DN'. Similarly one can check that $M_1(\pm\pi/2),M_2(0),M_2(\pm\pi/2)$ correspond to ND, NN, DD respectively. For $\theta=\pm\pi/4$, on the other hand, $M(\theta)$ characterizes a perfectly transmitting defect. For example, there is effectively no defect in the case $M(\pi/4)$. For the other three cases, although the field $\phi$ may pick up a phase across the defect, the two counter propagating waves are still fully transmitted. {\bf\color{red} shall we follow permeable wall paper to denote them as PP, etc? it is a bit confusing though..}
 
 It proves useful to rewrite Eq.~\eqref{eq:def_M} in the ``light cone'' coordinate $x^\pm\equiv t\pm x$, where the physical meaning of $\theta$ is most transparent. For clarity, we denote the field on the negative (positive) real axis as $\phi^1$ ($\phi^2$). {\bf\color{red}Tianci: Add in the right panel in Fig.~\ref{fig:cut-and-join} the field content?}. After some algebra, we have
 \begin{eqnarray}\begin{aligned}
@@ -52,16 +52,14 @@ S_2(\theta)=\begin{bmatrix}
 -\sin 2\theta & -\cos 2\theta
 \end{bmatrix}
 \end{aligned}\end{eqnarray}
-The scattering matrix $S_1$ and $S_2$ relate the incoming and outgoing waves at the defect. For example, $S_1(0)$ implies that $\partial_\pm\phi^{1}=\partial_\pm\phi^{2}$ as discussed above. For other nontrivial values of $\theta$, the defect becomes partially-transmitting. The transmission and reflection coefficients, which are determined by $\theta$, can be read off from the scattering matrices.
+The scattering matrix $S_1$ and $S_2$ relate the incoming and outgoing waves at the defect. For example, $S_1(0)$ implies that $\partial_\pm\phi^{1}=\pm\partial_\mp\phi^{2}$ as discussed above. For other nontrivial values of $\theta$, the defect becomes partially-transmitting. The transmission and reflection coefficients, which are determined by $\theta$, can be read off from the scattering matrices. As we shall show explicitly in Sec.~\ref{sec_sub:free_boson_lattice}, the scattering matrices are independent of the wavelengths, as required by the scale invariance.
 
-{\bf\color{red}As we shall show explicitly in Sec.~\ref{sec_sub:free_boson_lattice}, the scattering matrices are independent of the wavelengths, as required by the scale invariance.}
-
-The problem of conformal interface can be studied in the framework of boundary CFT\cite{cardy_boundary_2004,cardy_conformal_1984} after we fold the field $\phi^2$ to the left half plane on top of $\phi^1$\cite{oshikawa_boundary_2010}. The boundary at $x=0$ is impenetrable for the tensor theory, and there hosts a conformal boundary states for the bosons. The folding sends $\phi^2(x)\rightarrow\phi^2(-x)$ for $x<0$. Therefore the gluing condition in Eq.~\eqref{eq:def_M} with $M_1(\theta)$ reads{\bf\color{red}say why M1?}
+The problem of conformal interface can be studied in the framework of boundary CFT\cite{cardy_boundary_2004,cardy_conformal_1984} after we fold the field $\phi^2$ to the left half plane on top of $\phi^1$\cite{oshikawa_boundary_2010}. The boundary at $x=0$ becomes impenetrable for the tensor theory, and there hosts a conformal boundary states for the bosons. The folding sends $\phi^2(x)\rightarrow\phi^2(-x)$ for $x<0$, therefore the gluing condition reads
 \begin{eqnarray}\begin{aligned}
 \partial_t(\cos\theta\phi^1-\sin\theta\phi^2)=0 \quad
 \partial_x(\sin\theta\phi^1+\cos\theta\phi^2)=0 
 \end{aligned}\end{eqnarray}
-After performing explicit mode expansion for both $\phi^{1,2}$, {\bf\color{red}write down mode expansion, or simply write down the physical meanings of a's as follows?}we have
+for the case $M=M_1(\theta)$. After performing explicit mode expansion for both $\phi^{1,2}$, {\bf\color{red}write down mode expansion, or simply write down the physical meanings of a's as follows?}we have
 \begin{eqnarray}\begin{aligned}
 \label{eq:rotation_a_basis}
 \cos\theta a_n^1-\sin\theta a_n^2 &= +( \cos\theta\bar{a}_{-n}^1-\sin\theta \bar{a}_{-n}^2 ) \\
@@ -83,4 +81,5 @@ S_1
 \end{pmatrix} \Big\} |0\rangle
 \end{aligned}
 \end{equation}
-where $S^1$ is precisely the scattering matrix in Eq.~\eqref{eq:def_S}.  {\bf\color{red}say sth: We shall make use of the above equation extensively. }
+where $S^1$ is precisely the scattering matrix in Eq.~\eqref{eq:def_S}. As one can explicitly check, Eq.~\eqref{eq:bd_state} satisfies the condition for the conformal boundary state\cite{oshikawa_boundary_2010}. The calculation for the case $M=M_2(\theta)$ is completely analogue. Eq.~\eqref{eq:bd_state} will be the starting point of calculating fidelity and Loschmidt echo in Sec.~\ref{sec:analytic_numerics}. In particular, 
+\todo[inline]{say sth: connecting to what will follow etc. }
