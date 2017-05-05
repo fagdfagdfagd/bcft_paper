@@ -1,0 +1,301 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing,decorations.markings,shapes,shapes.multipart,arrows,shapes.misc,intersections,positioning}
+\usepackage{wrapfig}
+\usepackage{bm}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.2in
+\parindent = 0.0in
+
+\title{Localized (Point) Defect}
+\author{Tianci Zhou}
+\begin{document}
+\maketitle
+\large
+
+{\bf Boson Point Defect}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\underline{Background}: Boson scale invariant defect. Specifically for a continuous free boson field, we impose
+\begin{equation}
+\partial_t \phi_1 = \frac{1}{\lambda} \partial_t \phi_2 \quad \partial_x \phi_1 = \lambda \partial_x \phi_2 
+\end{equation}
+where $\phi_1$ and $\phi_2$ are the boundary values of $\phi$ field on the two sides of the defect at $x = 0$. See bCFT notes for details. 
+
+\underline{$S$ matrix}: We match the free solution on the two sides
+\begin{equation}
+\phi_1 = A_{-} e^{i \omega t - i k x } + A_{+} e^{i \omega t + ikx } \quad \phi_2 = B_{-} e^{i \omega t - i k x } + B_{+} e^{i \omega t + ikx }
+\end{equation}
+which gives
+\begin{equation}
+\begin{aligned}
+- A_{-} + A_{+} =\lambda (  - B_{-} +  B_{+} ) \\
+A_{-} + A_{+} = \frac{1}{\lambda} (B_{-} + B_{+}) \\
+\end{aligned}
+\end{equation}
+The $S$ matrix converts the incoming wave to the outgoing wave $\begin{bmatrix} A_{+}\\ B_{-}\\ \end{bmatrix} = S \begin{bmatrix} A_{-}\\ B_{+}\\ \end{bmatrix}$  is 
+\begin{equation}
+S = 
+\begin{bmatrix}
+\frac{1 - \lambda^2}{1 + \lambda^2} & \frac{2\lambda }{1 + \lambda^2} \\
+\frac{2\lambda }{1 + \lambda^2} & \frac{-1 + \lambda^2}{1 + \lambda^2} \\
+\end{bmatrix}
+ = 
+\begin{bmatrix}
+\cos 2\theta & \sin 2\theta \\
+\sin 2\theta & - \cos2  \theta \\
+\end{bmatrix}
+\quad \text{where } \lambda = \tan \theta 
+\end{equation}
+\noindent\rule{\linewidth}{0.4pt}
+
+{\bf Harmonic Chain} 
+
+We construct the same defect in a discrete model. It corresponds to connecting two chains with different spring constant(rescaling for the compact case in the continuum limit.)
+
+Consider a uniform infinite harmonic chain with a bond defect between site $0$ and $1$,
+\begin{equation}
+  H = \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2  +  \frac{1}{2} \begin{bmatrix}  \phi_0, \phi_1 \end{bmatrix}
+\begin{bmatrix}
+1 + \Sigma_{11}  & \Sigma_{12} \\
+\Sigma_{21} &  1 + \Sigma_{22} \\
+\end{bmatrix}
+\begin{bmatrix}
+\phi_0 \\
+\phi_1 
+\end{bmatrix}
+\end{equation}
+where we parameterize all possible interactions between size $0$ and $1$ with $\Sigma_{ij}$. 
+
+The equation of motion is
+\begin{equation}
+-\frac{d^2}{dt^2} 
+\begin{bmatrix}
+\vdots\\
+\phi_{-1}\\
+\phi_0\\
+\phi_1\\
+\phi_2\\
+\vdots 
+\end{bmatrix}
+ =  
+\begin{bmatrix}
+\ddots & & & & &\\
+-1 & 2 & -1 & & &  \\
+&-1 & 2 + \Sigma_{11} & \Sigma_{12} & & &\\ 
+& & \Sigma_{21} & 2 + \Sigma_{22} & -1 & &\\
+& & & -1 & 2 & -1 & \\
+& & & & & \ddots &
+\end{bmatrix}
+\begin{bmatrix}
+\vdots\\
+\phi_{-1}\\
+\phi_0\\
+\phi_1\\
+\phi_2\\
+\vdots 
+\end{bmatrix}
+\end{equation}
+Again we match the solution between site $\phi_0$ and $\phi_1$ (the $n -1$ in $B$ simplifies the calculation)
+\begin{equation}
+\phi_n
+= \left\lbrace
+  \begin{aligned}
+    \phi_n^A &= A_{-} e^{i \omega t  - ikn}  + A_{+} e^{i \omega t  + ikn}  & \quad  n \le 0 \\
+    \phi_n^B &= B_{-} e^{i \omega t  - ik(n-1)}  + B_{+} e^{i \omega t  + ik(n-1)} & \quad n \ge 1 \\
+  \end{aligned} \right. 
+ \quad 
+\end{equation}
+At the junction we have
+\begin{equation}
+\begin{aligned}
+- \phi_{-1}^A + ( 2+ \Sigma_{11} ) \phi_{0}^A + \Sigma_{12} \phi_1^B =  \omega^2 \phi_0^A = - \phi_{-1}^A + 2 \phi_{0}^A - \phi_1^A\\
+\Sigma_{21} \phi_0^A + ( 2 + \Sigma_{22}) \phi_1^B - \phi_2^B = \omega^2 \phi_1^B  = - \phi_0^B + 2 \phi_1^B - \phi_2^B 
+\end{aligned}
+\end{equation}
+which simplifies to
+\begin{equation}
+\begin{aligned}
+\Sigma_{11} \phi_0^A + \Sigma_{12} \phi_1^B + \phi_1^A  =0 \\
+\Sigma_{21} \phi_0^A + \Sigma_{22} \phi_1^B + \phi_0^B = 0 \\
+\end{aligned}
+\end{equation}
+From the relation of the amplitudes
+\begin{equation}
+\begin{bmatrix}
+\Sigma_{11} + e^{-ik} & \Sigma_{12} \\
+\Sigma_{21} & \Sigma_{22}  + e^{-ik}  \\
+\end{bmatrix}
+\begin{bmatrix}
+A_{-} \\
+B_{+}\\
+\end{bmatrix}
+=-
+\begin{bmatrix}
+\Sigma_{11} +e^{ik} & \Sigma_{12}\\
+\Sigma_{21} & \Sigma_{22} + e^{ik}
+\end{bmatrix}
+\begin{bmatrix}
+A_{+}\\
+B_{-}\\
+\end{bmatrix}
+\end{equation}
+we solve the $S$ matrix
+\begin{equation}
+  S = \frac{-1}{ \det \Sigma  + e^{-ik} \text{tr} \Sigma   + e^{-2ik}}
+\begin{bmatrix}
+\det \Sigma+ \Sigma_{11} e^{-ik} + \Sigma_{22} e^{ik}+1  & -2i \sin k \Sigma_{12}  \\
+-2i \sin k \Sigma_{21} &  \det \Sigma+ \Sigma_{11} e^{ik} + \Sigma_{22} e^{-ik}+1\\
+\end{bmatrix}
+\end{equation}
+
+The magnitudes of the $S$ matrix elements are refection and transmission coefficients. In order to have a scale invariant defect, they need to be $k$ independent. In particular there are two ways to generate $k$ independence of $|S_{12}|$:
+\begin{enumerate}
+\item $\Sigma_{12} = \Sigma_{21} = 0$, then the $\Sigma$ matrix is diagonal, and 
+\begin{equation}
+  -S_{11} = \frac{\det \Sigma + \Sigma_{11} e^{-ik} + \Sigma_{22} e^{ik} + 1}{\det \Sigma + \text{tr} \Sigma + e^{-ik} } = \frac{(\Sigma_{11} + e^{ik})(\Sigma_{22} + e^{-ik} ) }{(\Sigma_{11} + e^{-ik})(\Sigma_{22} + e^{-ik} ) }= \frac{\Sigma_{11} + e^{ik} }{\Sigma_{11} + e^{-ik} }
+\end{equation}
+it is not possible to make the modulus $k$ independent.
+\item The determinant is cancels the $\sin k$
+\begin{equation}
+|e^{-ik} \det \Sigma + \text{tr} \Sigma + e^{-ik } | \sim \sin k \quad \implies \quad \det \Sigma = -1, \, \, \text{tr} \Sigma = 0
+\end{equation}
+\end{enumerate}
+Consequently, the scale invariant $S$ matrix is
+\begin{equation}
+S = \frac{1}{1 - e^{-2ik } } ( -2i \sin k ) \Sigma
+ = - e^{ik} \Sigma
+\end{equation}
+The phase $e^{ik}$ is the phase difference between neighboring site, which should really be $e^{ika}$ where $a$ is the lattice spacing. Hence in continuum limit, $e^{ik a} \rightarrow 1$,
+\begin{equation}
+\Sigma = -\lim_{a \rightarrow 0 } S = 
+\begin{bmatrix}
+\frac{\lambda^2- 1}{1 + \lambda^2} & \frac{-2\lambda }{1 + \lambda^2} \\
+\frac{-2\lambda }{1 + \lambda^2} & \frac{1- \lambda^2}{1 + \lambda^2} \\
+\end{bmatrix}
+\end{equation}
+It corresponds to the potential term $\frac{1}{1+ \lambda^2}( \lambda \phi_0 - \phi_1 ) ^2 $, which is derived by transfer matrix method in \cite{peschel_exact_2012}.
+
+On the other hand, if one of the $\det$ and $\text{tr}$ conditions are not satisfied, then
+\begin{equation}
+\lim_{a \rightarrow 0 } S = \frac{-1}{\det \Sigma  + \text{tr} \Sigma   + 1}
+\begin{bmatrix}
+ \det \Sigma+ \Sigma_{11}  + \Sigma_{22} +1  & 0  \\
+0 &   \det \Sigma+ \Sigma_{11} + \Sigma_{22} +1 \\
+\end{bmatrix} = - I 
+\end{equation}
+which corresponds to Dirichlet-Dirichlet boundary condition. 
+
+\underline{Boundary}
+
+For a boundary at $x =0$, we restrict to the corner of the discrete Laplacian,
+\begin{equation}
+-\frac{d^2}{dt^2} 
+\begin{bmatrix}
+\vdots\\
+\phi_{-1}\\
+\phi_0\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\ddots & & \\
+-1 & 2 & -1\\
+  &-1 & 2+\Sigma\\
+\end{bmatrix}
+\begin{bmatrix}
+\vdots\\
+\phi_{-1}\\
+\phi_0\\
+\end{bmatrix}
+\end{equation}
+The discrete equation on the corner is
+\begin{equation}
+\begin{aligned}
+-\phi_{-1}^A + ( 2 + \Sigma ) \phi_0^A  &= \omega^2 \phi_0^A = -\phi_{-1}^A + 2 \phi_0^A  - \phi_1^A \\
+\implies \quad \Sigma \phi_0^A + \phi_1^A &= 0 \\
+\implies \quad A_{+} &= - \frac{\Sigma + e^{ika}}{ \Sigma + e^{-ika} } A_{-} 
+\end{aligned}
+\end{equation}
+In the long wavelength limit, the boundary conditions will flow to two fixed points
+\begin{equation}
+S = - \lim_{a\rightarrow 0 } \frac{\Sigma + e^{ika}}{ \Sigma + e^{-ika} } = 
+\left\lbrace
+\begin{aligned}
+  -1 & \quad \Sigma \ne -1  \quad \text{Dirichlet}(\text{fixed point } \Sigma = \pm \infty)\\
+   1&  \quad \Sigma =-1 \quad \text{Neumann}\\
+\end{aligned} \right. 
+\end{equation}
+
+{\bf T-dual Boundary Condition}
+
+There is another type of scale invariant defect, which is the T-dual of the original one, 
+\begin{equation}
+\partial_t \phi_1 = \lambda \partial_x \phi_2 \quad \partial_x \phi_1 = \frac{1}{\lambda} \partial_t \phi_2 
+\end{equation}
+
+\underline{$S$ matrix}: We match the free solution on the two sides
+\begin{equation}
+\phi_1 = A_{-} e^{i \omega t - i k x } + A_{+} e^{i \omega t + ikx } \quad \phi_2 = B_{-} e^{i \omega t - i k x } + B_{+} e^{i \omega t + ikx }
+\end{equation}
+which gives
+\begin{equation}
+\begin{aligned}
+i \sigma( A_{-} + A_{+} )  =\lambda  ik (  - B_{-} +  B_{+} ) \\
+i\omega( B_{-} + B_{+} ) = \lambda  ik( - A_{-} + A_{+}) \\
+\end{aligned}
+\end{equation}
+Let $\omega = k$, the $S$ matrix converts the incoming wave to the outgoing wave $\begin{bmatrix} A_{+}\\ B_{-}\\ \end{bmatrix} = S \begin{bmatrix} A_{-}\\ B_{+}\\ \end{bmatrix}$  is 
+\begin{equation}
+S = 
+\begin{bmatrix}
+\frac{\lambda^2 - 1}{1 + \lambda^2} & \frac{2\lambda }{1 + \lambda^2} \\
+\frac{-2\lambda }{1 + \lambda^2} & \frac{\lambda^2 - 1}{1 + \lambda^2} \\
+\end{bmatrix}
+ = 
+\begin{bmatrix}
+-\cos 2\theta & \sin 2\theta \\
+-\sin 2\theta & - \cos2  \theta \\
+\end{bmatrix}
+\quad \text{where } \lambda = \tan \theta 
+\end{equation}
+which is the $S_2$ in the bCFT notes. \\
+\noindent\rule{\linewidth}{0.4pt}
+
+[tentative]
+Since time derivative is involved, this is a dynamical boundary condition; we would expect that the Hamiltonian will contain $xp$ term. 
+
+A guess would be
+\begin{equation}
+H = - \lambda \partial_x \phi_1 \pi_2 - - \lambda \partial_x \phi_2 \pi_1
+\end{equation}
+in this way, the resulting equation of motion will be
+\begin{equation}
+\partial_t \phi_2  = \lambda \partial_x \phi_1 \quad \partial_t \phi_1  = \lambda \partial_x \phi_2
+\end{equation}
+and the momentum part upon integration by part (which is not allowed, since this Hamiltonian is at the boundary), 
+\begin{equation}
+\partial_t \pi_2  = \lambda \partial_x \pi_1 \quad \partial_t \pi_1  = \lambda \partial_x \pi_2
+\end{equation}
+
+
+\bibliographystyle{unsrt}
+\bibliography{defect}
+
+\end{document}
+%%% Local Variables: 
+%%% TeX-PDF-mode: t
+%%% End:
