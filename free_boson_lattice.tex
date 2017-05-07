@@ -1,3 +1,92 @@
+In this section, we consider a lattice model with bosonic defect at the center, which reduces to the one considered in Sec.~\ref{sec_sub:general_formulation} in the continuum limit\cite{calabrese_entanglement_2012}. Therefore, it serves as a numerical tool to check our analytic results in Sec.~\ref{sec:analytic_numerics}. Despite its simpleness, such discrete bosonic defect can be considered in more general quadratic bosonic\cite{PhysRevA.74.022329}, or fermionic\cite{PhysRevB.64.064412} systems. It also sheds light on the possible application of our CFT results in condensed matter experiments\cite{Rohringer2015,Trotzky2012}.
 
-\todo[inline]{Say motivation: in low energy go to CFT}
-\todo[inline]{Say goal: Demonstrate the S matrix is conformal invariance}
+\todo[inline]{Remove the citations if not relevant...}
+
+We imagine connecting two coupled harmonic chains, which consists in total $2n$ coupled harmonic oscillators labeled by $\left\{\phi_{-n+1},...,\phi_0,\phi_1,...,\phi_n\right\}$. There is a bond defect between site $0$ and $1$, and the Hamiltonian reads
+\begin{eqnarray}\begin{aligned}
+H = \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2  +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
+\begin{bmatrix}
+1 + \Sigma_{11}  & \Sigma_{12} \\
+\Sigma_{21} &  1 + \Sigma_{22} \\
+\end{bmatrix}
+\begin{pmatrix}
+\phi_0 \\
+\phi_1 
+\end{pmatrix}
+\end{aligned}\end{eqnarray}
+where $\pi_i$ is the conjugate momentum. Later we shall see the matrix $\Sigma_{ij}$ is related to the scattering matrix in Sec.~\ref{sec_sub:general_formulation}, and thus characterizes all possible bosonic defects discussed there.
+
+It is straightforward to write down the ansatz for this quantum mechanical problem, (the use of $(n-1)$ in $\phi_n^B$ simplifies the calculation)
+\begin{equation}
+\label{eq:ansatz}
+\phi_n
+= \left\lbrace
+  \begin{aligned}
+    \phi_n^A &= A_{-} e^{i \omega t  - inka}  + A_{+} e^{i \omega t  + inka}  & \quad  n \le 0 \\
+    \phi_n^B &= B_{-} e^{i \omega t  - i(n-1)ka}  + B_{+} e^{i \omega t  + i(n-1)ka} & \quad n \ge 1 \\
+  \end{aligned} \right. 
+ \quad 
+\end{equation}
+where $a$ is the lattice constant. The dispersion of the system reads
+\begin{eqnarray}\begin{aligned}
+\label{eq:dispersion}
+\omega=\left|2\sin\frac{k}{2}\right|
+\end{aligned}\end{eqnarray}
+which implies the system is gapless. The defect will not break the criticality of the harmonic chain\cite{peschel_exact_2012}. Upon plugging Eq.~\eqref{eq:ansatz}-\eqref{eq:dispersion} into the equation of motion, we have the following relation between the incoming and outgoing amplitudes
+\begin{equation}
+\label{eq:discrete_S}
+\begin{bmatrix}
+\Sigma_{11} + e^{-ik} & \Sigma_{12} \\
+\Sigma_{21} & \Sigma_{22}  + e^{-ik}  \\
+\end{bmatrix}
+\begin{pmatrix}
+A_{-} \\
+B_{+}\\
+\end{pmatrix}
+=-
+\begin{bmatrix}
+\Sigma_{11} +e^{ik} & \Sigma_{12}\\
+\Sigma_{21} & \Sigma_{22} + e^{ik}
+\end{bmatrix}
+\begin{pmatrix}
+A_{+}\\
+B_{-}\\
+\end{pmatrix}
+\end{equation}
+and the scattering matrix can be solved as
+\begin{equation}
+  S = \frac{-1}{ \det \Sigma  + e^{-ik} \text{tr} \Sigma   + e^{-2ik}}
+\begin{bmatrix}
+\det \Sigma+ \Sigma_{11} e^{-ik} + \Sigma_{22} e^{ik}+1  & -2i \sin k \Sigma_{12}  \\
+-2i \sin k \Sigma_{21} &  \det \Sigma+ \Sigma_{11} e^{ik} + \Sigma_{22} e^{-ik}+1\\
+\end{bmatrix}
+\end{equation}
+It is clear that Eq.~\eqref{eq:discrete_S} is a discrete analogue of Eq.~\eqref{eq:def_S}, with momentum dependence. The necessary condition for the scattering matrix to be scale invariance is that the ratio $|S_{11}/S_{21}|$ is independent of $k$. This implies 
+\begin{equation}
+\label{eq:Sigma_condition}
+\det \Sigma = -1, \, \, \text{tr} \Sigma = 0
+\end{equation}
+Therefore, we have the scale invariant S-matrix as
+\begin{equation}
+S = \frac{1}{1 - e^{-2ika } } ( -2i \sin k ) \Sigma
+ = - e^{ika} \Sigma
+\end{equation}
+In the continuum limit where $a\rightarrow0$, the matrix $\Sigma$ can be parameterized as
+\begin{equation}
+\Sigma = -\lim_{a \rightarrow 0 } S = 
+\begin{bmatrix}
+\frac{\lambda^2- 1}{1 + \lambda^2} & \frac{-2\lambda }{1 + \lambda^2} \\
+\frac{-2\lambda }{1 + \lambda^2} & \frac{1- \lambda^2}{1 + \lambda^2} \\
+\end{bmatrix}
+\end{equation}
+in accordance to Eq.~\eqref{eq:Sigma_condition}. 
+
+{\bf\color{red}
+Say in the continuum limit, what happens
+
+say in the long time, what happens? 
+
+say the special case in the boundary
+}
+
+This is the matrix we will use for the numerics. The results will be presented in Sec.~\ref{sec:analytic_numerics}.

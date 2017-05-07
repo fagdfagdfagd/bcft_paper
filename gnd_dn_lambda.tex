@@ -17,14 +17,14 @@ f(k, x) =
   A_2 e^{ikt}  \sin\left(kx - \frac{1}{2}kL \right) & \quad x > 0   \\
 \end{aligned} \right. 
 \end{equation}
-As demonstrated in the \todo[inline]{main text}, if we denote $f(k,x<0)\equiv\phi_1$ and $f(k,x>0)\equiv\phi_2$, the boundary condition at the junction reads
+As demonstrated in Sec.~\ref{sec_sub:general_formulation}, if we denote $f(k,x<0)\equiv\phi_1$ and $f(k,x>0)\equiv\phi_2$, the boundary condition at the junction reads
 \begin{eqnarray}\begin{aligned}
-\frac{\partial_x \phi_1}{ \partial_t \phi_1} = \lambda^2 \frac{\partial_x \phi_2}{ \partial_t \phi_2} = \tan^2 \theta\frac{\partial_x \phi_2}{ \partial_t \phi_2} \quad \theta \in \left[0,\frac{\pi}{2} \right]  
+\frac{\partial_x \phi_1}{ \partial_t \phi_1} = \lambda^2 \frac{\partial_x \phi_2}{ \partial_t \phi_2} = \tan^2 \theta\frac{\partial_x \phi_2}{ \partial_t \phi_2}, \quad \theta \in \left[0,\frac{\pi}{2} \right]  
 \end{aligned}\end{eqnarray}
 which implies
 \begin{equation}
 \label{eq:momentum_gnd_dn_lambda}
-k = \frac{2\pi}{L}\left( n \pm \frac{\theta}{\pi} \right)  \quad n\in\mathbb{Z}
+k = \frac{2\pi}{L}\left( n \pm \frac{\theta}{\pi} \right),  \quad n\in\mathbb{Z}
 \end{equation}
 It is evident that the momentum $k$ is shifted from integer multiple of $2\pi/L$ due to the $\lambda$ boundary condition in the middle. 
 \begin{comment}
@@ -46,7 +46,7 @@ Expand the field $\phi = \sum_n \phi_n f_n(x) $, the action and Hamiltonian beco
 \end{equation}
 \end{comment}
 
-It is clear that the normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as orthonormal basis in mode expansion. Following the same procedure in \onlinecite{di_francesco_conformal_1997}, we have the Hamiltonian as
+It is clear that the normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as orthonormal basis in mode expansion. Following the same procedure in Ref.~\onlinecite{di_francesco_conformal_1997}, we have the Hamiltonian as
 \begin{equation}
 \label{eq:H_in_gnd_dn_lambda}
 H = \frac{1}{2} \sum_{n \in \mathbb{Z} } |k|  \left(a^{\dagger}_n a_n + \frac{1}{2} \right)

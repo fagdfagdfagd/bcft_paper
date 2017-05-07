@@ -127,11 +127,11 @@ We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in ${\bf b}$ basis, as
 and so
 \begin{equation}\begin{aligned}
 \label{eq:S0invS}
-({\bf a} , {\bf a}^\dagger)S_0^{-1}S_1=({\bf c} , {\bf c}^\dagger)
+({\bf a} , {\bf a}^\dagger)=({\bf c} , {\bf c}^\dagger)\left(S_0^{-1}S_1\right)^{-1}
 \end{aligned}\end{equation}
 One realizes that Eq.~\eqref{eq:S0invS} is another Bogoliubov transformation and so the corresponding matrix has the block structure
 \begin{equation}
-S_0^{-1}S_1=\begin{bmatrix}
+S_1^{-1}S_0=\begin{bmatrix}
 u_1 & v_1^*\\
 v_1 & u_1^*
 \end{bmatrix}.
@@ -159,7 +159,6 @@ which annihilate the evolved state at time $t$: $a_i(t)|0\rangle_{{\bf a}(t)}=0$
 ({\bf a} , {\bf a}^\dagger)e^{iHt}=({\bf a},{\bf a}^\dagger)S_0^{-1}S_1\text{diag}(e^{iEt},e^{-iEt})S_1^{-1}S_0
 \end{aligned}\end{equation}
 It is evident that the evolved state $|0\rangle_{{\bf a}(t)}$ is related to the $|0\rangle_{{\bf a}}$ through the same way as in Eq.~\eqref{eq:boson_BCS_gnd}. The overlap, as we have seen in the fidelity case, is the normalization factor of the "BCS" ground state. It is related to the top left block of the Bogoliubov transformation in Eq.~\eqref{eq:BdG_transformation_echo},
-\todo[inline]{Mao: you have highlights "it reads", anything wrong here?}
 \begin{equation}\begin{aligned}
 \label{eq:echo_t}
 \mathcal{L}(t)=|_{\bf a}\langle0|0\rangle_{{\bf a}(t)}|^2=|\text{det}(u_1^\dagger e^{iEt}u_1-v_1^\dagger e^{-iEt}v_1)|^{-1}
