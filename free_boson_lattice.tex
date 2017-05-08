@@ -1,8 +1,11 @@
-In this section, we consider a lattice model with bosonic defect at the center, which reduces to the one considered in Sec.~\ref{sec_sub:general_formulation} in the continuum limit\cite{calabrese_entanglement_2012}. Therefore, it serves as a numerical tool to check our analytic results in Sec.~\ref{sec:analytic_numerics}. Despite its simpleness, such discrete bosonic defect can be considered in more general quadratic bosonic\cite{PhysRevA.74.022329}, or fermionic\cite{PhysRevB.64.064412} systems. It also sheds light on the possible application of our CFT results in condensed matter experiments\cite{Rohringer2015,Trotzky2012}.
 
-\todo[inline]{Remove the citations if not relevant...}
+In this section, we consider a lattice model with bosonic interface at the center\cite{peschel_exact_2012,calabrese_entanglement_2012}, which reduces to the one considered in Sec.~\ref{sec_sub:general_formulation} in the continuum limit\cite{sakai_entanglement_2008}. Therefore, it serves as a numerical tool to check our analytic results in Sec.~\ref{sec:analytic_numerics}. 
 
-We imagine connecting two coupled harmonic chains, which consists in total $2n$ coupled harmonic oscillators labeled by $\left\{\phi_{-n+1},...,\phi_0,\phi_1,...,\phi_n\right\}$. There is a bond defect between site $0$ and $1$, and the Hamiltonian reads
+% Despite its simpleness, such discrete bosonic defect can be considered in more general quadratic bosonic\cite{PhysRevA.74.022329}, or fermionic\cite{PhysRevB.64.064412} systems. It also sheds light on the possible application of our CFT results in condensed matter experiments\cite{Rohringer2015,Trotzky2012}.
+
+\todo[inline]{I think the reference cited here are irrelevant.}
+
+We consider two harmonic chains with bosonic field $\phi_i$ and conjugate momentum $\pi_i$ on lattice site $i$. The left and right chains are connected between site $0$ and $1$ with the Hamiltonian
 \begin{eqnarray}\begin{aligned}
 H = \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2  +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
 \begin{bmatrix}
@@ -14,9 +17,11 @@ H = \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{
 \phi_1 
 \end{pmatrix}
 \end{aligned}\end{eqnarray}
-where $\pi_i$ is the conjugate momentum. Later we shall see the matrix $\Sigma_{ij}$ is related to the scattering matrix in Sec.~\ref{sec_sub:general_formulation}, and thus characterizes all possible bosonic defects discussed there.
+where the matrix $\Sigma$ parameterize two-site interaction. In fact $\Sigma$ gives a simple relation with the scattering matrix defined in Sec.~\ref{sec_sub:general_formulation}, and thus the Hamiltonian is the lattice regularization of the bosonic interface discussed there.
 
-It is straightforward to write down the ansatz for this quantum mechanical problem, (the use of $(n-1)$ in $\phi_n^B$ simplifies the calculation)
+\todo[inline]{Mao: I suggest to relocate this part to an appendix, and maybe more details can be filled in, especially scale invariance condition imposed on the $\Sigma$. In the main text, just cite the relation between $\Sigma$ and $S$ and proceed}
+
+To find the scattering matrix, we set up the plane wave scattering problem across the interface using ansatz for two semi-infinite chain (the use of $(n-1)$ in $\phi_n^B$ simplifies the calculation)
 \begin{equation}
 \label{eq:ansatz}
 \phi_n
@@ -27,26 +32,21 @@ It is straightforward to write down the ansatz for this quantum mechanical probl
   \end{aligned} \right. 
  \quad 
 \end{equation}
-where $a$ is the lattice constant. The dispersion of the system reads
-\begin{eqnarray}\begin{aligned}
-\label{eq:dispersion}
-\omega=\left|2\sin\frac{k}{2}\right|
-\end{aligned}\end{eqnarray}
-which implies the system is gapless. The defect will not break the criticality of the harmonic chain\cite{peschel_exact_2012}. Upon plugging Eq.~\eqref{eq:ansatz}-\eqref{eq:dispersion} into the equation of motion, we have the following relation between the incoming and outgoing amplitudes
+where $a$ is the lattice constant. The dispersion of the system is $\omega = \left|2\sin\frac{k}{2}\right|$ which implies the system is gapless. The interface will not break the criticality of the harmonic chain\cite{peschel_exact_2012}. Upon plugging Eq.~\eqref{eq:ansatz}-\eqref{eq:dispersion} into the equation of motion, we have the following relation between the incoming and outgoing amplitudes
 \begin{equation}
 \label{eq:discrete_S}
-\begin{bmatrix}
-\Sigma_{11} + e^{-ik} & \Sigma_{12} \\
-\Sigma_{21} & \Sigma_{22}  + e^{-ik}  \\
-\end{bmatrix}
 \begin{pmatrix}
 A_{-} \\
 B_{+}\\
 \end{pmatrix}
 =-
 \begin{bmatrix}
-\Sigma_{11} +e^{ik} & \Sigma_{12}\\
-\Sigma_{21} & \Sigma_{22} + e^{ik}
+\Sigma_{11} + e^{-ika} & \Sigma_{12} \\
+\Sigma_{21} & \Sigma_{22}  + e^{-ika}  \\
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+\Sigma_{11} +e^{ika} & \Sigma_{12}\\
+\Sigma_{21} & \Sigma_{22} + e^{ika}
 \end{bmatrix}
 \begin{pmatrix}
 A_{+}\\
@@ -55,13 +55,13 @@ B_{-}\\
 \end{equation}
 and the scattering matrix can be solved as
 \begin{equation}
-  S = \frac{-1}{ \det \Sigma  + e^{-ik} \text{tr} \Sigma   + e^{-2ik}}
+  S = \frac{-1}{ \det \Sigma  + e^{-ika} \text{tr} \Sigma   + e^{-2ika}}
 \begin{bmatrix}
-\det \Sigma+ \Sigma_{11} e^{-ik} + \Sigma_{22} e^{ik}+1  & -2i \sin k \Sigma_{12}  \\
--2i \sin k \Sigma_{21} &  \det \Sigma+ \Sigma_{11} e^{ik} + \Sigma_{22} e^{-ik}+1\\
+\det \Sigma+ \Sigma_{11} e^{-ika} + \Sigma_{22} e^{ika}+1  & -2i \sin ka \Sigma_{12}  \\
+-2i \sin ka \Sigma_{21} &  \det \Sigma+ \Sigma_{11} e^{ika} + \Sigma_{22} e^{-ika}+1\\
 \end{bmatrix}
 \end{equation}
-It is clear that Eq.~\eqref{eq:discrete_S} is a discrete analogue of Eq.~\eqref{eq:def_S}, with momentum dependence. The necessary condition for the scattering matrix to be scale invariance is that the ratio $|S_{11}/S_{21}|$ is independent of $k$. This implies 
+A necessary condition for the scattering matrix to be scale invariance is that the ratio $|S_{11}/S_{21}|$ is independent of $k$. This implies 
 \begin{equation}
 \label{eq:Sigma_condition}
 \det \Sigma = -1, \, \, \text{tr} \Sigma = 0
@@ -90,3 +90,9 @@ say the special case in the boundary
 }
 
 This is the matrix we will use for the numerics. The results will be presented in Sec.~\ref{sec:analytic_numerics}.
+
+
+%%% Local Variables:
+%%% TeX-master: "bCFT_paper"
+%%% TeX-PDF-mode: t
+%%% End:
