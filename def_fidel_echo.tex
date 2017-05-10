@@ -1,27 +1,38 @@
 
-Bipartite fidelity is the overlap of the groundstates of two Hamiltonians. In the path integral language, the groundstates can be produced by imaginary time evolution. If we take the horizontal axis as the Euclidean time, the fidelity can be diagrammatically represented as in Fig.~\ref{fig:fidel}. Treating it as a partition function, we analyze its finite size dependence on the total chain size $L$. The logarithmic fidelity should then follow the general discussion of Cardy and Peschel\cite{cardy_finite-size_1988} of the finite size dependence of free energy and give a term proportional to $\ln L$
+In this section, we define the fidelity and Loschmidt echo and present their corresponding spacetime path integral diagrams. It will then be evident that these quantities are just the free energy of Boson with conformal interfaces (or boundaries). 
+
+Fidelity is the square of the overlap of the groundstates of two Hamiltonians, 
 \begin{equation}
-\mathcal{F} = - \ln \langle \phi_1 |\phi_2 \rangle^2 = - 2 \ln Z  \sim  \ln L 
+{\rm fidelity} = |\langle \psi_1 |\psi_2  \rangle |^2 
 \end{equation}
-The proportionality constant is the exponent characterizing the interface. 
+For the systems we considered, $|\psi_1 \rangle$ is the groundstate of the two disconnected chain (of equal length, hence "bipartite") and $|\psi_2\rangle$ is that of the connected chain with conformal defect. Both of them can be produced by the imaginary time evolution. Taking the horizontal axis as imaginary time, the fidelity can be diagrammatically represented as in Fig.~\ref{fig:fidel}, where the slits represents the disconnected boundary condition, such as Dirichlet(D) and Neumann(N), and the dashed line represents the conformal interface parameterized by $\lambda$. The logarithmic fidelity is then (twice) the free energy of this diagram
+\begin{equation}
+\mathcal{F}( {\rm fidelity} )  = - \ln \langle \psi_1 |\psi_2 \rangle^2 = - 2 \ln Z
+\end{equation}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{fig_fidel.pdf}
+\includegraphics[width=0.8\textwidth]{fig_fidel.pdf}
 \caption{Fidelity of connecting two CFTs. The horizontal axis the imaginary time. Evolution on the two infinitely extended side produces the groundstate of the disconnected and connected chain Hamiltonians. The right diagram is the result of folding the lower part of the diagram up, so that all the boundary are now boundary states.}
 \label{fig:fidel}
 \end{figure}
 
 \todo[inline]{echo diagram folding}
 
-The Loschmidt echo is defined to be defined as the overlap of the ground state and the quenched states, 
+The Loschmidt echo is also the (square of the) overlap of two wavefunctions. One of the them the groundstate of the disconnected chain and the other is groundstate evolved by the connected chain Hamiltonian
 \begin{equation}
-\mathcal{L} = |\langle \phi_{\rm gnd}  | e^{-i Ht } | \phi_{\rm gnd} \rangle|^2
+\mathcal{L} = |\langle \psi_{\rm gnd}  | e^{-i H t } | \psi_{\rm gnd} \rangle|^2
 \end{equation}
-We have drawn the path integral definition of this quantity in Fig.~\ref{fig:cut-and-join}; for convenience of the latter conformal mapping, we turn the diagram by a right angle and take the horizontal axis as time. The slits represents disconnected boundary conditions like Dirichlet and Neumann, the dashed line represent partially transmitting boundary condition parameterized by $\lambda$. We may as well fold the lower half plane up and everything on the real axis should be regarded as boundary states. Again by Cardy and Peschel\cite{cardy_finite-size_1988}, the logarithm of the Loschmidt echo is the free energy and should have logarithmic dependence on the characterizing length scale in the problem. In other words
+The path integral definition of this quantity would be similar to Fig.~\ref{fig:cut-and-join}, but to be consistent with the fidelity diagram, we take the horizontal axis as imaginary time and present it in Fig.~{\color{red} TODO}. Viewing the diagram as a partition function subject to the switching of boundary conditions, the logarithmic Loschmidt is also the associated the free energy.
+
+If the interface is completely transparent, i.e. at the special point of $\lambda = 1$, the tip of the slits can be regarded as corner singularities. According to Cardy and Peschel\cite{cardy_finite-size_1988}, they will contribute to a term that is logarithmic of the corner's characteristic size, which is $\ln L$ in fidelity and $\ln \tau$ in Loschmidt echo. One would expect the fidelity and echo to have power law decay patter with respective to these scales in the long wavelength limit. In fact, such kind of computation has been done in Ref.~\onlinecite{stephan_logarithmic_2013,stephan_local_2011,vasseur_universal_2014,vasseur_crossover_2013,kennes_universal_2014} using either the Cardy-Peschel formula or Wald identity integration. If the slits boundary conditions are taken to be Dirichlet, we have the universal behavior for the leading term \cite{stephan_logarithmic_2013,stephan_local_2011}
 \begin{equation}
-\mathcal{L} = - \ln |\langle \phi_{\rm gnd}  | e^{-i Ht } | \phi_{\rm gnd} \rangle|^2 \propto \ln \tau 
+\label{eq:full-pass}
+\mathcal{F}({\rm fidelity}) =  \frac{c}{8} \ln L \qquad \mathcal{F}( {\rm echo} )  = \frac{c}{4} \ln \tau 
 \end{equation}
+
+The tip of the slit is no longer a twist field with presence of the conformal interface. Its nature is clearer in the folding picture shown in Fig.~\ref{fig:fidel} and {\color{red} TODO} where the lower half plane is flipped up on top of the upper half plane on both fidelity and echo diagram. From the boundary conformal field theory point of view, the change of boundary condition can be regarded as insertion of primary fields called boundary condition changing(bcc) operator. These diagrams then becomes the one and two point functions of the bcc operators and the free energy logarithmic term extracts their scaling dimensions. 
+
 
 
 

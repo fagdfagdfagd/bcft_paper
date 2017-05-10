@@ -1,25 +1,29 @@
 
-In this subsection, we will demonstrate that the diagrams drawn in the last subsections are all related to the amplitudes between boundary states. 
+In this subsection, we relate the free energy to the amplitudes between boundary states and give analytic results. 
 
-We notice that there is only one apparent length scale in these diagram: in the case of fidelity it is the finite size $L$ for fidelity and $\tau$ for Loschmidt echo. In the absence of the regulators, the conformal invariance can rescale them to $1$ by doing a conformal transformation, thus getting rid of their dependences. Therefore, regulator is necessary in keeping track of the scale dependence in doing the conformal transformation. This is also required by the lattice realization of the systems. 
+We notice that there is only one apparent length scale in these diagrams -- the finite size $L$ for fidelity and imaginary time $\tau$ for the Loschmidt echo. These are the characteristic size of the corner at the tip of the slit. However, without regulators the conformal invariance can rescale both to $1$ by doing a dilation transformation, thus getting rid of their dependence. Therefore, regulators are necessary in keeping track of the scale dependence and also physically sensible considering the lattice realization of the systems. 
 
-We work in the folding picture, add small semi-circles to the point where the boundary condition changing operator resides. For the fidelity case, the conformal mapping is depicted in Fig.~\ref{fig:fidel-map} 
+We thus add small semi-circles around the points where the boundary condition changing operator resides and then do a series of conformal mapping. 
+
+For the fidelity case, the regulators as well as conformal mapping are depicted in Fig.~\ref{fig:fidel-map} 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{fig_fidel-map.pdf}
 \caption{Mapping from a strip to the upper half plane $w = \frac{L}{\pi} \ln z $. The two black dots represent possible insertion of bcc operators. The dot inside the blue semi-circle is at coordinate $z = 1$, which is the image of point connecting $a$ and $b$ boundaries. The other dot is at $z = 0$, and corresponds to the connection between $a$ and $c$ boundaries at $- \infty$. To evaluate the diagram, we add the outer-semi-circle as the IR cut-off, it can also be regarded as the image of the blue vertical line on the $w$ plane.}
 \label{fig:fidel-map}
 \end{figure}
-If the three boundary conditions $a, b, c$ are all different, then there are two boundary condition changing operators on the real axis. We focus on the one where $a = c$. The two end points of the $\epsilon$ radius semi-circle on the $w$ plane are mapped to
+We assume $a = c$ such that there is only one bcc operator on the real axis enclosed by the regulator. The two end points of the $\epsilon$ radius semi-circle on the $w$ plane are mapped to
 \begin{equation}
 \exp( \pm \pi \frac{\epsilon}{ L}  ) \sim 1 \pm \pi \frac{\epsilon}{L} 
 \end{equation}
-The vertical line at $\text{Re} w = W$ is mapped to $|z| = e^{\pi \frac{W}{L} } \gg 1 $. Since the radius of this larger circle is overwhelming, moving the inner semi-circle on the $z$ plane to the center will not affect the cross ratio to the leading order. The dashed line and solid line are then regarded as two boundary states. The imaginary time evolution is performed in the angular direction and the partition function we are looking for is
+The vertical line at $\text{Re} w = W$ (IR regulator) is mapped to $|z| = e^{\pi \frac{W}{L} } \gg 1 $. Since the radius of this larger circle is overwhelming, moving the inner semi-circle on the $z$ plane to the center will not affect the cross ratio to the leading order. The dashed line and solid line can then be regarded as two boundary states, the diagram corresponds to the following partition function
 \begin{equation}
   Z_{ab} = \langle a | e^{-\pi H } |b \rangle 
 \end{equation}
 
-The Loschmidt echo can also be evaluated the same way. We therefore introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulator and then perform a series conformal transformation as shown in Fig.~\ref{fig:H-tau_fold}. In the $\xi$ plane, we end with the same diagram as fidelity. With one more conformal mapping, it is becomes the cylinder partition function between two boundary states. 
+
+
+The Loschmidt echo can be evaluated the same way. Again we introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulator and then perform the conformal transformation shown in Fig.~\ref{fig:H-tau_fold}. In the $\xi$ plane, we end with the same diagram as fidelity. With one more conformal mapping, it is becomes the cylinder partition function between two boundary states. 
 
 \begin{figure}[htb]
 \centering
@@ -28,13 +32,29 @@ The Loschmidt echo can also be evaluated the same way. We therefore introduce tw
 \label{fig:H-tau_fold}
 \end{figure}
 
-One should however notice that in performing the conformal transformation, we have introduced shifts in free energy. In fact, the free energy in the boundary state calculation gives a positive exponent, meaning a power law increase of the fidelity and echo, which does not make sense. We inspect the shifts in App.~\ref{app:F_correction}, generally speaking it comes from the Schwartzian term and the regulator. 
-
-The amplitude between different boundary states can be computed by the technique presented in App.~\ref{app:lambda_12} and App.~\ref{app:gnd_dn_lambda}, where we set the width of the cylinder to be $\beta$. Adding back the correction in App.~\ref{app:F_correction}, the final result is
+The results of the general partition function $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and its free energy are evaluated in App.~\ref{app:lambda_12} to the leading order of cylinder width $\beta$. But one can't use these results na\"ively as we have tacitly introduced shifts in doing these conformal transformation. In fact, directly using the free energy given in App.~\ref{app:lambda_12} resulting in a power law increase of Loschmidt echo, which does not agree with the known results. One easy way to see the shift is that free energy is zero when $a,b,c$ are all periodic boundary conditions, hence 
 \begin{equation}
- - \ln Z_{ab }( \beta ) + \frac{1}{6} \beta 
+\mathcal{F} = - \ln Z_{ab} ( \beta ) + \frac{1}{12} \beta 
 \end{equation}
-where $a,b$ denotes different boundary condition (including the $\lambda$ junction) and $\beta = 2 \ln L$ or  $ 4 \ln \tau$ in the fidelity and echo. 
+where $\frac{1}{12}\beta$ is the value of $ \ln Z_{ab} ( \beta )$ when $a = b = {\rm P}$. A more careful inspection is performed in App.~\ref{app:F_correction}, where the correction is found to be coming from the Schwartzian and outer circle regulator. 
+
+For the process ($c$ is assumed to be the same as $a$)
+\begin{equation}
+S_i( \theta_1 ) \rightarrow S_j( \theta_2 ) 
+\end{equation}
+the free energy is
+\begin{equation}
+\mathcal{F}( \beta )  = 
+\left\lbrace
+\begin{aligned}
+  &\frac{1}{2}(-|x| + x^2 )\beta  \quad &i = j \\
+  &\frac{1}{16}\beta   \quad &i \ne j   \\
+\end{aligned} \right. \quad x = \frac{\theta_2 - \theta_1}{\pi} 
+\end{equation}
+We can then read off the fidelity and Loschmidt echo power law decay exponent with the identification $\beta = 2 \ln L$ and $ 4 \ln \tau$. 
+
+
+
 
 %%% Local Variables:
 %%% TeX-master: "bCFT_paper"

@@ -1,0 +1,20 @@
+
+We use chemical reaction equation style to represent the change of boundary conditions. Taking the example of the echo diagrams in Fig.~{\color{red} TODO}, there are three boundary conditions $a,b,c$ in the folding picture, which represents status on two ends of the chain before and after the quench. The choice of a uniform $c$ boundary condition on the far end of the chain is to isolate the effect coming from the bcc on the conformal interface. The process $a + c \rightarrow b + c$ represents the change of boundary condition form the combination $a$/$c$ on the two ends to $b$/ $c$ after the quench. Since each letter can take a general conformal interface defined by the $S$ matrix in Eq.~\eqref{eq:S1_S2}, we denote it as
+\begin{equation}
+S_a( \theta_a ) + S_c( \theta_c) \rightarrow S_b( \theta_b )  + S_c( \theta_c ) 
+\end{equation}
+Analytic computation can be performed when we neglect the boundary condition $c$, assuming $L \gg \tau$. To remove the bcc operator from $c$ to $a$ at infinity, we usually take $a = c$ in the numerical calculation. 
+
+In the "cut-and-join" protocol we considered, $a$ should be one of 'DD', 'DN', 'ND', 'NN', $b$ is taken to be $S_1( \theta )$ or $S_2( \theta )$. The physical situation of connecting two compact bosons and our lattice model corresponds to the choice of $S_1( \theta)$, we also reserve the notation $\lambda$ for this type of the boundary condition. For instance, the notation for the process presented in Fig.~{\color{red} TODO} is
+\begin{equation}
+{\rm DN }  + {\rm DN} \rightarrow \lambda + { \rm DN} 
+\end{equation}
+The scaling dimension of this bcc operator does indeed deviate from the completely transmitting case for certain choice of boundary conditions. 
+
+Another interesting case is to take $a$ or $c$ to be completely transmitting interface, i.e. $S_2( \frac{\pi}{4} )$. This corresponds to the traditional periodic boundary condition and we use symbol 'P' to denote it. 
+
+
+%%% Local Variables:
+%%% TeX-master: "bCFT_paper"
+%%% TeX-PDF-mode: t
+%%% End:
