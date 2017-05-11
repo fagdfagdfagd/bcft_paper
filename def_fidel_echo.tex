@@ -12,18 +12,24 @@ For the systems we considered, $|\psi_1 \rangle$ is the groundstate of the two d
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{fig_fidel.pdf}
+\includegraphics[width=0.8\textwidth]{fig_fidelity-DN-lambda-folding.pdf}
 \caption{Fidelity of connecting two CFTs. The horizontal axis the imaginary time. Evolution on the two infinitely extended side produces the groundstate of the disconnected and connected chain Hamiltonians. The right diagram is the result of folding the lower part of the diagram up, so that all the boundary are now boundary states.}
 \label{fig:fidel}
 \end{figure}
 
-\todo[inline]{echo diagram folding}
 
 The Loschmidt echo is also the (square of the) overlap of two wavefunctions. One of the them the groundstate of the disconnected chain and the other is groundstate evolved by the connected chain Hamiltonian
 \begin{equation}
 \mathcal{L} = |\langle \psi_{\rm gnd}  | e^{-i H t } | \psi_{\rm gnd} \rangle|^2
 \end{equation}
-The path integral definition of this quantity would be similar to Fig.~\ref{fig:cut-and-join}, but to be consistent with the fidelity diagram, we take the horizontal axis as imaginary time and present it in Fig.~{\color{red} TODO}. Viewing the diagram as a partition function subject to the switching of boundary conditions, the logarithmic Loschmidt is also the associated the free energy.
+The path integral definition of this quantity would be similar to Fig.~\ref{fig:cut-and-join}, but to be consistent with the fidelity diagram, we take the horizontal axis as imaginary time and present it in Fig.~\ref{fig:echo}. Viewing the diagram as a partition function subject to the switching of boundary conditions, the logarithmic Loschmidt is also the associated the free energy.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{fig_echo-DN-lambda-folding.pdf}
+\caption{\color{red} fill in caption of echo diagram}
+\label{fig:echo}
+\end{figure}
 
 If the interface is completely transparent, i.e. at the special point of $\lambda = 1$, the tip of the slits can be regarded as corner singularities. According to Cardy and Peschel\cite{cardy_finite-size_1988}, they will contribute to a term that is logarithmic of the corner's characteristic size, which is $\ln L$ in fidelity and $\ln \tau$ in Loschmidt echo. One would expect the fidelity and echo to have power law decay patter with respective to these scales in the long wavelength limit. In fact, such kind of computation has been done in Ref.~\onlinecite{stephan_logarithmic_2013,stephan_local_2011,vasseur_universal_2014,vasseur_crossover_2013,kennes_universal_2014} using either the Cardy-Peschel formula or Wald identity integration. If the slits boundary conditions are taken to be Dirichlet, we have the universal behavior for the leading term \cite{stephan_logarithmic_2013,stephan_local_2011}
 \begin{equation}
@@ -31,7 +37,7 @@ If the interface is completely transparent, i.e. at the special point of $\lambd
 \mathcal{F}({\rm fidelity}) =  \frac{c}{8} \ln L \qquad \mathcal{F}( {\rm echo} )  = \frac{c}{4} \ln \tau 
 \end{equation}
 
-The tip of the slit is no longer a twist field with presence of the conformal interface. Its nature is clearer in the folding picture shown in Fig.~\ref{fig:fidel} and {\color{red} TODO} where the lower half plane is flipped up on top of the upper half plane on both fidelity and echo diagram. From the boundary conformal field theory point of view, the change of boundary condition can be regarded as insertion of primary fields called boundary condition changing(bcc) operator. These diagrams then becomes the one and two point functions of the bcc operators and the free energy logarithmic term extracts their scaling dimensions. 
+The tip of the slit is no longer a twist field with presence of the conformal interface. Its nature is clearer in the folding picture shown in Fig.~\ref{fig:fidel} and Fig.~\ref{fig:echo} where the lower half plane is flipped up on top of the upper half plane on both fidelity and echo diagram. From the boundary conformal field theory point of view, the change of boundary condition can be regarded as insertion of primary fields called boundary condition changing(bcc) operator. These diagrams then becomes the one and two point functions of the bcc operators and the free energy logarithmic term extracts their scaling dimensions. 
 
 
 

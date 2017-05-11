@@ -1,4 +1,3 @@
-% flatex input: [gnd_dn_lambda.tex]
 
 \begin{figure}[h]
 \centering
@@ -7,7 +6,7 @@
 \label{fig:Fig_gnd_dn_lambda}
 \end{figure}
 
-In this appendix, we would like to calculate the amplitude for the setup shown in Fig.~\ref{fig:Fig_gnd_dn_lambda}. In particular, the unfolded configuration has D/N boundary conditions at $x = \pm \frac{L}{2}$ and linking boundary condition at $x = 0$. The general solutions can be written as
+In this appendix, we calculate the amplitude for the setup shown in Fig.~\ref{fig:Fig_gnd_dn_lambda}. In particular, the unfolded configuration has D/N boundary conditions at $x = \pm \frac{L}{2}$ and conformal interface $\lambda$ at $x = 0$. The general solutions can be written as
 \begin{equation}
 \label{eq:normalized_f}
 f(k, x) = 
@@ -17,7 +16,7 @@ f(k, x) =
   A_2 e^{ikt}  \sin\left(kx - \frac{1}{2}kL \right) & \quad x > 0   \\
 \end{aligned} \right. 
 \end{equation}
-As demonstrated in Sec.~\ref{sec_sub:general_formulation}, if we denote $f(k,x<0)\equiv\phi_1$ and $f(k,x>0)\equiv\phi_2$, the boundary condition at the junction reads
+As demonstrated in Sec.~\ref{sec_sub:general_formulation}, if we denote $f(k,x<0)\equiv\phi_1$ and $f(k,x>0)\equiv\phi_2$, the boundary condition at the junction becomes
 \begin{eqnarray}\begin{aligned}
 \frac{\partial_x \phi_1}{ \partial_t \phi_1} = \lambda^2 \frac{\partial_x \phi_2}{ \partial_t \phi_2} = \tan^2 \theta\frac{\partial_x \phi_2}{ \partial_t \phi_2}, \quad \theta \in \left[0,\frac{\pi}{2} \right]  
 \end{aligned}\end{eqnarray}
@@ -26,27 +25,9 @@ which implies
 \label{eq:momentum_gnd_dn_lambda}
 k = \frac{2\pi}{L}\left( n \pm \frac{\theta}{\pi} \right),  \quad n\in\mathbb{Z}
 \end{equation}
-It is evident that the momentum $k$ is shifted from integer multiple of $2\pi/L$ due to the $\lambda$ boundary condition in the middle. 
-\begin{comment}
-Thus, the normalized eigenfunctions are
-\begin{equation}
-f_n(x) = \sqrt{\frac{2}{L}}
-\left\lbrace
-\begin{aligned}
-  \cos(kx +\frac{1}{2}kL ) &  \quad x < 0  \\
-  \pm \sin(kx - \frac{1}{2}kL ) & \quad x > 0   \\
-\end{aligned} \right. 
-\qquad 
-k = \frac{2\pi}{L}\left( n \pm  \frac{\theta}{\pi} \right)  \quad n \in \mathbb{Z} 
-\end{equation}
-Expand the field $\phi = \sum_n \phi_n f_n(x) $, the action and Hamiltonian becomes
-\begin{equation}
-  S = \frac{g}{2} \int dt \, \sum_{n \in \mathbb{Z} }\left(  \dot{\phi}^2_n + k^2 \phi_n^2 \right) \implies\quad   g \dot{\phi}_n  = \pi_n \quad \implies H =  
-\frac{1}{2g}\sum_{n \in \mathbb{Z} } \pi_n^2 + ( kg )^2  \phi_n^2 
-\end{equation}
-\end{comment}
+It is evident that the momentum $k$ is shifted from integer multiple of $\frac{2\pi}{L}$ due to the $\lambda$ boundary condition in the middle. 
 
-It is clear that the normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as orthonormal basis in mode expansion. Following the same procedure in Ref.~\onlinecite{di_francesco_conformal_1997}, we have the Hamiltonian as
+The normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as orthonormal basis in the mode expansion, we thus have the 
 \begin{equation}
 \label{eq:H_in_gnd_dn_lambda}
 H = \frac{1}{2} \sum_{n \in \mathbb{Z} } |k|  \left(a^{\dagger}_n a_n + \frac{1}{2} \right)
@@ -59,7 +40,7 @@ a^{\dagger}_n = \frac{1}{\sqrt{2}} \left( \sqrt{ |k|g} \phi_n - \frac{i }{\sqrt{
 \end{aligned}
 \end{equation}
 
-The Casimir energy is the vacuum energy brought by the finite size of the setup. From Eq.~\eqref{eq:H_in_gnd_dn_lambda} and define $x\equiv\theta/\pi$ in Eq.~\eqref{eq:momentum_gnd_dn_lambda}, we have
+The Casimir energy is the vacuum energy brought up by the finite size of the setup. From Eq.~\eqref{eq:H_in_gnd_dn_lambda} and use $x\equiv \frac{\theta}{\pi}$ in Eq.~\eqref{eq:momentum_gnd_dn_lambda}, we have
 \begin{equation}
 \begin{aligned}
 E_c &= \frac{1}{4} \sum_{n \in \mathbb{Z}} | k| = \frac{\pi}{2L} \left( \sum_{n \in \mathbb{Z}}  | n + x | + \sum_{n \in \mathbb{Z}}  | n - x |  \right) \\  
@@ -68,9 +49,13 @@ E_c &= \frac{1}{4} \sum_{n \in \mathbb{Z}} | k| = \frac{\pi}{2L} \left( \sum_{n 
 &= \frac{1}{2} \left( - x^2 + x - \frac{1}{6}\right)
 \end{aligned}
 \end{equation}
-where we used the fact that the unfolded geometry has length $L=2\pi$. Thus the free energy reads
+where we used the fact that the unfolded geometry has length $L=2\pi$. Thus the free energy in the large $\beta$ limit is
 \begin{equation}
 F = \beta E_c = - \frac{\beta}{2} B_2( x) 
 \end{equation}
 which agrees with the boundary state calculation in Sec.~\ref{app:lambda_12}. 
 
+%%% Local Variables:
+%%% TeX-master: "bCFT_paper"
+%%% TeX-PDF-mode: t
+%%% End:

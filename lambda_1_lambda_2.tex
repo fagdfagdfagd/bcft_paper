@@ -3,7 +3,7 @@
 \begin{figure}[h]
 \centering
 \includegraphics{fig_lambda_1_lambda_2.pdf}
-\caption{Partition function between two boundary states $\lambda_1$ and $\lambda_2$}
+\caption{Partition function between two boundary states of $S_i( \theta_1)$ and that of $S_j( \theta_2 )$}
 \label{fig:fig_lambda_1_lambda_2}
 \end{figure}
 
@@ -17,11 +17,11 @@ Let the cylinder has height $2\pi$ and width $\beta \gg 1 $, the partition funct
 \begin{equation}
 Z_{ab} =  \langle a | e^{ - 2\pi H } |b \rangle 
 \end{equation}
-where the Hamiltonian
+where the Hamiltonian is
 \begin{equation}
 H = \frac{2\pi}{\beta} (L_0 + \bar{L}_0) =  \frac{4\pi}{\beta}  L_0 = \frac{4\pi}{\beta}\sum_{n > 0 }  n b_n^{\dagger} b_n. 
 \end{equation}
-In this expression, we have neglected the $-\frac{c}{24}$ term for it has been considered in App.~\ref{app:F_correction}. We have also used the boundary state condition $L_n = \bar{L}_n$ valid for the boundary state. The partition function then becomes
+We have used the condition $L_n = \bar{L}_n$ valid for the boundary state. The partition function then becomes
 \begin{equation}
 Z_{ab} = \langle 0 | \exp\Big\{ \vec{b} S_a^* \vec{\bar{b}}\Big\} \exp\Big\{ - \vec{b}^{\dagger} \mathbb{I}_2 \otimes M  \vec{b} \Big\}   \exp\Big\{  \vec{b}^{\dagger} S_b  \vec{\bar{b}}^{\dagger}\Big\}  |0  \rangle  = \frac{1}{\det ( 1 - S^{\dagger} _a  e^{- \mathbb{I}_2 \otimes M} S_b) }
 \end{equation}
@@ -29,7 +29,7 @@ where
 \begin{equation}
 M =  \frac{4\pi^2}{\beta} \text{diag}( 1, 2, \cdots ) \quad  \mathbb{I}_2 = \text{diag}( 1, 1) 
 \end{equation}
-Using the fact that their determinants are $|\det( S_a S_b^{\dagger})|  = 1$, we have the free energy 
+Using the fact that $|\det( S_a S_b^{\dagger})|  = 1$, free energy becomes
 \begin{equation}
 F = - \ln |Z_{ab}| = \ln |\det ( S_a S_b^{\dagger} - e^{- \mathbb{I}_2 \otimes M} )|
 \end{equation}

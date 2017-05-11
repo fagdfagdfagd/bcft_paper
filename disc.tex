@@ -1,0 +1,34 @@
+
+% relation between fidelity and echo
+
+In all the computation we have done, the fidelity results can be converted to that of the Loschmidt echo by the recipe $ \ln L \rightarrow 2 \ln \tau$. The numerical factor $2$ comes from the fact that the Loschmidt echo has two slit tips. Other than that, we see that they probe the same finite size effect of the free energy associated with the new interfaces. Our purpose of computing the (simpler) fidelity is diagnostic and so in the following we will be mainly discuss the echo properties. 
+
+% analytic results type 1 -> type 2, c/4; 
+In the Sec.~\ref{sec_sub:analy_eval}, we have presented the analytic results for the general process (assuming the far end boundary condition $c$ is the same as prior-quench interface $a$) 
+\begin{equation}
+ S_i( \theta_1 ) \rightarrow S_j( \theta_2 )
+\end{equation}
+We find that if the conformal interfaces are of different types, i.e. $i \ne j$, the echo is always $\frac{1}{4} \ln t$, regardless of the theta angle. The two types of conformal interface do not talk to each other because they impose on different fields. If we treat $S_1$ as a combination of Dirichlet and Neumann boundary conditions imposed on the rotated $\phi$ fields as in Eq.~\eqref{eq:rotation_a_basis}, then $S_2$ one of them on the duel field of $\phi$. In the derivation of the $M$ matrix, these two corresponds to the parts of the Lorentz group and can't be connected by taking singular value of $\lambda$. It is then reasonable to find an universal echo between them. The special value of $DD \rightarrow P$ also agrees with the existing general CFT result with transparent interface\cite{stephan_logarithmic_2013,stephan_local_2011,vasseur_universal_2014,vasseur_crossover_2013,kennes_universal_2014}. 
+
+
+% x dependence, DN -> ND agrees with existing result;
+More interesting case is when the boundary conditions are of the same type, which we verified the quadratic angle dependence numerically for the process 
+\begin{equation}
+{\rm DN} + {\rm DN} \rightarrow \lambda + {\rm DN} 
+\end{equation}
+which gives a series of new bcc operator dimensions of the $c = 2$ boson boundary CFT. Unfortunately, our numerical curve of the Loschmidt echo is not as perfect as the fidelity calculation. This is very likely due to the ambiguity of the free boson zero mode, as moving slight way from the point remedy the situation. And numerical study also shows that the outer boundary condition, which in the large system size limit should not impact the system, does change the scaling dimensional in a way that is not captured by our analytic computation. Generally speaking, the boundary condition on the far end may introduce additional bcc operator and thus change the free energy. It would be interesting to have a CFT calculation to reproduce the better numerical result of
+\begin{equation}
+{\rm ND} + {\rm DN} \rightarrow \lambda + {\rm ND} 
+\end{equation}
+
+Nevertheless the special case of ${\rm DN} \rightarrow {\rm P}$ agrees with the Ref.~\onlinecite{kennes_universal_2014,stephan_logarithmic_2013}, where the difference of this and the $DD \rightarrow {\rm P}$ one  $\frac{3}{8}- \frac{1}{4} = \frac{1}{16} $ is interpreted as the bcc operator dimension between D and N. The picture is complete in this full ${\rm DN}$ to $\lambda $ transition. 
+
+% connecting Luttinger liquid(quantum wire) using votage to control the boundary condition. X-ray edge singularity. examples include Taylor santo's topological phases. Hope to have experimental setup. 
+
+Aside from free lattice boson model for the numerical purposes, these set of boundary conditions can be realized in connecting two compact bosons. There are already numerous theoretical and experimental work on the boundary conditions of Luttinger liquid\cite{schmeltzer_zero_1999,anfuso_luttinger_2003,voit_bounded_2000,fabrizio_interacting_1995,egger_applying_1998}, which is the universal compact boson theory of the (Bosonized) one-dimensional electron gas\cite{giamarchi_quantum_2015}. For example, gate voltage \cite{egger_applying_1998} may be used to twist the left and right modes of the boson to create a boundary condition interpolating between the normal open and fixed boundary conditions. The interface studied in this paper is a generalization which (in the folding picture) twist the two independent Bosons (two left modes plus two right modes) on the two sides. A X-ray edge singularity experiment in a quantum wire system, which uses ion to switch on and off the boson interfaces should be plausible. 
+
+
+%%% Local Variables:
+%%% TeX-master: "bCFT_paper"
+%%% TeX-PDF-mode: t
+%%% End:

@@ -1,17 +1,16 @@
-% flatex input: [pf_of_id.tex]
 
-In this appendix, we provide more details for calculating the amplitude $Z_{ab}$ in Sec.~\ref{sec:analytic_numerics}. We started to prove the following identity for a real symmetric matrix $M$
+In this appendix, we provide more details for calculating the amplitude $Z_{ab}$ in Sec.~\ref{sec:analytic_numerics}. We start to prove the following identity for a real symmetric matrix $M$
 \begin{equation}
 \label{eq:first_id_app_pf_of_id}
 \exp\Big\{- \vec{b}^{\dagger} M \vec{b}  \Big\} \exp \Big\{ \vec{b}^{\dagger} R \bar{\vec{b}}^{\dagger}  \Big\}  = \exp \Big\{ \vec{b}^{\dagger} e^{-M}  R \bar{\vec{b}}^{\dagger}  \Big\} \exp\Big\{- \vec{b}^{\dagger} M \vec{b}  \Big\} 
 \end{equation}
-where ${\bf b}$ and $\bar{\bf b}$ are vectors of bosonic operators. As emphasized in the {\bf\color{red}main text}, the matrix notation, for example, $\vec{b}^{\dagger} R \bar{\vec{b}}^{\dagger}$ should really mean $\sum_{ij}b^\dagger_iR_{ij}\bar{b}_j^\dagger$ where the dagger does not transpose the vector.  
+where ${\bf b}$ and $\bar{\bf b}$ are vectors of bosonic operators. The matrix notation here should be understand as bilinear form. For example, $\vec{b}^{\dagger} R \bar{\vec{b}}^{\dagger}$ should really mean $\sum_{ij}b^\dagger_iR_{ij}\bar{b}_j^\dagger$ where the dagger does not transpose the vector.  
 
 To prove Eq.~\eqref{eq:first_id_app_pf_of_id}, we first consider the special case where $R=\mathbb{I}$. We diagonalize $M = O^{T} \Lambda O $ and rotate the two sets of boson operators to the diagonal basis
 \begin{equation}
   \vec{b}^{\dagger}  M \vec{b} = \vec{d}^{\dagger} \Lambda \vec{d}  \quad \vec{d} = O \vec{b} \quad \vec{\bar{d}}^\dagger = O^T \vec{\bar{b}}^\dagger
 \end{equation}
-where we understood $\vec{\bar{b}}^\dagger$ is a column vector and independent to $\vec{{b}}^\dagger$. Thus the whole expression can be written as
+where we understand $\vec{\bar{b}}^\dagger$ as a column vector independent to $\vec{{b}}^\dagger$. Thus the whole expression can be written as
 \begin{equation}
 \begin{aligned}
   \exp&\Big\{- \vec{b}^{\dagger} M \vec{b}  \Big\} \exp \Big\{ \vec{b}^{\dagger} \bar{\vec{b}}^\dagger  \Big\}  =  

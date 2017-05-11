@@ -47,14 +47,39 @@ the free energy is
 \mathcal{F}( \beta )  = 
 \left\lbrace
 \begin{aligned}
-  &\frac{1}{2}(-|x| + x^2 )\beta  \quad &i = j \\
+  &\frac{1}{2}(|x| - x^2 )\beta  \quad &i = j \\
   &\frac{1}{16}\beta   \quad &i \ne j   \\
 \end{aligned} \right. \quad x = \frac{\theta_2 - \theta_1}{\pi} 
 \end{equation}
 We can then read off the fidelity and Loschmidt echo power law decay exponent with the identification $\beta = 2 \ln L$ and $ 4 \ln \tau$. 
 
-
-
+As analyzed in Sec.~\ref{sec:analytic_numerics}, $S_2( \theta)$ interpolates between DD and NN, $S_1( \theta )$ interpolates between DN and ND. In the region accessible to the numerical calculation in the lattice model, we choose the process 
+\begin{equation}
+{\rm DD} + {\rm DD} \rightarrow  \lambda + {\rm DD}
+\end{equation}
+to verify
+\begin{equation}
+\mathcal{F} = 
+\left\lbrace
+\begin{aligned}
+\frac{1}{8}\ln L  &\quad\text{fidelity}  \\
+\frac{1}{4}\ln t   &\quad \text{echo}   \\
+\end{aligned} \right.  
+\end{equation}
+where same results have already been obtained for $\lambda = {\rm P}$\cite{stephan_logarithmic_2013,stephan_local_2011,vasseur_universal_2014,vasseur_crossover_2013,kennes_universal_2014}. Another process
+\begin{equation}
+{\rm DN} + {\rm DN} \rightarrow \lambda + {\rm DN} 
+\end{equation}
+is used to verify
+\begin{equation}
+\mathcal{F} = 
+\left\lbrace
+\begin{aligned}
+ (x - x^2 )\ln L   &  \quad {\rm fidelity} \\
+ 2(x - x^2 ) \ln t  & \quad \text{ Loschmidt echo} \\
+\end{aligned} \right. 
+\end{equation}
+where $\lambda = \tan \theta$ and $x = \frac{\theta}{\pi}$. 
 
 %%% Local Variables:
 %%% TeX-master: "bCFT_paper"
