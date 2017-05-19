@@ -4,6 +4,7 @@ In this section, we consider a lattice model with bosonic interface at the cente
 
 We consider two harmonic chains with bosonic field $\phi_i$ and conjugate momentum $\pi_i$ on lattice site $i$. The left and right chains are connected between site $0$ and $1$ with the Hamiltonian
 \begin{equation}
+\label{eq:lattice_H}
 H = \frac{1}{2} \sum_i \left(\pi_i^2  + ( \phi_i - \phi_{i+1} )^2 \right) +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
 \Sigma
 \begin{pmatrix}
@@ -22,28 +23,21 @@ H = \frac{1}{2} \sum_i \left(\pi_i^2  + ( \phi_i - \phi_{i+1} )^2 \right) +  \fr
 %\phi_1 
 %\end{pmatrix}
 %\end{aligned}\end{eqnarray}
-where the $2\times2$ matrix $\Sigma$ parameterizes two-site interaction. In fact $\Sigma$ gives a simple relation with the scattering matrix defined in Sec.~\ref{sec_sub:general_formulation}, and thus the Hamiltonian is the lattice regularization of the bosonic interface discussed there. We perform the scattering analysis in App.~\ref{app:interface_free_boson}, and the scale invariant S-matrix reads
+where the $2\times2$ matrix $\Sigma$ parameterizes two-site interaction. In fact $\Sigma$ gives a simple relation with the scattering matrix defined in Sec.~\ref{sec_sub:general_formulation}, and thus the Hamiltonian is the lattice regularization of the bosonic interface discussed there. We perform the standard scattering analysis in App.~\ref{app:interface_free_boson}, and the scale invariant S-matrix reads
 \begin{equation}
 S = \frac{1}{1 - e^{-2ika } } ( -2i \sin ka ) \Sigma
  = - e^{ika} \Sigma
 \end{equation}
 where $a$ is the lattice constant. In the continuum limit $a\rightarrow0$, the matrix $\Sigma$ can be parameterized as
 \begin{equation}
+\label{eq:def_Sigma}
 \Sigma = -\lim_{a \rightarrow 0 } S = 
 \begin{bmatrix}
 \frac{\lambda^2- 1}{1 + \lambda^2} & \frac{-2\lambda }{1 + \lambda^2} \\
 \frac{-2\lambda }{1 + \lambda^2} & \frac{1- \lambda^2}{1 + \lambda^2} \\
 \end{bmatrix}
 \end{equation}
-
-{\bf\color{red}
-
-say in the long time, what happens? 
-
-say the special case in the boundary
-}
-
-This is the matrix we will use for the numerics. The results will be presented in Sec.~\ref{sec:analytic_numerics}.
+where $\lambda\in\mathbb{R}$. The lattice model in Eq.~\eqref{eq:lattice_H} with interface defined in Eq.~\eqref{eq:def_Sigma} will be used to check our analytic results. 
 
 
 %%% Local Variables:
