@@ -4,14 +4,14 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{bm}
-\usepackage[font={footnotesize}]{caption}
+%\usepackage[font={footnotesize}]{caption}
+\usepackage[caption=false]{subfig}
 \usepackage{todonotes}
 \usepackage{comment}
 \graphicspath{{./}{./images/}}
 \definecolor{darkblue}{rgb}{0.1,0.2,0.6} \definecolor{darkred}{rgb}{0.8,0.1,0.2}
 \usepackage[colorlinks,citecolor=darkblue,linkcolor=darkred,urlcolor=darkblue]{hyperref}
 \usepackage[all]{hypcap}
-
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 
 \newcommand{\cf}{\textit{cf.} } 
@@ -65,8 +65,10 @@
 \label{sec_sub:analy_eval}
 \input{analy_eval}
 \subsection{Numerical Results and Comparison}
+\input{num_result}
 
 \section{Discussion}
+\label{sec:disc}
 \input{disc}
 
 
@@ -86,6 +88,10 @@
 % 2. contribution from the boundary: cite Cardy 
 \label{app:F_correction}
 \input{F_correction}
+
+\section{Scale Invariant Interface in Free Bosonic Lattice}
+\label{app:interface_free_boson}
+\input{interface_free_boson}
 
 \section{Numerical Computation of Bipartite Fidelity and Loschmidt Echo}
 % basis transformation, Bogoliubov state, overlap(master theorem)
@@ -115,8 +121,6 @@
 
 \bibliographystyle{plain}
 \bibliography{bCFT}
-
-%\end{comment}
 
 \end{document}
 

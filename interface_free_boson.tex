@@ -1,0 +1,95 @@
+
+In this section, we consider a lattice model with bosonic interface at the center\cite{peschel_exact_2012,calabrese_entanglement_2012}, which reduces to the one considered in Sec.~\ref{sec_sub:general_formulation} in the continuum limit\cite{sakai_entanglement_2008}. Therefore, it serves as a numerical tool to check our analytic results in Sec.~\ref{sec:analytic_numerics}. 
+
+
+We consider two harmonic chains with bosonic field $\phi_i$ and conjugate momentum $\pi_i$ on lattice site $i$. The left and right chains are connected between site $0$ and $1$ with the Hamiltonian
+\begin{eqnarray}\begin{aligned}
+H = \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2  +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
+\begin{bmatrix}
+1 + \Sigma_{11}  & \Sigma_{12} \\
+\Sigma_{21} &  1 + \Sigma_{22} \\
+\end{bmatrix}
+\begin{pmatrix}
+\phi_0 \\
+\phi_1 
+\end{pmatrix}
+\end{aligned}\end{eqnarray}
+where the matrix $\Sigma$ parameterize two-site interaction. In fact $\Sigma$ gives a simple relation with the scattering matrix defined in Sec.~\ref{sec_sub:general_formulation}, and thus the Hamiltonian is the lattice regularization of the bosonic interface discussed there.
+
+\todo[inline]{Mao: I suggest to relocate this part to an appendix, and maybe more details can be filled in, especially scale invariance condition imposed on the $\Sigma$. In the main text, just cite the relation between $\Sigma$ and $S$ and proceed}
+
+To find the scattering matrix, we set up the plane wave scattering problem across the interface using ansatz for two semi-infinite chain (the use of $(n-1)$ in $\phi_n^B$ simplifies the calculation)
+\begin{equation}
+\label{eq:ansatz}
+\phi_n
+= \left\lbrace
+  \begin{aligned}
+    \phi_n^A &= A_{-} e^{i \omega t  - inka}  + A_{+} e^{i \omega t  + inka}  & \quad  n \le 0 \\
+    \phi_n^B &= B_{-} e^{i \omega t  - i(n-1)ka}  + B_{+} e^{i \omega t  + i(n-1)ka} & \quad n \ge 1 \\
+  \end{aligned} \right. 
+ \quad 
+\end{equation}
+where $a$ is the lattice constant. The dispersion of the system is $\omega = \left|2\sin\frac{k}{2}\right|$ which implies the system is gapless. The interface will not break the criticality of the harmonic chain\cite{peschel_exact_2012}. Upon plugging ansatz and dispersion relation into the equation of motion, we have the following relation between the incoming and outgoing amplitudes
+\begin{equation}
+\label{eq:discrete_S}
+\begin{pmatrix}
+A_{-} \\
+B_{+}\\
+\end{pmatrix}
+=-
+\begin{bmatrix}
+\Sigma_{11} + e^{-ika} & \Sigma_{12} \\
+\Sigma_{21} & \Sigma_{22}  + e^{-ika}  \\
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+\Sigma_{11} +e^{ika} & \Sigma_{12}\\
+\Sigma_{21} & \Sigma_{22} + e^{ika}
+\end{bmatrix}
+\begin{pmatrix}
+A_{+}\\
+B_{-}\\
+\end{pmatrix}
+\end{equation}
+and the scattering matrix can be solved as
+\begin{equation}
+  S = \frac{-1}{ \det \Sigma  + e^{-ika} \text{tr} \Sigma   + e^{-2ika}}
+\begin{bmatrix}
+\det \Sigma+ \Sigma_{11} e^{-ika} + \Sigma_{22} e^{ika}+1  & -2i \sin ka \Sigma_{12}  \\
+-2i \sin ka \Sigma_{21} &  \det \Sigma+ \Sigma_{11} e^{ika} + \Sigma_{22} e^{-ika}+1\\
+\end{bmatrix}
+\end{equation}
+A necessary condition for the scattering matrix to be scale invariance is that the ratio $|S_{11}/S_{21}|$ is independent of $k$. This implies 
+\begin{equation}
+\label{eq:Sigma_condition}
+\det \Sigma = -1, \, \, \text{tr} \Sigma = 0
+\end{equation}
+Therefore, we have the scale invariant S-matrix as
+\begin{equation}
+S = \frac{1}{1 - e^{-2ika } } ( -2i \sin k ) \Sigma
+ = - e^{ika} \Sigma
+\end{equation}
+In the continuum limit where $a\rightarrow0$, the matrix $\Sigma$ can be parameterized as
+\begin{equation}
+\Sigma = -\lim_{a \rightarrow 0 } S = 
+\begin{bmatrix}
+\frac{\lambda^2- 1}{1 + \lambda^2} & \frac{-2\lambda }{1 + \lambda^2} \\
+\frac{-2\lambda }{1 + \lambda^2} & \frac{1- \lambda^2}{1 + \lambda^2} \\
+\end{bmatrix}
+\end{equation}
+in accordance to Eq.~\eqref{eq:Sigma_condition}. 
+
+{\bf\color{red}
+Say in the continuum limit, what happens
+
+say in the long time, what happens? 
+
+say the special case in the boundary
+}
+
+This is the matrix we will use for the numerics. The results will be presented in Sec.~\ref{sec:analytic_numerics}.
+
+
+%%% Local Variables:
+%%% TeX-master: "bCFT_paper"
+%%% TeX-PDF-mode: t
+%%% End:
