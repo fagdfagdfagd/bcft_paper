@@ -116,8 +116,8 @@ for tick in ax2.yaxis.get_major_ticks():
 
 ax2.set_yscale( 'log' ) 
 ax2.set_xscale( 'log' )
-ax2.set_xlabel( r"$L$", fontsize = 8 )
-ax2.set_ylabel( r"Fidelity", fontsize = 8 )
+ax2.set_xlabel( r"$t$", fontsize = 8 )
+ax2.set_ylabel( r"$\mathcal{L}(t)$", fontsize = 8 )
  
 # plt.tight_layout()
 
