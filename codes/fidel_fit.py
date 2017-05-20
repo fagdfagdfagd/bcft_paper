@@ -102,7 +102,6 @@ for tick in ax2.xaxis.get_major_ticks():
 for tick in ax2.yaxis.get_major_ticks():
     tick.label.set_fontsize( 8 )
 
-
 ax2.set_yscale( 'log' ) 
 ax2.set_xscale( 'log' )
 ax2.set_xlabel( r"$t$", fontsize = 8 )
