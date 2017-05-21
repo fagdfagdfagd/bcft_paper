@@ -22,9 +22,12 @@ where the Hamiltonian is
 H = \frac{2\pi}{\beta} (L_0 + \bar{L}_0) =  \frac{4\pi}{\beta}  L_0 = \frac{4\pi}{\beta}\sum_{n > 0 }  n b_n^{\dagger} b_n. 
 \end{equation}
 We have used the condition $L_n = \bar{L}_n$ valid for the boundary state. The partition function then becomes
-\begin{equation}
-Z_{ab} = \langle 0 | \exp\Big\{ \vec{b} S_a^* \vec{\bar{b}}\Big\} \exp\Big\{ - \vec{b}^{\dagger} \mathbb{I}_2 \otimes M  \vec{b} \Big\}   \exp\Big\{  \vec{b}^{\dagger} S_b  \vec{\bar{b}}^{\dagger}\Big\}  |0  \rangle  = \frac{1}{\det ( 1 - S^{\dagger} _a  e^{- \mathbb{I}_2 \otimes M} S_b) }
-\end{equation}
+\begin{eqnarray}\begin{aligned}
+Z_{ab} &= \langle 0 | e^{ \vec{b} S_a^* \vec{\bar{b}} } e^{ - \vec{b}^{\dagger} \mathbb{I}_2 \otimes M  \vec{b} } e^{  \vec{b}^{\dagger} S_b  \vec{\bar{b}}^{\dagger} }  |0  \rangle  \\
+&= \frac{1}{\det ( 1 - S^{\dagger} _a  e^{- \mathbb{I}_2 \otimes M} S_b) }
+%Z_{ab} &= \langle 0 | \exp\Big\{ \vec{b} S_a^* \vec{\bar{b}}\Big\} \exp\Big\{ - \vec{b}^{\dagger} \mathbb{I}_2 \otimes M  \vec{b} \Big\}   \exp\Big\{  \vec{b}^{\dagger} S_b  \vec{\bar{b}}^{\dagger}\Big\}  |0  \rangle  \\
+%&= \frac{1}{\det ( 1 - S^{\dagger} _a  e^{- \mathbb{I}_2 \otimes M} S_b) }
+\end{aligned}\end{eqnarray}
 where
 \begin{equation}
 M =  \frac{4\pi^2}{\beta} \text{diag}( 1, 2, \cdots ) \quad  \mathbb{I}_2 = \text{diag}( 1, 1) 

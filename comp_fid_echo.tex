@@ -37,7 +37,7 @@ of the Hamiltonian. The transformation is canonical, meaning that it preserves t
 \begin{equation}
 \begin{aligned}
 \label{eq:preserve_commutator}
-J\equiv\begin{bmatrix}
+J&\equiv\begin{bmatrix}
 0 & \mathbb{I}\\
 -\mathbb{I} & 0
 \end{bmatrix}
@@ -56,8 +56,8 @@ J\equiv\begin{bmatrix}
 \end{pmatrix},
 \begin{pmatrix}
 {\bf b} & {\bf b}^\dagger
-\end{pmatrix}]S
-=S^T JS.
+\end{pmatrix}]S \\
+&=S^T JS.
 \end{aligned}
 \end{equation}
 where we have used the compact notation of the sort $([\vec{b}, \vec{b}^{\dagger}])_{ij} =  [b_i, b_j^\dagger]$ to denote the commutator matrix. The appearance of $J$ makes the symplectic nature of the problem manifest and we find $S$ is in the symplectic group ${\rm Sp}( 2n, \mathbb{C} ) $\cite{blaizot_quantum_1986,fulton_representation_2004}. Furthermore, the requirement that $a^\dagger$ is a complex conjugation of $a$ leads to the block structure of $S$
@@ -117,8 +117,8 @@ in which the Hamiltonian reads
 \begin{pmatrix}
 \phi\\
 \pi
-\end{pmatrix}
-=\frac{1}{2}
+\end{pmatrix} \\
+&=\frac{1}{2}
 \begin{pmatrix}
 \phi & \pi
 \end{pmatrix}
@@ -129,7 +129,6 @@ in which the Hamiltonian reads
 \end{pmatrix}
 \end{aligned}\end{equation}
 It is not hard to check that $\mathcal{M}$ is real and symmetric. 
-
 
 The general solution diagonalization problem is hard\cite{arnold_mathematical_2010}, however the positive definite $\mathcal{M}$ (and hence $M$) can be solved by Williamson's theorem\cite{arnold_mathematical_2010,xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006}, which states the existence, uniqueness (up to reordering of eigenvalues) and explicit construction of the matrix $\mathcal{S}\in {\rm Sp}(2n \mathbb{R}) $ such that 
 \begin{equation}\begin{aligned}
@@ -211,7 +210,7 @@ v_1 & u_1^*
 \end{equation}
 Thus $|0\rangle_{\bf c}$ is related to the $|0\rangle_{{\bf a}}$ in the same way as in Eq.~\eqref{eq:boson_BCS_gnd}. Their overlap is therefore given by the normalization factor
 \begin{equation}\begin{aligned}
-|{}_{\bf a}\langle0|0\rangle_{\bf c}|^2=\frac{1}{|\text{det}(u_1)|} \Big|{}_{\bf a}\langle 0 | \exp( -\frac{1}{2} a_j^{\dagger} T^{jk} a_k^{\dagger} )|0   \rangle_{\bf a} \Big|^2   = \frac{1}{|\text{det}(u_1)|}
+|{}_{\bf a}\langle0|0\rangle_{\bf c}|^2=\frac{\Big|{}_{\bf a}\langle 0 | \exp( -\frac{1}{2} a_j^{\dagger} T^{jk} a_k^{\dagger} )|0   \rangle_{\bf a} \Big|^2}{|\text{det}(u_1)|} = \frac{1}{|\text{det}(u_1)|}
 \end{aligned}\end{equation}
 
 \subsection{Boson Loschmidt echo}
@@ -228,8 +227,9 @@ a_i(t)&=e^{-i\hat{H}_1t}a_ie^{i\hat{H}_1t}
 which annihilate the evolved state at time $t$: $a_i(t)|0\rangle_{{\bf a}(t)}=0$. Upon using the diagonal basis $\hat{H}_1=\sum_iE_ic_i^\dagger c_i$, the Bogoliubov transformation at time $t$ can be represented as a chain of symplectic transformation
 \begin{equation}\begin{aligned}
 \label{eq:BdG_transformation_echo}
-({\bf a}(t),{\bf a}^\dagger(t))=e^{-iHt}
-({\bf a} , {\bf a}^\dagger)e^{iHt}=({\bf a},{\bf a}^\dagger)S_0^{-1}S_1\text{diag}(e^{iEt},e^{-iEt})S_1^{-1}S_0
+&({\bf a}(t),{\bf a}^\dagger(t))=e^{-iHt}
+({\bf a} , {\bf a}^\dagger)e^{iHt} \\
+=&({\bf a},{\bf a}^\dagger)S_0^{-1}S_1\text{diag}(e^{iEt},e^{-iEt})S_1^{-1}S_0
 \end{aligned}\end{equation}
 It is evident that the evolved state $|0\rangle_{{\bf a}(t)}$ is related to the $|0\rangle_{{\bf a}}$ in the same way as in Eq.~\eqref{eq:boson_BCS_gnd}. The overlap, as we have seen in the fidelity case, is the normalization factor of the "BCS" ground state. It is related to the top left block of the Bogoliubov transformation in Eq.~\eqref{eq:BdG_transformation_echo},
 \begin{equation}\begin{aligned}
@@ -300,7 +300,7 @@ S
 where the Bogoliubov transformation take the desired block form
 \begin{equation}\begin{aligned}
 S&=C\mathcal{S}C^{-1}
-&=\begin{bmatrix}
+=\begin{bmatrix}
 O(D^{1/2}+D^{-1/2}) & O(D^{1/2}-D^{-1/2}) \\
 O(D^{1/2}-D^{-1/2}) & O(D^{1/2}+D^{-1/2}) 
 \end{bmatrix}

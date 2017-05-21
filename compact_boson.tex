@@ -6,6 +6,8 @@ Our derivation follows the general multi-component Boson constraints in Ref.~\on
 
 \subsection{Mode Expansion of Compact Boson}
 Suppose the boson is compactified as $\phi =  \phi + 2\pi R$, then mode expansion will have zero mode
+
+\begin{widetext}
 \begin{equation}
 \begin{aligned}
 \phi( x, t ) &= \phi_0 - \frac{2\pi m R}{L}x + \frac{\pi_0}{gL} t  + \frac{i}{\sqrt{4 \pi g}}\sum_{n\neq0}\frac{1}{n}(a_ne^{2\pi i n(x-t)/L}+ \bar{a}_{n} e^{2\pi i n(x+t)/L})\\  
@@ -20,23 +22,22 @@ the mode expansion becomes
 \begin{equation}
 \label{eq:boson-mode-exp}
 \begin{aligned}
-\phi( z, \bar{z}) = &\phi_0 -i \left( \frac{n}{4\pi g  R} + \frac{m R }{2} \right)  \ln z + \frac{i}{\sqrt{4\pi g}} \sum_{n\ne 0 } \frac{a_n}{n} z^{-n } \\
-&-i \left( \frac{n}{4\pi g R} - \frac{m R }{2} \right)  \ln \bar{z} + \frac{i}{\sqrt{4\pi g}} \sum_{n\ne 0 } \frac{\bar{a}_n}{n} \bar{z}^{-n } 
+\phi( z, \bar{z}) = &\phi_0 -i \left( \frac{n}{4\pi g  R} + \frac{m R }{2} \right)  \ln z + \frac{i}{\sqrt{4\pi g}} \sum_{n\ne 0 } \frac{a_n}{n} z^{-n } -i \left( \frac{n}{4\pi g R} - \frac{m R }{2} \right)  \ln \bar{z} + \frac{i}{\sqrt{4\pi g}} \sum_{n\ne 0 } \frac{\bar{a}_n}{n} \bar{z}^{-n } 
 \end{aligned}
 \end{equation}
+\end{widetext}
 We further identify 
 \begin{equation}
 \begin{aligned}
-  a_0 &= \sqrt{ 4 \pi g } \left( \frac{n}{4\pi g R} + \frac{m R }{2} \right) \\
-  \bar{a}_0 &= \sqrt{ 4 \pi g } \left( \frac{n}{4\pi g R} - \frac{m R }{2} \right)
-\end{aligned}
+  a_0 = \sqrt{ 4 \pi g } \left( \frac{n}{4\pi g R} + \frac{m R }{2} \right) \quad \bar{a}_0 = \sqrt{ 4 \pi g } \left( \frac{n}{4\pi g R} - \frac{m R }{2} \right)
+  \end{aligned}
 \end{equation}
 and then 
 \begin{equation}
+\begin{aligned}
 i \partial_z \phi =  \sum_n \frac{1}{\sqrt{4\pi g}} a_n z^{-n-1} 
+\end{aligned}
 \end{equation}
-
-
 
 \subsection{Gluing Condition for Winding Modes}
 \label{app_sub:compact_gluing_boundary}
@@ -135,9 +136,9 @@ Z_0 = \sum_{S_1 } g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} } \exp\Big\{- \frac{4
 \end{equation}
 In the limit $\beta\rightarrow\infty$, Eq.~\eqref{eq:Z0} can be approximated by a simple two dimensional integral
 \begin{equation}\begin{aligned}
-Z_0\approx g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} } (\sqrt{\beta})^2\int dxdy\exp\Big\{-8 \pi^2 g ( \frac{x}{ 4 \pi R_1 g} + \frac{y R_1 }{ 2} )^2 \Big\}\propto\beta
+Z_0\approx g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} }\beta\int dxdy\exp\Big\{-8 \pi^2 g ( \frac{x}{ 4 \pi R_1 g} + \frac{y R_1 }{ 2} )^2 \Big\}
 \end{aligned}\end{equation}
-Thus the winding mode will contribute at most a $\ln\beta$ term to the free energy. Compared to the result in App.~\ref{app:gnd_dn_lambda}-\ref{app:lambda_12}, we conclude that the winding mode contribution is negligible in the large $\beta$ limit. 
+The integral is a constant, thus the winding mode will contribute at most a $\ln\beta$ term to the free energy. Compared to the result in App.~\ref{app:gnd_dn_lambda}-\ref{app:lambda_12}, we conclude that the winding mode contribution is negligible in the large $\beta$ limit. 
 
 For the case $\lambda_1\neq\lambda_2$, the partition function will acquire non-zero contribution from the least common divisor of $(n_1,m_1)$ and $(n_2,m_2)$. The same conclusion still holds in the limit $\beta\rightarrow\infty$. 
 
