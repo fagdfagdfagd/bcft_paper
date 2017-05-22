@@ -1,14 +1,21 @@
-\todo[inline]{Mao: I suggest to relocate this part to an appendix, and maybe more details can be filled in, especially scale invariance condition imposed on the $\Sigma$. In the main text, just cite the relation between $\Sigma$ and $S$ and proceed}
-In this appendix, we demonstrate how to realize scale invariant S-matrix in a lattice regularization. Following Sec.~\ref{sec_sub:free_boson_lattice}, we consider the following harmonic chain 
+
+In this appendix, we demonstrate how to realize conformal interface in a lattice harmonic chain defined in Sec.~\ref{sec_sub:free_boson_lattice},
+\todo[inline]{Mao: Your expression of the Hamiltonian is wrong! Please note the coefficients of the cross $\phi_1 \phi_0$ term. }
 \begin{equation}
-H = \frac{1}{2} \sum_i \left(\pi_i^2  + ( \phi_i - \phi_{i+1} )^2 \right) +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
-\Sigma
+\begin{aligned}
+H =& \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2  \\
+ &+ \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
+\begin{bmatrix}
+1 + \Sigma_{11}  & \Sigma_{12} \\
+\Sigma_{21} &  1 + \Sigma_{22} \\
+\end{bmatrix}
 \begin{pmatrix}
-\phi_0 \\
-\phi_1 
+  \phi_0 \\
+  \phi_1 
 \end{pmatrix}
+\end{aligned}
 \end{equation}
-where the matrix $\Sigma$ parameterize two-site interaction between site 0 and 1. To find the scattering matrix, we set up the plane wave scattering problem across the interface with the following ansatz (the use of $(n-1)$ in $\phi_n^B$ simplifies the calculation)
+where the matrix $\Sigma$ parameterizes the two-site interaction between site 0 and 1. We set up the plane wave scattering problem across the interface with the following ansatz (the use of $(n-1)$ in $\phi_n^B$ simplifies the calculation)
 \begin{equation}
 \label{eq:ansatz}
 \phi_n
@@ -19,7 +26,7 @@ where the matrix $\Sigma$ parameterize two-site interaction between site 0 and 1
   \end{aligned} \right. 
  \quad 
 \end{equation}
-where $a$ is the lattice constant. Upon solving the equation of motion far away from the interface, it is found that the system is gapless with the dispersion relation $\omega = \left|2\sin\frac{k}{2}\right|$. The interface will not break the criticality of the harmonic chain\cite{peschel_exact_2012}. After some algebra, the incoming and outgoing amplitudes are related via
+where $a$ is the lattice constant. The solution on both semi-infinite chains are gapless with the dispersion relation $\omega = \left|2\sin\frac{ka}{2}\right|$. The $S$ matrix connecting them can be found by relating the incoming and outgoing amplitudes
 \begin{widetext}
 \begin{equation}
 \label{eq:discrete_S}
@@ -41,7 +48,7 @@ A_{-}\\
 B_{+}\\
 \end{pmatrix}
 \end{equation}
-and the scattering matrix can be solved as
+and the explicit expression is
 \begin{equation}
   S = \frac{-1}{ \det \Sigma  + e^{-ika} \text{tr} \Sigma   + e^{-2ika}}
 \begin{bmatrix}
@@ -50,17 +57,22 @@ and the scattering matrix can be solved as
 \end{bmatrix}
 \end{equation}
 \end{widetext}
-The S matrix elements are reflection and transmission coefficients. In order to have a scale invariant interface, they need to be $k-$independent. Therefore the necessary condition is that the ratio $|S_{11}/S_{21}|$ is independent of $k$, which implies 
+
+The reflection and transmission coefficients associated with this interface contained in the $S$ matrix and both of them have to be $k-$independent to form a conformal interface\cite{peschel_exact_2012}. A necessary condition is that $|S_{12}|$ must be $k$-independent. If $\Sigma_{12} = \Sigma_{21} = 0 $, we have 
+\begin{equation}
+  S_{11} = - \frac{\Sigma_{11} + e^{ika} }{\Sigma_{11} + e^{-ika}}
+\end{equation}
+which is not scale invariant. The only remaining possibility is
 \begin{equation}
 \label{eq:Sigma_condition}
 \det \Sigma = -1, \, \, \text{tr} \Sigma = 0
 \end{equation}
-Therefore, we have the scale invariant S-matrix as
+which leads to a scale invariant S-matrix 
 \begin{equation}
 S = \frac{1}{1 - e^{-2ika } } ( -2i \sin ka ) \Sigma
  = - e^{ika} \Sigma
 \end{equation}
-In the actual simulation, we evolved a large enough system for a long time, such that a field theoretic description can be applied. In this continuum limit where $a\rightarrow0$, the matrix $\Sigma$ can be parameterized as
+In this continuum limit where $a\rightarrow0$, the matrix $\Sigma$ can be parameterized as
 \begin{equation}
 \Sigma = -\lim_{a \rightarrow 0 } S = 
 \begin{bmatrix}
@@ -68,7 +80,9 @@ In the actual simulation, we evolved a large enough system for a long time, such
 \frac{-2\lambda }{1 + \lambda^2} & \frac{1- \lambda^2}{1 + \lambda^2} \\
 \end{bmatrix}
 \end{equation}
-where $\lambda\in\mathbb{R}$ is the parameter for $S_1(\theta)$, as emphasized in Sec.~\ref{sec:notation}. This simple relation between $\Sigma$ and the S-matrix provides a tool to check our analytic results. 
+where $\lambda\in\mathbb{R}$ is the parameter for $S_1(\theta)$, as introduced in Sec.~\ref{sec:notation}. 
+
+We use this series of two-site to model the $S_1(\theta)$ type conformal interface, as they give the same $S$ matrix in the continuum limit. Therefore, the large $t$ behavior of its Loschmidt echo should match with our field theoretic prediction. 
 
 %%% Local Variables:
 %%% TeX-master: "bCFT_paper"

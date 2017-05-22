@@ -16,8 +16,9 @@ rc( 'font', **{'family': 'serif', 'serif': ['Computer Modern'], 'size' : 10} )
 rc( 'text', usetex = True )
 rcParams['legend.numpoints'] = 1
 rcParams['axes.linewidth'] = 0.5
+colorList={0:"#ff2222", 1:'#ffa500', 2:'#4488ff', 3:"#0000aa", 4:'#66bb22'}
 
-folder = 'DDNN_fidel'
+folder = 'PP_fidel'
 path = "../data/" + folder + "/"
 fig_path = "../images/"
 figname = fig_path + folder + "_fit.pdf"
@@ -36,8 +37,9 @@ def fit_data( x, y ):
     log_x = np.log( x ) / np.log( 10 )
     log_y = np.log( y ) / np.log( 10 )
 
-    log_x = log_x[ x > 2.5 ]
-    log_y = log_y[ x > 2.5 ]
+    data_range = np.logical_and( ( log_x > 2 ) , ( log_x < 5 ) )
+    log_x = log_x[ data_range ]
+    log_y = log_y[ data_range ]
 
     slope, _, _, _, std_err = scipy.stats.linregress( log_x, log_y )
 
@@ -54,13 +56,13 @@ x = []
 
 for filename in dataset:
     data = np.loadtxt( path + filename )
-    t = data[:,0]
-    echo = data[:,1]
+    L = data[:,0]
+    F = data[:,1]
 
     # extract x = theta / pi from filename
     x.append( float( filename ) )
     
-    this_slope, this_error = fit_data( t, echo );
+    this_slope, this_error = fit_data( L, F );
     slope.append( this_slope )
     error.append( this_error )
 
@@ -74,9 +76,13 @@ slope = slope[idx]
 error = error[idx]
 
 # inset data
-inset_data = np.loadtxt( path + dataset[1] )
-t_inset = inset_data[:,0]
-echo_inset = inset_data[:,1]
+inset_x = [1, 11, 16]
+L_inset = []
+F_inset = []
+for i in inset_x:
+    inset_data = np.loadtxt( path + dataset[i] )
+    L_inset.append( inset_data[:,0] )
+    F_inset.append( inset_data[:,1] )
 
 # ---------------------------------------------------------------------- 
 #                           plot and insets                            |
@@ -84,9 +90,10 @@ echo_inset = inset_data[:,1]
 
 fig, ax = plt.subplots( 1, 1, squeeze = True, figsize = ( 4.5, 3 ) )
 # analytic results
-x_analy = np.insert( x, 0, 0 )
-y_analy = ( -np.square( x_analy ) + x_analy )
-ax.plot( x_analy, y_analy, color = 'red' , label = r"analytical $\frac{\theta}{\pi} - \left(\frac{\theta}{\pi}\right)^2$" )
+# x_analy = np.insert( x, 0, 0 )
+x_analy = x
+y_analy = ( -np.square( x_analy - 0.25 ) + np.abs( x_analy - 0.25 ) )
+ax.plot( x_analy, y_analy, color = 'red' , label = r"analytical $\left|\frac{\theta}{\pi} - \frac{1}{4}\right| - \left(\frac{\theta}{\pi} - \frac{1}{4} \right)^2$" )
 
 # numerical results
 (_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 2, label = "numerical" ) 
@@ -94,9 +101,10 @@ for cap in caps:
     cap.set_markeredgewidth( 1 )
 
 # inset position
-left, bottom, width, height = [0.55, 0.27, 0.3, 0.25]
+left, bottom, width, height = [0.4, 0.5, 0.3, 0.25]
 ax2 = fig.add_axes( [left, bottom, width, height] )
-ax2.plot( t_inset, echo_inset , 'o' , markersize = 1.5, c = 'blue')    
+for i in range( 0, len( inset_x ) ):
+    ax2.plot( L_inset[i], F_inset[i] , 'o' , markersize = 1.5, c = colorList[i] )
 
 # ----------------------------------------------------------------------           
 #                         title label and axis                         |           
@@ -118,6 +126,8 @@ ax2.set_yscale( 'log' )
 ax2.set_xscale( 'log' )
 ax2.set_xlabel( r"$L$", fontsize = 8 )
 ax2.set_ylabel( r"Fidelity", fontsize = 8 )
+ax2.yaxis.set_ticks( np.linspace( 0.01, 1, 2 ) )
+ax2.yaxis.set_label_coords( -0.1, 0.5 )
  
 # plt.tight_layout()
 
