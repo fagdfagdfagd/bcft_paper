@@ -1,2 +1,2 @@
 debug:
-	./PP_fidel_fit.py
+	./PDN_fit.py

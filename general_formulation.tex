@@ -1,5 +1,5 @@
 
-The general constraint we can impose on an interface is that the momentum flow (or current flow if exists) should be continuous. An equivalent way of viewing it (and will be used later) is to fold one of the theories on top of the other. The interface now located on the boundary of the tensor theory becomes impenetrable, and momentum flow ends here. This folding picture leads to the concept of boundary states in the framework of boundary CFT\cite{cardy_boundary_2004,cardy_conformal_1984}. In the Boson theory we are interested in, the tensor theory has $c = 2$ and the general classification the boundary state is still an open questions\cite{affleck_quantum_2001}. 
+The general constraint we can impose on an interface is that the momentum flow (or current flow if exists) should be continuous. An equivalent way of viewing it (and will be used later) is to fold one of the theories on top of the other. The interface now located on the boundary of the tensor theory becomes impenetrable, and momentum flow ends there. This folding picture leads to the concept of boundary states in the framework of boundary CFT\cite{cardy_boundary_2004,cardy_conformal_1984}. In the Boson theory we are interested in, the tensor theory has $c = 2$ and the general classification the boundary state is still an open questions\cite{affleck_quantum_2001}. 
 
 There are however many successful attempts to construct a subset of those bosonic boundary states. One way is to impose current operator rather than Virasoro generator constraints, which dates back to the idea of the Ishibashi state\cite{ishibashi_boundary_1989} and can be applied to the multi-component boson with a general compactification lattice\cite{affleck_quantum_2001,oshikawa_boundary_2010,quella_reflection_2007}. Other examples utilize the fusion algebra to generate new boundary states from the known ones\cite{affleck_quantum_2001,bachas_fusion_2008}. 
 
@@ -39,7 +39,7 @@ Several special choices of $\theta$ need to be noted.
 \item $\theta = \pm \frac{\pi}{4}$. In this case, $M_1(\theta)$ characterizes a perfectly transmitting interface. For example, there is effectively no interface in the case $M_1( \frac{\pi}{4})$ which is the traditional periodic boundary condition and we will denote it as P. For the other three cases, despite picking up a phase, the two counter propagating modes are still fully transmitted cross the interface. 
 \end{enumerate}
 
-The physical significance of $\theta$ will be manifest in the scattering process described below. We rewrite the Eq.~\eqref{eq:def_M} in the coordinates $t\pm x$ and $\partial_{\pm} = \partial_{t} \pm \partial_x $ to extract the left and right going modes. For example, $\partial_{-} \phi^2$ will be a function $t - x$ and hence represents a right going mode on the right half plane. It is then one of the scattering products that leaves the interface. On the other hand $\partial_{-} \phi^1$ and $\partial_{+} \phi^2$ are modes that approaching the interface from their respective domain. We therefore establish the scattering relation 
+The physical significance of $\theta$ will be manifest in the scattering process described below. We rewrite the Eq.~\eqref{eq:def_M} in the coordinates $t\pm x$ and use $\partial_{\pm} = \partial_{t} \pm \partial_x $ to extract the left and right going modes. For example, $\partial_{-} \phi^2$ will be a function $t - x$ and hence represents a right going mode on the right half plane. It is then one of the scattering products that leaves the interface. On the other hand $\partial_{-} \phi^1$ and $\partial_{+} \phi^2$ are modes that approaching the interface from their respective domain. We therefore establish the scattering relation 
 \begin{equation}\begin{aligned}
 \label{eq:def_S}
 \begin{pmatrix}
@@ -84,11 +84,11 @@ for the case $M = M_1(\theta)$.
 
 If we quantize the Boson theory on the interface line $x = 0$, these gluing conditions become an operator identity for the boson creation and annihilation of the modes. We shall interpret these identities to be valid only when acting on the boundary states. The mode expansion of free boson on $x = 0$\cite{di_francesco_conformal_1997} is
 \begin{equation}
-\phi(z, \bar{z} ) = \phi_0 - \frac{i}{4\pi g } \pi_0 \ln z \bar{z}  + \frac{i}{\sqrt{4\pi g} } \sum_{n \ne 0 } \frac{1}{n} \left(a_n z^n - \bar{a}_{-n } \bar{z}^{-n}   \right)
+\phi(z, \bar{z} ) = \phi_0 - \frac{i}{4\pi g } \pi_0 \ln z \bar{z}  + \frac{i}{\sqrt{4\pi g} } \sum_{n \ne 0 } \frac{1}{n} \left(a_n z^{-n} + \bar{a}_{n} \bar{z}^{-n}   \right)
 \end{equation}
-where take $T$ to be time period and the following choice of the holomorphic and anti-holomorphic coordinates
+where we take $T$ to be time period and the following choice of the holomorphic and anti-holomorphic coordinates
 \begin{equation}
-z= e^{ 2\pi ( i\tau - x ) / T } \quad \bar{z} = e^{ -2\pi ( i\tau + x ) / T }
+z= e^{ 2\pi i(x - t) / T } \quad \bar{z} = e^{ 2\pi i( x + t  ) / T }
 \end{equation}
 We end up with a set of operator identities for each mode
 \begin{equation}
@@ -114,7 +114,9 @@ S_1( \theta )
 \end{pmatrix} \Big\} |0\rangle
 \end{aligned}
 \end{equation}
-where $S_1(\theta) $ is precisely the scattering matrix in Eq.~\eqref{eq:def_S}. The calculation for the case $M=M_2(\theta)$ is completely analogous. Eq.~\eqref{eq:bd_state} will be used extensively in the boundary state calculation of fidelity and Loschmidt echo in Sec.~\ref{sec:analytic_numerics}. 
+where $S_1(\theta) $ is precisely the scattering matrix in Eq.~\eqref{eq:def_S}. The calculation for the case $M=M_2(\theta)$ is completely analogous. 
+
+The boundary state expression in Eq.~\eqref{eq:bd_state} will be used extensively in fidelity and Loschmidt echo calculation in Sec.~\ref{sec:analytic_numerics}. 
 
 %%% Local Variables:
 %%% TeX-master: "bCFT_paper"

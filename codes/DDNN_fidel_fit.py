@@ -16,6 +16,7 @@ rc( 'font', **{'family': 'serif', 'serif': ['Computer Modern'], 'size' : 10} )
 rc( 'text', usetex = True )
 rcParams['legend.numpoints'] = 1
 rcParams['axes.linewidth'] = 0.5
+colorList={0:"#ff2222", 1:'#ffa500', 2:'#4488ff', 3:"#0000aa", 4:'#66bb22'}
 
 folder = 'DDNN_fidel'
 path = "../data/" + folder + "/"
@@ -36,8 +37,9 @@ def fit_data( x, y ):
     log_x = np.log( x ) / np.log( 10 )
     log_y = np.log( y ) / np.log( 10 )
 
-    log_x = log_x[ x > 2.5 ]
-    log_y = log_y[ x > 2.5 ]
+    data_range = ( log_x < 4 )
+    log_x = log_x[ data_range ]
+    log_y = log_y[ data_range ]
 
     slope, _, _, _, std_err = scipy.stats.linregress( log_x, log_y )
 
@@ -54,13 +56,13 @@ x = []
 
 for filename in dataset:
     data = np.loadtxt( path + filename )
-    t = data[:,0]
-    echo = data[:,1]
+    L = data[:,0]
+    F = data[:,1]
 
     # extract x = theta / pi from filename
     x.append( float( filename ) )
     
-    this_slope, this_error = fit_data( t, echo );
+    this_slope, this_error = fit_data( L, F );
     slope.append( this_slope )
     error.append( this_error )
 
@@ -74,9 +76,13 @@ slope = slope[idx]
 error = error[idx]
 
 # inset data
-inset_data = np.loadtxt( path + dataset[1] )
-t_inset = inset_data[:,0]
-echo_inset = inset_data[:,1]
+inset_x = [1, 5, 40]
+L_inset = []
+F_inset = []
+for i in inset_x:
+    inset_data = np.loadtxt( path + dataset[i] )
+    L_inset.append( inset_data[:,0] )
+    F_inset.append( inset_data[:,1] )
 
 # ---------------------------------------------------------------------- 
 #                           plot and insets                            |
@@ -96,7 +102,9 @@ for cap in caps:
 # inset position
 left, bottom, width, height = [0.55, 0.27, 0.3, 0.25]
 ax2 = fig.add_axes( [left, bottom, width, height] )
-ax2.plot( t_inset, echo_inset , 'o' , markersize = 1.5, c = 'blue')    
+
+for i in range( 0, len( inset_x ) ):
+    ax2.plot( L_inset[i], F_inset[i] , 'o' , markersize = 1.5, c = colorList[i] )
 
 # ----------------------------------------------------------------------           
 #                         title label and axis                         |           
@@ -116,8 +124,10 @@ for tick in ax2.yaxis.get_major_ticks():
 
 ax2.set_yscale( 'log' ) 
 ax2.set_xscale( 'log' )
-ax2.set_xlabel( r"$t$", fontsize = 8 )
-ax2.set_ylabel( r"$\mathcal{L}(t)$", fontsize = 8 )
+ax2.set_xlabel( r"$L$", fontsize = 8 )
+ax2.set_ylabel( r"Fidelity", fontsize = 8 )
+ax2.yaxis.set_ticks( np.linspace( 0.001, 0.1, 2 ) )
+ax2.yaxis.set_label_coords( -0.1, 0.5 )
  
 # plt.tight_layout()
 

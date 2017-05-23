@@ -40,13 +40,12 @@ i \partial_z \phi =  \sum_n \frac{1}{\sqrt{4\pi g}} a_n z^{-n-1}
 \end{aligned}
 \end{equation}
 
-\subsection{Gluing Condition for Winding Modes}
+\subsection{Gluing Condition for the Winding Modes}
 \label{app_sub:compact_gluing_boundary}
 
-Following the treatment of boundary CFT in Ref.~\onlinecite{di_francesco_conformal_1997}, we shall quantize the theory by imposing \emph{equal-time} commutator for $a_n$ and $\bar{a}_n$ in Eq.~\eqref{eq:boson-mode-exp}. The conformal boundary state will be defined on a constant time slice, say $t=0$. For the permeable wall connecting two compactified bosons, this results in folding $t\rightarrow-t$ rather than $x\rightarrow-x$ as in the main text. Since the two cases are {\bf T}-dual to each other, the results are not affected.
+Here we solve the boundary state on the $t = 0$ slice. Our actual boundary state used in the text corresponds to the $x = 0$ slice. There is a $x \rightarrow t$ exchange in the convention here. However, that amounts to the change of $\theta \rightarrow \frac{\pi}{2} - \theta$ in the $S$ matrix argument. 
 
-%Before we invoke the folding trick, we need to note one important caveat here. In the usual treatment of boundary CFT, for example in , the field is quantized on the real axis. As emphasized in Sec.~\ref{sec:bosonic_conformal_interface}, the gluing condition becomes an operator identity of creation and annihilation operators, which is valid \emph{only} when acting on the conformal boundary states. 
-
+\todo[inline]{Mao: this is not a T-dual transformation, it is DN -> ND. }
 We recall that the gluing condition is written as
 \begin{equation}
 \begin{aligned}
@@ -62,23 +61,7 @@ We recall that the gluing condition is written as
 \end{pmatrix}
 \end{aligned}
 \end{equation}
-The folding sends $\phi^2(t)\rightarrow\phi^2(-t)$ for $t<0$, and the $\partial_t \phi^2$ term changes sign, we therefore have 
-\begin{equation}
-\begin{aligned}
-\label{eq:def_S_in_app_2}
-\begin{pmatrix}
-\partial_+\phi^1\\
--\partial_+\phi^2
-\end{pmatrix}
-=S(\theta)
-\begin{pmatrix}
-\partial_-\phi^1\\
--\partial_-\phi^2
-\end{pmatrix}
-\end{aligned}
-\end{equation}
-For convenience, we shift $\phi^2\rightarrow-\phi^2$ by a sign. This amounts to reparameterize the S-matrix and exchange the two sectors of $O(2)$ group. But this will not change our conclusion in the main text. 
-\todo[inline]{Check the parameterization} 
+
 Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
 \begin{equation}
 \begin{aligned}
@@ -176,7 +159,7 @@ We specialize to $S = S_1$ to solve the $ n = 0$ constraint. We introduce the co
 \end{equation}
 to rewrite the zero mode part as 
 \begin{equation}
-  a_0^i - S^{-1} _{ij} \bar{a}_{0}^j = 0 \quad \implies \quad ( \vec{M} + \frac{1}{g}\vec{M}^* ) = S_1 ( -\vec{M} + \frac{1}{g}\vec{M}^* )
+  a_0^i - S^{-1} _{ij} \bar{a}_{0}^j = 0 \,\, \implies \,\, ( \vec{M} + \frac{1}{g}\vec{M}^* ) = S_1 ( -\vec{M} + \frac{1}{g}\vec{M}^* )
 \end{equation}
 which is basically the multi-component boson winding constraints given in \onlinecite{affleck_quantum_2001,oshikawa_boundary_2010}. The solution gives the interface parameter $\lambda$
 \begin{equation}
@@ -185,34 +168,47 @@ which is basically the multi-component boson winding constraints given in \onlin
 \lambda = \tan\theta=\frac{n_2R_1}{n_1R_2}=-\frac{m_1R_1}{m_2R_2}
 \end{aligned}
 \end{equation}
-and the conformal boundary state reads
+and the conformal boundary state
 \begin{equation}\begin{aligned}
+\label{eq:S1bd-state}
 g_{S_1}\sum_{S_1}e^{in_1\phi_0-im_1\bar{\phi}_0}|n_1,m_1\rangle|n_2,m_2\rangle
 \end{aligned}\end{equation}
-where $\sum_{S_1}$ is the summation consistent with the constraint in Eq.~\eqref{eq:S_1_constraint}. The g-factor can only be determined by Cardy condition\cite{cardy_boundary_2004}. Since it is not important for what follows, we shall not repeat the calculation here. Since $S = S_2$ is effectively $S_1$ on the dual boson, we can expect that it will end up in a similar parameter $\lambda$ and boundary state. We omit the expression here because the main text does not use it. 
+where $\sum_{S_1}$ is the summation consistent with the constraint in Eq.~\eqref{eq:S_1_constraint}. The g-factor can only be determined by Cardy condition\cite{cardy_boundary_2004}. Since it is not important for what follows, we shall not include the calculation here. 
+
+Since $S = S_2$ is effectively $S_1$ on the dual boson, we can expect that it will end up in the same expression as in Eq.~\eqref{eq:S1bd-state}, but with a different constraints on the winding number
+\begin{equation}
+\vec{M} = \frac{\cot \theta}{g} 
+\begin{bmatrix}
+0 & -1\\
+1 & 0 \\                                
+\end{bmatrix}
+\vec{M}^*
+\end{equation}
+
+
 
 \subsection{Winding Mode Contribution to the Partition Function}
 \label{app_sub:winding_contribution}
 We now calculate the winding mode part of the partition function as shown in Fig.~\ref{fig:fig_lambda_1_lambda_2}
 \begin{equation}\begin{aligned}
-Z=\langle\lambda_2|e^{-\pi H}|\lambda_1\rangle\qquad H=\frac{2\pi}{\beta}(L_0+\bar{L}_0)
+Z=\langle S_j( \theta_2 )|e^{-\pi H}|S_i(\theta_1 )\rangle\qquad H=\frac{2\pi}{\beta}(L_0+\bar{L}_0)
 \end{aligned}\end{equation}
-To that end, we can simply replace $L_0$($\bar{L}_0$) with $a_0$($\bar{a}_0$). 
+With boundary state, we can simply replace $L_0$($\bar{L}_0$) with $a_0$($\bar{a}_0$). 
 
 For the amplitude between the same boundary states $\lambda_1=\lambda_2$, we have the winding mode contribution as
 \begin{equation}
 \begin{aligned}
 \label{eq:Z0}
-Z_0 = \sum_{S_1 } g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} } \exp\Big\{- \frac{4\pi}{\beta} 2 \pi g ( \frac{n_1}{ 4 \pi R_1 g} + \frac{m_1 R_1 }{ 2} )^2 \Big\}
+Z_0 \le  \sum_{S_i} g_{\,\!_{S_i} }g_{\,\!_{S_j} } \exp\Big\{- \frac{4\pi}{\beta} 2 \pi g ( \frac{n_1}{ 4 \pi R_1 g} + \frac{m_1 R_1 }{ 2} )^2 \Big\}
 \end{aligned}
 \end{equation}
+where the equality only is only taken when the two boundary states are identical. 
+
 In the limit $\beta\rightarrow\infty$, Eq.~\eqref{eq:Z0} can be approximated by a simple two dimensional integral
 \begin{equation}\begin{aligned}
-Z_0\approx g_{\,\!_{\lambda_1} }g_{\,\!_{\lambda_2} }\beta\int dxdy\exp\Big\{-8 \pi^2 g ( \frac{x}{ 4 \pi R_1 g} + \frac{y R_1 }{ 2} )^2 \Big\}
+Z_0\approx g_{\,\!_{S_i} }g_{\,\!_{S_j} }\beta\int dxdy\exp\Big\{-8 \pi^2 g ( \frac{x}{ 4 \pi R_1 g} + \frac{y R_1 }{ 2} )^2 \Big\}
 \end{aligned}\end{equation}
-The integral is a constant, thus the winding mode will contribute at most a $\ln\beta$ term to the free energy. Compared to the result in App.~\ref{app:gnd_dn_lambda}-\ref{app:lambda_12}, we conclude that the winding mode contribution is negligible in the large $\beta$ limit. 
-
-For the case $\lambda_1\neq\lambda_2$, the partition function will acquire non-zero contribution from the least common divisor of $(n_1,m_1)$ and $(n_2,m_2)$. The same conclusion still holds in the limit $\beta\rightarrow\infty$. 
+The winding mode thus can contribute at most a $\ln\beta$ term to the free energy. Compared to the result in App.~\ref{app:gnd_dn_lambda}-\ref{app:lambda_12}, we conclude that the winding mode contribution will not present in the leading order of large $\beta$ limit. 
 
 
 %%% Local Variables:

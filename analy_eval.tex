@@ -1,9 +1,9 @@
 
-In this subsection, we relate the free energy to the amplitudes between boundary states and give analytic results. 
+In this subsection, we relate the free energy to the amplitudes between boundary states and present the analytic results. 
 
 We notice that there is only one apparent length scale in these diagrams -- the finite size $L$ for fidelity and imaginary time $\tau$ for the Loschmidt echo. These are the characteristic size of the corner at the tip of the slit. However, without regulators the conformal invariance can rescale both to $1$ by doing a dilation transformation, thus getting rid of their dependence. Therefore, regulators are necessary in keeping track of the scale dependence, and also physically sensible when considering the lattice realization of the systems. 
 
-We thus add small semi-circles around the points where the bcc operators reside, followed a series of conformal mapping. For the fidelity case, the regulators as well as conformal mapping are depicted in Fig.~\ref{fig:fidel-map}. 
+We thus add small semi-circles around the points where the bcc operators reside, followed by a series of conformal mapping. For the fidelity case, the regulators as well as conformal mapping are depicted in Fig.~\ref{fig:fidel-map}. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{fig_fidel-map.pdf}
@@ -14,14 +14,14 @@ We assume $a = c$ such that there is only one bcc operator on the real axis encl
 \begin{equation}
 \exp( \pm \pi \frac{\epsilon}{ L}  ) \sim 1 \pm \pi \frac{\epsilon}{L} 
 \end{equation}
-The vertical line at $\text{Re} w = W$ (IR regulator) is mapped to $|z| = e^{\pi \frac{W}{L} } \gg 1 $. Since the radius of this larger circle is overwhelming, moving the inner semi-circle on the $z$ plane to the center will not affect the cross ratio to the leading order. The dashed line and solid line can then be regarded as two boundary states, the diagram corresponds to the following partition function
+The vertical line at $\text{Re} w = W$ (IR regulator) is mapped to $|z| = e^{\pi \frac{W}{L} } \gg 1 $. Since the radius of this larger circle is overwhelming, moving the inner semi-circle on the $z$ plane to the center will not affect the cross ratio to the leading order. The dashed line and solid line can then be regarded as two boundary states, the diagram corresponds to the following partition function is 
 \begin{equation}
   Z_{ab} = \langle a | e^{-\pi H } |b \rangle 
 \end{equation}
 
 
 
-The Loschmidt echo can be evaluated the same way. Again we introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulator and then perform the conformal transformation shown in Fig.~\ref{fig:H-tau_fold}. In the $\xi$ plane, we end with the same diagram as fidelity. With one more conformal mapping, it is becomes the cylinder partition function between two boundary states. 
+The Loschmidt echo can be evaluated the same way. Again we introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulator and then perform the conformal transformation shown in Fig.~\ref{fig:H-tau_fold}. In the $\xi$ plane, we end up with the same diagram as fidelity. With one more conformal mapping, it is becomes the cylinder partition function between two boundary states. 
 
 \begin{figure}[htb]
 \centering
@@ -30,7 +30,7 @@ The Loschmidt echo can be evaluated the same way. Again we introduce two semi-ci
 \label{fig:H-tau_fold}
 \end{figure}
 
-The results of the general partition function $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and its free energy are evaluated in App.~\ref{app:lambda_12} to the leading order of cylinder width $\beta$. But one can't use these results na\"ively as we have tacitly introduced shifts in doing these conformal transformation. In fact, directly using the free energy given in App.~\ref{app:lambda_12} resulting in a power law increase of Loschmidt echo, which does not agree with the known results. One easy way to see the shift is that free energy is zero when $a,b,c$ are all periodic boundary conditions, hence 
+The results of the general partition function $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and its free energy are evaluated in App.~\ref{app:lambda_12} to the leading order of cylinder width $\beta$. But one can't use these results na\"ively as we have tacitly introduced shifts in doing these conformal transformation. In fact, directly using the free energy given in App.~\ref{app:lambda_12} resulting in a power law surge of Loschmidt echo, which does not agree with the known results. One easy way to see the shift is that free energy is zero when $a,b,c$ are all periodic boundary conditions, hence there is a necessary shift
 \begin{equation}
 \mathcal{F} = - \ln Z_{ab} ( \beta ) + \frac{1}{12} \beta 
 \end{equation}

@@ -4,29 +4,23 @@ In this section, we consider a lattice model with bosonic interface at the cente
 
 We consider two harmonic chains with bosonic field $\phi_i$ and conjugate momentum $\pi_i$ on lattice site $i$. The left and right chains are connected between site $0$ and $1$ with the Hamiltonian
 \begin{equation}
+\begin{aligned}
 \label{eq:lattice_H}
-H = \frac{1}{2} \sum_i \left(\pi_i^2  + ( \phi_i - \phi_{i+1} )^2 \right) +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
-\Sigma
+H &= \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2 \\
+& + \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
+\begin{bmatrix}
+1 + \Sigma_{11}  & \Sigma_{12} \\
+\Sigma_{21} &  1 + \Sigma_{22} \\
+\end{bmatrix}
 \begin{pmatrix}
 \phi_0 \\
 \phi_1 
 \end{pmatrix}
+\end{aligned}
 \end{equation}
-%\begin{eqnarray}\begin{aligned}
-%H = \frac{1}{2} \sum_i \pi_i^2  +  \frac{1}{2} \sum_{i\ne 0 }  ( \phi_i - \phi_{i+1} )^2  +  \frac{1}{2} \begin{pmatrix}  \phi_0, \phi_1 \end{pmatrix}
-%\begin{bmatrix}
-%1 + \Sigma_{11}  & \Sigma_{12} \\
-%\Sigma_{21} &  1 + \Sigma_{22} \\
-%\end{bmatrix}
-%\begin{pmatrix}
-%\phi_0 \\
-%\phi_1 
-%\end{pmatrix}
-%\end{aligned}\end{eqnarray}
-where the $2\times2$ matrix $\Sigma$ parameterizes two-site interaction. In fact $\Sigma$ gives a simple relation with the scattering matrix defined in Sec.~\ref{sec_sub:general_formulation}, and thus the Hamiltonian is the lattice regularization of the bosonic interface discussed there. We performed the standard scattering analysis in App.~\ref{app:interface_free_boson}, and the scale invariant S-matrix reads
+where the $2\times2$ matrix $\Sigma$ parameterizes the two-site interaction. We performed the standard scattering analysis in App.~\ref{app:interface_free_boson}. For mode with momentum $k$, the only possible scale invariant S-matrix is
 \begin{equation}
-S = \frac{1}{1 - e^{-2ika } } ( -2i \sin ka ) \Sigma
- = - e^{ika} \Sigma
+S = - e^{ika} \Sigma
 \end{equation}
 where $a$ is the lattice constant. In the continuum limit $a\rightarrow0$, the matrix $\Sigma$ can be parameterized as
 \begin{equation}
@@ -37,7 +31,9 @@ where $a$ is the lattice constant. In the continuum limit $a\rightarrow0$, the m
 \frac{-2\lambda }{1 + \lambda^2} & \frac{1- \lambda^2}{1 + \lambda^2} \\
 \end{bmatrix}
 \end{equation}
-where $\lambda\in\mathbb{R}$. The lattice model in Eq.~\eqref{eq:lattice_H} with interface defined in Eq.~\eqref{eq:def_Sigma} will be used to check our analytic results. 
+where $\lambda\in\mathbb{R}$. 
+
+The lattice model in Eq.~\eqref{eq:lattice_H} with interface defined in Eq.~\eqref{eq:def_Sigma} will be used to check our analytic results for both Loschmidt echo and fidelity.  
 
 
 %%% Local Variables:

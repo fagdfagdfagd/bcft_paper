@@ -4,13 +4,13 @@
 \label{fig:DDDD}
 \end{figure}
 
-We use the lattice model introduced in Sec.~\ref{sec_sub:free_boson_lattice} to check the analytic results. Our numerical evaluations is based on boson Bogoliubov transformation and the explicit form of the groundstates. The readers are referred to App.~\ref{app:comp_fid_echo} for the technical details. In all the figures, we present the coefficients of the logarithmic term $\mathcal{F} / \ln L$ and $\mathcal{F} / \ln t$ and call them fidelity and echo exponents respectively. 
+We use the lattice model introduced in Sec.~\ref{sec_sub:free_boson_lattice} to check the analytic results. Our numerical evaluations is based on a boson Bogoliubov transformation and the explicit form of the groundstates. The readers are referred to App.~\ref{app:comp_fid_echo} for the technical details. In all the figures, we present the coefficients of the logarithmic term $\frac{\mathcal{F}}{\ln L}$ and $\frac{\mathcal{F} }{\ln t}$ and call them fidelity and echo exponents respectively. 
 
 We start with the process
 \begin{equation}
 \text{DD}+\text{DD}\rightarrow\lambda+\text{DD}
 \end{equation}
-and show its Loschmidt echo in Fig.~\ref{fig:DDDD}. The inset is a typical Loschmidt echo diagram, whose linear decreasing behavior in the log-log axes indicates the expected power law decay. We also provide the analytic prediction $\mathcal{L}(t)\sim t^{-0.25}$ (\cf Eq.~\eqref{eq:result_DDDD}) as a dashline for comparison. The exponent (negative of the slope of the line in log-log plot) is calculated by fitting such diagrams for $\theta = 0.02n \pi$, $n = 1,...,25 $. To avoid subjective choice of data points, we repeat 5 times to randomly pick {\color{red} 10 points} before the finite size revival surges, followed by taking the mean and standard deviation. We see that the exponents all match with the $\frac{1}{4}$ theoretical line within error. 
+and show its Loschmidt echo in Fig.~\ref{fig:DDDD}. The inset is a typical Loschmidt echo diagram, whose linear decreasing behavior in the log-log axes indicates the expected power law decay. We also provide the analytic prediction $\mathcal{L}(t)\sim t^{-0.25}$ (\cf Eq.~\eqref{eq:result_DDDD}) as contrast. The exponent (negative of the slope of the line in log-log plot) is calculated by fitting such diagrams for $\theta = 0.02n \pi$, $n = 1,...,25 $. The fitting is performed before the finite size revival surges and error is estimated by assuming iid Gaussian distribution of the each point. We see that the exponents all match with the $\frac{1}{4}$ theoretical line within error. 
 
 We also calculated the companion process
 \begin{equation}
@@ -35,7 +35,6 @@ Since ${\rm DN} = S_1 (0 )$, taking smaller and smaller $\delta \theta$ should c
 \includegraphics[width=1\columnwidth]{DDNN_fidel_fit.pdf}
     \caption{The slope of the free energy for Loschmidt echo (a) and bipartite fidelity (b) in the process $\text{DN}+\text{DN}\rightarrow\lambda+\text{DN}$. The total system size is $N=35k$ sites with the same parameters in Fig.~\ref{fig:DDDD}. The numerical value of exponents follow a quadratic relation as predicted. There is still visible deviation from the analytic results in (a) due to the subtle zero mode, see the discussion in the main text. Inset in (a): From the top to bottom, we show the power law decay of Loschmidt echo with $\theta=0.02\pi, 0.12\pi, 0.24\pi$ and $0.48\pi$. The finite size effect do not emerge before $t=10^{4}$. We use the same curve fitting method as described for Fig.~\ref{fig:DDDD}.}
       \label{fig:DDNN}
-    \todo[inline]{Tianci: make the plots have the same style?}
 \end{figure}
 
 We finally consider the case
@@ -55,10 +54,24 @@ where we take $\delta\theta=0.003\pi$. The $\theta$ dependent exponents now are 
   \centering
   \includegraphics[width=1\columnwidth]{PP_fit.pdf}
     \includegraphics[width=1\columnwidth]{PP_fidel_fit.pdf}
-    \caption{The decay exponent of Loschmidt echo (a) and bipartite fidelity (b) in the process $\text{P}+\text{P}\rightarrow\lambda+\text{P}$. The parameters are the same as those in Fig.~\ref{fig:DDNN}. The plot is symmetric with respect to $\theta=0.25\pi$ as predicted. The deviation around $\frac{\pi}{4}$ in (a) is small but visible, see the discussion in the main text. Inset in (a): From the top to bottom, we show the power law decay of Loschmidt echo with $\theta=0.02\pi, 0.08\pi,0.18\pi$ and $0.24\pi$. The finite size effect do not emerge before $t=10^{4}$. We use the same curve fitting method as described for Fig.~\ref{fig:DDDD}.}
+    \caption{The decay exponent of Loschmidt echo (a) and bipartite fidelity (b) $\text{P}+\text{P}\rightarrow\lambda+\text{P}$. The parameters are the same as those in Fig.~\ref{fig:DDNN}. The plot is symmetric with respect to $\theta=0.25\pi$ as predicted. The deviation around $\frac{\pi}{4}$ in (a) is small but visible, see the discussion in the main text. Inset in (a): From the top to bottom, we show the power law decay of Loschmidt echo with $\theta=0.02\pi, 0.08\pi,0.18\pi$ and $0.24\pi$. The finite size effect do not emerge before $t=10^{4}$. We use the same curve fitting method as described for Fig.~\ref{fig:DDDD}.}
     \label{fig:PPPP}
-    \todo[inline]{Mao: Put the PPPP for echo; Tianci: make the plots have the same style?}
+    \todo[inline]{Mao: Put the PP for echo;}
 \end{figure}
+
+Finally, we also provide the data for the process
+\begin{equation}
+{\rm DN} + {\rm P} \rightarrow \lambda  + {\rm P}
+\end{equation}
+to evaluate the influence of the boundary condition $c$. It {\rm does} influence the scaling dimension, in a way that is not captured by our analytic calculation. Specifically, the large value of $\theta$ still follows the quadratic relation with a deficit of $\frac{1}{8}$, while the small $\theta$ value has smaller deficit and merge with the analytic curve at $\theta = 0$. 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1\columnwidth]{PDN_fit.pdf}
+\caption{The decay exponent of Loschmidt echo in the process ${\rm DN} + {\rm P} \rightarrow \lambda  + {\rm P}$. The boundary condition $c$ changes the scaling of the completely. The deficit to the analytic value is roughly $\frac{1}{8}$ for $\theta > \frac{\pi}{4}$ and becomes smaller and approach zero for small $\theta$. }
+\label{fig:PDN_fit}
+\end{figure}
+
+\todo[inline]{May need to improve the figure quality.}
 
 
 %%% Local Variables:
