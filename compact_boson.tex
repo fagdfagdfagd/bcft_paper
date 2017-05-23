@@ -48,18 +48,6 @@ Following the treatment of boundary CFT in Ref.~\onlinecite{di_francesco_conform
 %Before we invoke the folding trick, we need to note one important caveat here. In the usual treatment of boundary CFT, for example in , the field is quantized on the real axis. As emphasized in Sec.~\ref{sec:bosonic_conformal_interface}, the gluing condition becomes an operator identity of creation and annihilation operators, which is valid \emph{only} when acting on the conformal boundary states. 
 
 We recall that the gluing condition is written as
-\begin{equation}\begin{aligned}
-\label{eq:def_M}
-\begin{pmatrix}
-\partial_t\phi^1\\
-\partial_x\phi^1
-\end{pmatrix}_{t=0^-}
-=M\begin{pmatrix}
-\partial_t\phi^2\\
-\partial_x\phi^2
-\end{pmatrix}_{t=0^+}
-\end{aligned}\end{equation}
-where the derivatives are evaluated at the appropriate limit. In this appendix, we shall take the definition $x^\pm=x\pm t$ and $\partial_\pm=\partial_x\pm\partial_t$. Therefore we establish the scattering matrix as
 \begin{equation}
 \begin{aligned}
 \label{eq:def_S_in_app}
@@ -74,7 +62,75 @@ where the derivatives are evaluated at the appropriate limit. In this appendix, 
 \end{pmatrix}
 \end{aligned}
 \end{equation}
-%The folding sends $\phi^2(x)\rightarrow\phi^2(-x)$ for $x<0$, and the $\partial_x \phi^2$ term changes sign, we therefore have 
+The folding sends $\phi^2(t)\rightarrow\phi^2(-t)$ for $t<0$, and the $\partial_t \phi^2$ term changes sign, we therefore have 
+\begin{equation}
+\begin{aligned}
+\label{eq:def_S_in_app_2}
+\begin{pmatrix}
+\partial_+\phi^1\\
+-\partial_+\phi^2
+\end{pmatrix}
+=S(\theta)
+\begin{pmatrix}
+\partial_-\phi^1\\
+-\partial_-\phi^2
+\end{pmatrix}
+\end{aligned}
+\end{equation}
+For convenience, we shift $\phi^2\rightarrow-\phi^2$ by a sign. This amounts to reparameterize the S-matrix and exchange the two sectors of $O(2)$ group. But this will not change our conclusion in the main text. 
+\todo[inline]{Check the parameterization} 
+Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
+\begin{equation}
+\begin{aligned}
+\label{eq:def_S_in_app_2}
+\sum_{n\in\mathbb{Z}}
+\begin{pmatrix}
+\bar{a}_n^1\bar{z}^{-n}\\
+\bar{a}_n^2\bar{z}^{-n}
+\end{pmatrix}
+=S(\theta)
+\sum_{n\in\mathbb{Z}}
+\begin{pmatrix}
+a_n^1{z}^{-n}\\
+a_n^2{z}^{-n}
+\end{pmatrix}
+\end{aligned}
+\end{equation}
+As explained above, the boundary condition is imposed at $t=0$, where $\bar{z}=z^{-1}$, therefore we have
+\begin{equation}\begin{aligned}
+a^i_n-(S^{-1}_{ij})\bar{a}^j_{-n}=0
+\end{aligned}\end{equation}
+The solution of the $n \ne 0$ constraints is exactly the boundary state in Eq.~\eqref{eq:bd_state}. 
+
+%We recall that the gluing condition can written as
+%\begin{equation}\begin{aligned}
+%\label{eq:def_M}
+%\begin{pmatrix}
+%\partial_t\phi^1\\
+%\partial_x\phi^1
+%\end{pmatrix}_{t=0^-}
+%=M\begin{pmatrix}
+%\partial_t\phi^2\\
+%\partial_x\phi^2
+%\end{pmatrix}_{t=0^+}
+%\end{aligned}\end{equation}
+%where the derivatives are evaluated at the appropriate limit. In this appendix, we shall take the definition $x^\pm=x\pm t$ and $\partial_\pm=\partial_x\pm\partial_t$. Therefore we establish the scattering matrix as
+%\begin{equation}
+%\begin{aligned}
+%\label{eq:def_S_in_app}
+%\begin{pmatrix}
+%\partial_+\phi^1\\
+%\partial_-\phi^2
+%\end{pmatrix}
+%=S(\theta)
+%\begin{pmatrix}
+%\partial_-\phi^1\\
+%\partial_+\phi^2
+%\end{pmatrix}
+%\end{aligned}
+%\end{equation}
+%
+%The folding sends $\phi^2(t)\rightarrow\phi^2(-t)$ for $t<0$, and the $\partial_t \phi^2$ term changes sign, we therefore have 
 %\begin{equation}
 %\begin{aligned}
 %\label{eq:def_S_in_app_2}
@@ -89,7 +145,7 @@ where the derivatives are evaluated at the appropriate limit. In this appendix, 
 %\end{pmatrix}
 %\end{aligned}
 %\end{equation}
-%Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
+%We note that the parameterization of S-matrix is \emph{different} from Eq.~\eqref{eq:def_S}, but this will not change our conclusions in the main text. Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
 %\begin{equation}
 %\begin{aligned}
 %\label{eq:def_S_in_app_2}
@@ -98,7 +154,7 @@ where the derivatives are evaluated at the appropriate limit. In this appendix, 
 %\bar{a}_n^1\bar{z}^{-n}\\
 %\bar{a}_n^2\bar{z}^{-n}
 %\end{pmatrix}
-%=S(\theta)
+%=-S(\theta)
 %\sum_{n\in\mathbb{Z}}
 %\begin{pmatrix}
 %a_n^1{z}^{-n}\\
@@ -106,49 +162,12 @@ where the derivatives are evaluated at the appropriate limit. In this appendix, 
 %\end{pmatrix}
 %\end{aligned}
 %\end{equation}
+%\todo[inline]{Check the sign and parameterization of S}
 %As explained above, the boundary condition is imposed at $t=0$, where $\bar{z}=z^{-1}$, therefore we have
 %\begin{equation}\begin{aligned}
-%a^i_n-(S^{-1}_{ij})\bar{a}^j_{-n}=0
+%a^i_n-(-S^{-1}_{ij})\bar{a}^j_{-n}=0
 %\end{aligned}\end{equation}
-%The solution of the $n \ne 0$ constraints is exactly the boundary state in Eq.~\eqref{eq:bd_state}. 
-The folding sends $\phi^2(t)\rightarrow\phi^2(-t)$ for $t<0$, and the $\partial_t \phi^2$ term changes sign, we therefore have 
-\begin{equation}
-\begin{aligned}
-\label{eq:def_S_in_app_2}
-\begin{pmatrix}
-\partial_+\phi^1\\
-\partial_+\phi^2
-\end{pmatrix}
-=S(\theta)
-\begin{pmatrix}
-\partial_-\phi^1\\
-\partial_-\phi^2
-\end{pmatrix}
-\end{aligned}
-\end{equation}
-Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
-\begin{equation}
-\begin{aligned}
-\label{eq:def_S_in_app_2}
-\sum_{n\in\mathbb{Z}}
-\begin{pmatrix}
-\bar{a}_n^1\bar{z}^{-n}\\
-a_n^2z^{-n}
-\end{pmatrix}
-=-S(\theta)
-\sum_{n\in\mathbb{Z}}
-\begin{pmatrix}
-a_n^1{z}^{-n}\\
-\bar{a}_n^2\bar{z}^{-n}
-\end{pmatrix}
-\end{aligned}
-\end{equation}
-\todo[inline]{Check the sign of S}
-As explained above, the boundary condition is imposed at $t=0$, where $\bar{z}=z^{-1}$, therefore we have
-\begin{equation}\begin{aligned}
-a^i_n-(-S^{-1}_{ij})\bar{a}^j_{-n}=0
-\end{aligned}\end{equation}
-The solution of the $n \neq 0$ constraints is exactly the boundary state in Eq.~\eqref{eq:bd_state}, with an extra minus sign. Following our boundary state calculation in the main text, it is clear that this extra minus sign, which is the result of {\bf T}-duality, does not affect our conclusion.
+%The solution of the $n \neq 0$ constraints is exactly the boundary state in Eq.~\eqref{eq:bd_state}, with an extra minus sign. Following our boundary state calculation in the main text, it is clear that this extra minus sign, which is the result of {\bf T}-duality, does not affect our conclusion.
 
 We specialize to $S = S_1$ to solve the $ n = 0$ constraint. We introduce the compactification lattice and its dual\cite{affleck_quantum_2001,oshikawa_boundary_2010}
 \begin{equation}
