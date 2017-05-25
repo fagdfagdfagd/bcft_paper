@@ -1,39 +1,36 @@
 
-In this appendix, we address the issue of winding modes of compact bosons. In the main text, we have exclusively worked with the oscillator modes of free bosons. Here, we shall show that winding modes for compactified bosons will have no contribution to the fidelity or Loschmidt echo in the leading order. Therefore, our results are ready to be applied in the case where two compactified bosons of different radii are connected by a conformal interface\cite{PhysRevLett.118.136801}. \todo[inline]{say intuition why not matter, mention application to Laughlin, etc.}
+In this appendix, we address the issue of winding modes of compact bosons. In the main text, we have exclusively worked with the oscillator modes of free bosons. Here, we shall show that winding modes for compactified bosons will have no contribution to the fidelity or Loschmidt echo in the leading order. Therefore, our results are ready to be applied in the case where two compactified bosons of different radii are connected by a conformal interface\cite{PhysRevLett.118.136801}. 
+
+\todo[inline]{say intuition why not matter, mention application to Laughlin, etc.}
 
 Our derivation follows the general multi-component Boson constraints in Ref.~\onlinecite{affleck_quantum_2001,oshikawa_boundary_2010}. A review of the detailed parameterization of the states can be found in Ref.~\onlinecite{sakai_entanglement_2008}. 
 
 \subsection{Mode Expansion of Compact Boson}
-Suppose the boson is compactified as $\phi =  \phi + 2\pi R$, then mode expansion will have zero mode
-
+Suppose the boson is compactified as $\phi =  \phi + 2\pi R$, using the notation in Ref.\onlinecite{di_francesco_conformal_1997}, we have the following mode expansion 
 \begin{widetext}
-\begin{equation}
-\begin{aligned}
-\phi( x, t ) &= \phi_0 - \frac{2\pi m R}{L}x + \frac{\pi_0}{gL} t  + \frac{i}{\sqrt{4 \pi g}}\sum_{n\neq0}\frac{1}{n}(a_ne^{2\pi i n(x-t)/L}+ \bar{a}_{n} e^{2\pi i n(x+t)/L})\\  
-&= \phi_0 - \frac{2\pi m R}{L}x + \frac{n}{gLR} t  +  \frac{i}{\sqrt{4 \pi g}}\sum_{n\neq0}\frac{1}{n}(a_ne^{2\pi i n(x-t)/L}+ \bar{a}_{n} e^{2\pi i n(x+t)/L})\\ 
-\end{aligned}
-\end{equation}
-where the conjugate momentum $\pi_0$ takes discrete eigenvalues $\frac{n}{R}$. In the holomorphic coordinates
-\begin{equation}
-\label{eq:zzbar}
-z = \exp( 2 \pi i \frac{t - x}{L}) \qquad \bar{z} = \exp( 2 \pi i \frac{t + x}{L})
-\end{equation}
-the mode expansion becomes
 \begin{equation}
 \label{eq:boson-mode-exp}
 \begin{aligned}
 \phi( z, \bar{z}) = &\phi_0 -i \left( \frac{n}{4\pi g  R} + \frac{m R }{2} \right)  \ln z + \frac{i}{\sqrt{4\pi g}} \sum_{n\ne 0 } \frac{a_n}{n} z^{-n } -i \left( \frac{n}{4\pi g R} - \frac{m R }{2} \right)  \ln \bar{z} + \frac{i}{\sqrt{4\pi g}} \sum_{n\ne 0 } \frac{\bar{a}_n}{n} \bar{z}^{-n } 
 \end{aligned}
+\end{equation}\end{widetext}
+where $n,m$ are momentum and winding modes quantum numbers. 
+
+In Ref.\onlinecite{di_francesco_conformal_1997}, the quantization is performed on an equal time space. The boundary state we need here however lives on $x = 0$ -- a equal-space slice. We therefore exchange compact the theory in time direction with period $T$, and identify the holomorphic and anti-holomorphic coordinates as 
+\begin{equation}
+\label{eq:zzbar}
+z = \exp( 2 \pi i \frac{t - x}{L}) \qquad \bar{z} = \exp( 2 \pi i \frac{t + x}{L})
 \end{equation}
-\end{widetext}
-We further identify 
+This corresponds to exchange the $x$ and $t$ in Ref.\onlinecite{di_francesco_conformal_1997}. 
+
+We further identify
 \begin{equation}
 \begin{aligned}
   a_0 &= \sqrt{ 4 \pi g } \left( \frac{n}{4\pi g R} + \frac{m R }{2} \right) \\
    \bar{a}_0 &= \sqrt{ 4 \pi g } \left( \frac{n}{4\pi g R} - \frac{m R }{2} \right)
   \end{aligned}
 \end{equation}
-and then 
+to obtain the expression uniform for all the modes
 \begin{equation}
 \begin{aligned}
 i \partial_z \phi =  \sum_n \frac{1}{\sqrt{4\pi g}} a_n z^{-n-1} 
@@ -43,9 +40,6 @@ i \partial_z \phi =  \sum_n \frac{1}{\sqrt{4\pi g}} a_n z^{-n-1}
 \subsection{Gluing Condition for the Winding Modes}
 \label{app_sub:compact_gluing_boundary}
 
-Here we solve the boundary state on the $t = 0$ slice. Our actual boundary state used in the text corresponds to the $x = 0$ slice. There is a $x \rightarrow t$ exchange in the convention here. However, that amounts to the change of $\theta \rightarrow \frac{\pi}{2} - \theta$ in the $S$ matrix argument. 
-
-\todo[inline]{Mao: this is not a T-dual transformation, it is DN -> ND. }
 We recall that the gluing condition is written as
 \begin{equation}
 \begin{aligned}
@@ -61,8 +55,23 @@ We recall that the gluing condition is written as
 \end{pmatrix}
 \end{aligned}
 \end{equation}
-
-Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
+Upon folding $\phi^2$ to the negative axis, its $\partial_x$ derivative becomes $-\partial_x$, so 
+\begin{equation}
+\begin{bmatrix}
+\partial_{+} \phi^1 \\
+\partial_{+} \phi^2 \\
+\end{bmatrix}
+ = S
+\begin{bmatrix}
+\partial_{-} \phi^1 \\
+\partial_{-} \phi^2 \\
+\end{bmatrix}
+\end{equation}
+In terms of the holomorphic coordinates defined in Eq.~\eqref{eq:zzbar}, 
+\begin{equation}
+\partial_{+} = \frac{4\pi i }{T} \bar{z} \partial_{\bar{z}} \qquad \partial_{-} = -\frac{4\pi i }{T} z\partial_{z}
+\end{equation}
+the $S$ matrix establish a relation between the modes
 \begin{equation}
 \begin{aligned}
 \label{eq:def_S_in_app_2}
@@ -71,7 +80,7 @@ Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref
 \bar{a}_n^1\bar{z}^{-n}\\
 \bar{a}_n^2\bar{z}^{-n}
 \end{pmatrix}
-=S(\theta)
+= -S(\theta)
 \sum_{n\in\mathbb{Z}}
 \begin{pmatrix}
 a_n^1{z}^{-n}\\
@@ -79,78 +88,13 @@ a_n^2{z}^{-n}
 \end{pmatrix}
 \end{aligned}
 \end{equation}
-As explained above, the boundary condition is imposed at $t=0$, where $\bar{z}=z^{-1}$, therefore we have
-\begin{equation}\begin{aligned}
-a^i_n-(S^{-1}_{ij})\bar{a}^j_{-n}=0
-\end{aligned}\end{equation}
+At the boundary $x = 0$ $\bar{z}=z^{-1}$, therefore we have
+\begin{equation}
+\begin{aligned}
+a^i_n + (S^{-1}_{ij})\bar{a}^j_{-n}=0
+\end{aligned}
+\end{equation}
 The solution of the $n \ne 0$ constraints is exactly the boundary state in Eq.~\eqref{eq:bd_state}. 
-
-%We recall that the gluing condition can written as
-%\begin{equation}\begin{aligned}
-%\label{eq:def_M}
-%\begin{pmatrix}
-%\partial_t\phi^1\\
-%\partial_x\phi^1
-%\end{pmatrix}_{t=0^-}
-%=M\begin{pmatrix}
-%\partial_t\phi^2\\
-%\partial_x\phi^2
-%\end{pmatrix}_{t=0^+}
-%\end{aligned}\end{equation}
-%where the derivatives are evaluated at the appropriate limit. In this appendix, we shall take the definition $x^\pm=x\pm t$ and $\partial_\pm=\partial_x\pm\partial_t$. Therefore we establish the scattering matrix as
-%\begin{equation}
-%\begin{aligned}
-%\label{eq:def_S_in_app}
-%\begin{pmatrix}
-%\partial_+\phi^1\\
-%\partial_-\phi^2
-%\end{pmatrix}
-%=S(\theta)
-%\begin{pmatrix}
-%\partial_-\phi^1\\
-%\partial_+\phi^2
-%\end{pmatrix}
-%\end{aligned}
-%\end{equation}
-%
-%The folding sends $\phi^2(t)\rightarrow\phi^2(-t)$ for $t<0$, and the $\partial_t \phi^2$ term changes sign, we therefore have 
-%\begin{equation}
-%\begin{aligned}
-%\label{eq:def_S_in_app_2}
-%\begin{pmatrix}
-%\partial_+\phi^1\\
-%\partial_+\phi^2
-%\end{pmatrix}
-%=S(\theta)
-%\begin{pmatrix}
-%\partial_-\phi^1\\
-%\partial_-\phi^2
-%\end{pmatrix}
-%\end{aligned}
-%\end{equation}
-%We note that the parameterization of S-matrix is \emph{different} from Eq.~\eqref{eq:def_S}, but this will not change our conclusions in the main text. Upon mode expanding $\phi^{1,2}$ in the holomorphic coordinates as in Eq.~\eqref{eq:boson-mode-exp}, we have
-%\begin{equation}
-%\begin{aligned}
-%\label{eq:def_S_in_app_2}
-%\sum_{n\in\mathbb{Z}}
-%\begin{pmatrix}
-%\bar{a}_n^1\bar{z}^{-n}\\
-%\bar{a}_n^2\bar{z}^{-n}
-%\end{pmatrix}
-%=-S(\theta)
-%\sum_{n\in\mathbb{Z}}
-%\begin{pmatrix}
-%a_n^1{z}^{-n}\\
-%a_n^2{z}^{-n}
-%\end{pmatrix}
-%\end{aligned}
-%\end{equation}
-%\todo[inline]{Check the sign and parameterization of S}
-%As explained above, the boundary condition is imposed at $t=0$, where $\bar{z}=z^{-1}$, therefore we have
-%\begin{equation}\begin{aligned}
-%a^i_n-(-S^{-1}_{ij})\bar{a}^j_{-n}=0
-%\end{aligned}\end{equation}
-%The solution of the $n \neq 0$ constraints is exactly the boundary state in Eq.~\eqref{eq:bd_state}, with an extra minus sign. Following our boundary state calculation in the main text, it is clear that this extra minus sign, which is the result of {\bf T}-duality, does not affect our conclusion.
 
 We specialize to $S = S_1$ to solve the $ n = 0$ constraint. We introduce the compactification lattice and its dual\cite{affleck_quantum_2001,oshikawa_boundary_2010}
 \begin{equation}

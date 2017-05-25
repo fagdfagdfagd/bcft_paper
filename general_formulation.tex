@@ -76,8 +76,8 @@ For generic values of $\theta$, the interface is partially-transmitting, whose t
 We now work in the folding picture as shown in Fig.~\ref{fig:folding_pic}. The boundary at $x=0$ becomes impenetrable for the folded system, and the resulting tensor theory admits a conformal boundary state. The folding sends $\phi^2(x)$ to $\phi^2(-x)$ and hence the gluing condition becomes
 \begin{equation}
 \begin{aligned}
-\partial_t(\cos\theta\phi^1-\sin\theta\phi^2)=0 \quad
-\partial_x(\sin\theta\phi^1+\cos\theta\phi^2)=0 
+\partial_t(\sin\theta\phi^1-\cos\theta\phi^2)=0 \quad
+\partial_x(\cos\theta\phi^1+\sin\theta\phi^2)=0 
 \end{aligned}
 \end{equation}
 for the case $M = M_1(\theta)$. 
@@ -88,14 +88,14 @@ If we quantize the Boson theory on the interface line $x = 0$, these gluing cond
 \end{equation}
 where we take $T$ to be time period and the following choice of the holomorphic and anti-holomorphic coordinates
 \begin{equation}
-z= e^{ 2\pi i(x - t) / T } \quad \bar{z} = e^{ 2\pi i( x + t  ) / T }
+z= e^{ \frac{2\pi i(x - t)}{T} } \quad \bar{z} = e^{ \frac{2\pi i( x + t  )}{T} }
 \end{equation}
 We end up with a set of operator identities for each mode
 \begin{equation}
 \begin{aligned}
 \label{eq:rotation_a_basis}
-\cos\theta a_n^1-\sin\theta a_n^2 &= +( \cos\theta\bar{a}_{-n}^1-\sin\theta \bar{a}_{-n}^2 ) \\
-\sin\theta a_n^1+\cos\theta a_n^2 &= -( \sin\theta\bar{a}_{-n}^1+\cos\theta \bar{a}_{-n}^2 ) 
+\sin  \theta a^1_n - \cos \theta a^2_n  &= + \left( \sin  \theta \bar{a}^1_{-n} - \cos \theta \bar{a}^2_{-n} \right)\\
+\cos  \theta a^1_n + \sin \theta a^2_n  &= - \left( \cos  \theta \bar{a}^1_{-n} + \sin \theta \bar{a}^2_{-n} \right) 
 \end{aligned}
 \end{equation}
 which is valid on the following boundary state
@@ -103,7 +103,7 @@ which is valid on the following boundary state
 \label{eq:bd_state}
 \begin{aligned}
 | B \rangle 
-& =  \exp\Big\{ \sum_{n > 0 } \frac{1}{n}
+& =  \exp\Big\{ -\sum_{n > 0 } \frac{1}{n}
 \begin{pmatrix}
 a_{-n}^1\\
 a_{-n}^2\\                              
