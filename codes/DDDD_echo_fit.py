@@ -77,12 +77,14 @@ idx = np.argsort( x )
 x = x[idx]
 slope = slope[idx]
 error = error[idx]
+print( idx )
+
 
 # print x
-# print slope    
+# print slope
 # print error
 
-inset_data = np.loadtxt( path + dataset[1] )
+inset_data = np.loadtxt( path + dataset[idx[0]] )
 t_inset = inset_data[:,0]
 echo_inset = inset_data[:,1] 
 
@@ -102,8 +104,8 @@ for cap in caps:
 
 left, bottom, width, height = [0.25, 0.2, 0.60, 0.4]
 ax2 = fig.add_axes([left, bottom, width, height])
-ax2.loglog( t_inset, echo_inset , 'o' , markersize = 1 )
-ax2.loglog( t_inset[40:-1], [y*(0.2)**(0.25) for y in echo_inset[40:-1]], 'k--', lw = 0.5 )
+ax2.loglog( t_inset, echo_inset , 'o' , markersize = 1, color = 'blue' )
+ax2.loglog( t_inset[20:-1], (t_inset[20:-1])**(-0.25) / 2, 'k--', lw = 0.25, dashes = (5, 5) )
 # ax2.annotate("$t^{-0.25}$", xy=(0.5, 0.3), xycoords='axes fraction' ,horizontalalignment='left', verticalalignment='bottom' )
 ax2.annotate("$t^{-0.25}$", xy=(0.1,0.1), xytext=(1.5, 0.2) ,horizontalalignment='left', verticalalignment='bottom' )
 

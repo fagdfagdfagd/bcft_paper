@@ -1,2 +1,2 @@
 debug:
-	./PDN_fit.py
+	./PP_echo_fit.py
