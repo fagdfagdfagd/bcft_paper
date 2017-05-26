@@ -54,10 +54,8 @@ def fit_data( x, y, where ):
             log_y = log_y[ (x>30)*(x<400) ]
 
     slope, _, _, _, std_err = scipy.stats.linregress( log_x, log_y )
-    log_x_mean = np.mean( log_x )
-    ssx = np.sum( np.square( log_x - log_x_mean ) )
 
-    error = np.sqrt( std_err / ssx )
+    error = std_err
 
     return -slope, error 
 

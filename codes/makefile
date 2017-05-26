@@ -1,2 +1,2 @@
 debug:
-	./PP_echo_fit.py
+	./DDDD_echo_fit.py

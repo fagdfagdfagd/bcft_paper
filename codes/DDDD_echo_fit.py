@@ -42,13 +42,11 @@ def fit_data( x, y ):
 
     log_x = log_x[ x > 20 ]
     log_y = log_y[ x > 20 ]
-
+    
+    # std_err is already the error of the slope!
     slope, _, _, _, std_err = scipy.stats.linregress( log_x, log_y )
 
-    log_x_mean = np.mean( log_x )
-    ssx = np.sum( np.square( log_x - log_x_mean ) )
-
-    error = np.sqrt( std_err / ssx )
+    error = std_err
 
     return -slope, error 
 
