@@ -28,7 +28,11 @@ offset=0
 dataset = []
 for (dirpath, dirnames, filenames) in walk(path):
     dataset.extend(filenames)
-# print dataset
+
+for filename in dataset:
+    if filename[0]=='.':
+        dataset.remove( filename )
+# print( dataset )   
 
 # ----------------------------------------------------------------------           
 #                         error bar and slope                          |           
@@ -55,8 +59,6 @@ error = []
 x = []
 
 for filename in dataset:
-   if filename[0]=='.':
-       continue
    data = np.loadtxt( path + filename )
    t = data[:,0]
    echo = data[:,1]
@@ -78,11 +80,11 @@ error = error[idx]
 print( idx )
 
 
-# print x
-# print slope
+print (x)
+print ( slope )
 # print error
 
-inset_data = np.loadtxt( path + dataset[idx[0]] )
+inset_data = np.loadtxt( path + dataset[idx[1]] )
 t_inset = inset_data[:,0]
 echo_inset = inset_data[:,1] 
 

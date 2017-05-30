@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
 from matplotlib import rcParams
-import scipy.optimize
+import scipy.stats
 from random import randint
 
 rc( 'font', **{'family': 'serif', 'serif': ['Computer Modern'], 'size' : 10} )
@@ -28,30 +28,36 @@ offset=0.15/25*pi/2/pi
 dataset = []
 for (dirpath, dirnames, filenames) in walk(path):
     dataset.extend(filenames)
-# print dataset
+
+for filename in dataset:
+    if filename[0]=='.':
+        dataset.remove( filename )
+# print( dataset ) 
 
 # ----------------------------------------------------------------------           
 #                         error bar and slope                          |           
 # ----------------------------------------------------------------------
 def fit_data( x, y ,where ):
-    slope_array = []
+    
+    log_x = np.log( x ) / np.log( 10 )
+    log_y = np.log( y ) / np.log( 10 )
 
-    f = lambda x, a, b: a * x ** b
-    for i in range( 0, 5 ): # fit five times
-        start = randint( 0, 5 )
-        if where=='center':
-            x_fit = t[40-start-15 : 40-start]
-            y_fit = echo[40-start-15 : 40-start]
-        elif where=='others':
-            x_fit = t[25-start-20 : 25-start]
-            y_fit = echo[25-start-20 : 25-start]
-        p , c = scipy.optimize.curve_fit( f, x_fit , y_fit )
-        slope_array.append( -p[1] )
+    if where=='left_center':
+        print( x )
+        log_x = log_x[ (x>1000)*(x<4000) ]
+        log_y = log_y[ (x>1000)*(x<4000) ]        
+    elif where=='right_center':
+        print( x )
+        log_x = log_x[ (x>500)*(x<3000) ]
+        log_y = log_y[ (x>500)*(x<3000) ] 
+    else:
+        log_x = log_x[ (x>100)*(x<1000) ]
+        log_y = log_y[ (x>100)*(x<1000) ]
+    slope, _, _, _, std_err = scipy.stats.linregress( log_x, log_y )
 
-    slope = np.mean( slope_array )
-    error = np.std( slope_array )
+    error = std_err
 
-    return slope, error 
+    return -slope, error 
 
 slope = []
 error = []
@@ -63,23 +69,31 @@ for filename in dataset:
    # extract x = theta / pi from filename
    x.append( float( filename.split('_')[1] ) )
 
+# print x
+# print slope    
+# print error
+
 # sort index
 x = np.array( x )
 idx = np.argsort( x )
 x = x[idx]
+
 dataset = np.array( dataset )
-print( dataset )
+# print( dataset )
 dataset = dataset[idx]
-print( dataset )
+# print( dataset )
 
 for filename in dataset:
    data = np.loadtxt( path + filename )
    t = data[:,0]
    echo = data[:,1]
-   if filename in dataset[9:14]:
-        where='center'
+   if filename in dataset[9:11]:
+        where='left_center'
+   elif filename in dataset[11:13]:
+        where='right_center'
    else:
         where='others'
+   print( filename )
    this_slope, this_error = fit_data( t, echo , where );
    slope.append( this_slope )
    error.append( this_error )
@@ -110,11 +124,11 @@ y_analy = (-1)*2 * ( np.square([this_x_analy-0.25 for this_x_analy in x_analy]) 
 # y_analy = (-1)*2 * ( np.square(x_analy-0.25) - abs(x_analy-0.25) ) 
 ax.plot( x_analy , y_analy , c = 'red' , label = r"analytical $2\left(\frac{\theta}{\pi} - \left(\frac{\theta}{\pi}\right)^2\right)$" )
 ax.plot( x , [-this_slope for this_slope in slope] , 'o', markersize = 2, c = 'black', markeredgewidth=0.0 , label = "numerical" )
-left, bottom, width, height = [0.41, 0.60, 0.30, 0.3]
+left, bottom, width, height = [0.39, 0.55, 0.28, 0.3]
 ax2 = fig.add_axes([left, bottom, width, height])
-ax2.plot( t_inset, echo_inset , 'o' , markersize = 2 , c = colorL[6] , label = r"$\theta=0.02\pi$" )
-ax2.plot( t_inset_2, echo_inset_2 , 'o' , markersize = 2 , c = colorL[8] , label = r"$\theta=0.12\pi$" )
-ax2.plot( t_inset_3, echo_inset_3 , 'o' , markersize = 2 , c = colorL[10] , label = r"$\theta=0.24\pi$" )
+ax2.plot( t_inset, echo_inset , 'o' , markersize = 1.5 , markeredgecolor='k', markeredgewidth=0.5 , c = colorL[6] , label = r"$\theta=0.02\pi$" )
+ax2.plot( t_inset_2, echo_inset_2 , 'o' , markersize = 1.5 , markeredgecolor='k', markeredgewidth=0.5 , c = colorL[8] , label = r"$\theta=0.12\pi$" )
+ax2.plot( t_inset_3, echo_inset_3 , 'o' , markersize = 1.5 , markeredgecolor='k', markeredgewidth=0.5 , c = colorL[10] , label = r"$\theta=0.24\pi$" )
 plt.text(0.05, 0.95,'(a)', ha='center', va='center', transform=ax.transAxes)
 
 # ----------------------------------------------------------------------           
@@ -141,7 +155,7 @@ ax2.set_xscale('log')
 ax2.set_xlabel( r"$t$" , fontsize=8 )
 ax2.set_ylabel( r"Loshmidt Echo" , fontsize=8 )
 ax2.tick_params(labelsize=6)
-ax2.yaxis.set_ticks(np.linspace(0.000001,0.01,2))
+ax2.yaxis.set_ticks(np.linspace(0.001,1,2))
 ax2.xaxis.set_ticks(np.linspace(10,1000,2))
 ax2.set_xlim( ( 10 , 1000 ) )
 ax2.xaxis.set_label_coords(0.5, -0.025)
