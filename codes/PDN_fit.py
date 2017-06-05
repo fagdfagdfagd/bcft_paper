@@ -37,7 +37,7 @@ def fit_data( x, y ):
     log_x = np.log( x ) / np.log( 10 )
     log_y = np.log( y ) / np.log( 10 )
 
-    data_range = np.logical_and( log_x > 1, log_x < 2.5 )
+    data_range = np.logical_and( log_x > 0, log_x < 2 )
     log_x = log_x[ data_range ]
     log_y = log_y[ data_range ]
 
