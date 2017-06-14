@@ -104,20 +104,20 @@ for filename in dataset:
 slope = np.array( slope )
 error = np.array( error )
 
-print( slope )
-print( error )
+# print( slope )
+# print( error )
 
-inset_data = np.loadtxt( path + dataset[1] )
+inset_data = np.loadtxt( path + dataset[2] )
 t_inset = inset_data[:,0]
 echo_inset = inset_data[:,1]
 # DDNN and PP needs three more insets
-inset_data = np.loadtxt( path + dataset[6] )
+inset_data = np.loadtxt( path + dataset[12] )
 t_inset_2 = inset_data[:,0]
 echo_inset_2 = inset_data[:,1]
-inset_data = np.loadtxt( path + dataset[12] )
+inset_data = np.loadtxt( path + dataset[24] )
 t_inset_3 = inset_data[:,0]
 echo_inset_3 = inset_data[:,1]
-inset_data = np.loadtxt( path + dataset[24] )
+inset_data = np.loadtxt( path + dataset[48] )
 
 # ---------------------------------------------------------------------- 
 #                           plot and insets                            |
@@ -163,9 +163,9 @@ ax2.set_xscale('log')
 ax2.set_xlabel( r"$t$" , fontsize=8 )
 ax2.set_ylabel( r"Loschmidt Echo" , fontsize=8 )
 
-ax2.yaxis.set_ticks(np.linspace(0.0001,1,2))
-ax2.xaxis.set_ticks(np.linspace(10,10000,2))
-ax2.set_xlim( ( 10 , 10000 ) )
+ax2.yaxis.set_ticks(np.linspace(0.001,1,2))
+ax2.xaxis.set_ticks(np.linspace(10,1000,2))
+ax2.set_xlim( ( 10 , 1000 ) )
 ax2.xaxis.set_label_coords(0.5, -0.025)
 ax2.yaxis.set_label_coords(-0.05, 0.5)
 
