@@ -98,7 +98,7 @@ for cap in caps:
     cap.set_markeredgewidth( 1 )
 
 # inset position
-left, bottom, width, height = [0.4, 0.5, 0.3, 0.25]
+left, bottom, width, height = [0.4, 0.43, 0.3, 0.25]
 ax2 = fig.add_axes( [left, bottom, width, height] )
 for i in range( 0, len( inset_x ) ):
     ax2.plot( L_inset[i], F_inset[i] , 'o' , markersize = 1.5, c = colorList[i] )
@@ -109,9 +109,9 @@ for i in range( 0, len( inset_x ) ):
 
 ax.set_xlim( ( 0, 0.5 ) )
 ax.set_ylim( ( 0, 0.3 ) )
-ax.set_xlabel( r"$\frac{\theta}{\pi}$" )
+ax.set_xlabel( r"$\frac{\theta}{\pi}$" , fontsize=15)
 ax.set_ylabel( r"Fidelity Exponent" )
-ax.legend( loc = 'upper left', frameon = False, prop = {'size':6}, ncol = 1, handlelength = 3 )
+ax.legend( loc = 'upper left', frameon = False, prop = {'size':10}, ncol = 1, handlelength = 3 )
 
 # smaller font for inset
 for tick in ax2.xaxis.get_major_ticks():
@@ -123,7 +123,7 @@ ax2.set_yscale( 'log' )
 ax2.set_xscale( 'log' )
 ax2.set_xlabel( r"$L$", fontsize = 8 )
 ax2.set_ylabel( r"Fidelity", fontsize = 8 )
-ax2.yaxis.set_ticks( np.linspace( 0.01, 1, 2 ) )
+ax2.yaxis.set_ticks( np.linspace( 0.01, 0.1, 2 ) )
 ax2.yaxis.set_label_coords( -0.1, 0.5 )
  
 # plt.tight_layout()

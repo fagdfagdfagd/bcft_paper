@@ -134,11 +134,11 @@ ax.plot( x_analy , y_analy , c = 'red' , label = r"analytical $2\left(\frac{\the
 for cap in caps:
   cap.set_markeredgewidth( 1 )
 # These are in unitless percentages of the figure size. (0,0 is bottom left)
-left, bottom, width, height = [0.53, 0.17, 0.35, 0.35]
+left, bottom, width, height = [0.55, 0.27, 0.3, 0.25]
 ax2 = fig.add_axes([left, bottom, width, height])
-ax2.plot( t_inset, echo_inset , 'o' , markersize = 1.5 , markeredgecolor='k', markeredgewidth=0.5 , c = colorL[6] , label = r"$\theta=0.02\pi$" )    
-ax2.plot( t_inset_2, echo_inset_2 , 'o' , markersize = 1.5 , markeredgecolor='k', markeredgewidth=0.5 , c = colorL[8] , label = r"$\theta=0.12\pi$" )
-ax2.plot( t_inset_3, echo_inset_3 , 'o' , markersize = 1.5 , markeredgecolor='k', markeredgewidth=0.5 , c = colorL[10] , label = r"$\theta=0.24\pi$" )
+ax2.plot( t_inset, echo_inset , 'o' , markersize = 1.5 ,  c = colorL[6] , label = r"$\theta=0.02\pi$" )    
+ax2.plot( t_inset_2, echo_inset_2 , 'o' , markersize = 1.5 ,  c = colorL[8] , label = r"$\theta=0.12\pi$" )
+ax2.plot( t_inset_3, echo_inset_3 , 'o' , markersize = 1.5 ,  c = colorL[10] , label = r"$\theta=0.24\pi$" )
 # plt.text(0.05, 0.9,'(a)', ha='center', va='center', transform=ax.transAxes)
 
 # ----------------------------------------------------------------------           
@@ -147,10 +147,10 @@ ax2.plot( t_inset_3, echo_inset_3 , 'o' , markersize = 1.5 , markeredgecolor='k'
 
 ax.set_xlim( ( 0, 0.5 ) )
 ax.set_ylim( ( 0 , 0.6 ) )
-ax.set_xlabel( r"$\frac{\theta}{\pi}$" )
+ax.set_xlabel( r"$\frac{\theta}{\pi}$" , fontsize=15)
 ax.set_ylabel( r"Echo Exponent" )
 
-ax.legend( loc = 'upper left', frameon = False, prop = {'size':6}, ncol=1, handlelength=3 )
+ax.legend( loc = 'upper left', frameon = False, prop = {'size':10}, ncol=1, handlelength=3 )
 
 # smaller font for inset
 for tick in ax2.xaxis.get_major_ticks():
@@ -161,12 +161,12 @@ for tick in ax2.yaxis.get_major_ticks():
 ax2.set_yscale('log')
 ax2.set_xscale('log')
 ax2.set_xlabel( r"$t$" , fontsize=8 )
-ax2.set_ylabel( r"Loschmidt Echo" , fontsize=8 )
+ax2.set_ylabel( r"Echo" , fontsize=8 )
 
 ax2.yaxis.set_ticks(np.linspace(0.001,1,2))
-ax2.xaxis.set_ticks(np.linspace(10,1000,2))
-ax2.set_xlim( ( 10 , 1000 ) )
-ax2.xaxis.set_label_coords(0.5, -0.025)
+# ax2.xaxis.set_ticks(np.linspace(10,1000,2))
+# ax2.set_xlim( ( 10 , 1000 ) )
+# ax2.xaxis.set_label_coords(0.5, -0.025)
 ax2.yaxis.set_label_coords(-0.05, 0.5)
 
 fig.savefig( figname, bbox_inches = 'tight' )

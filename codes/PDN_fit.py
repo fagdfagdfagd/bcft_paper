@@ -104,9 +104,9 @@ for cap in caps:
 
 ax.set_xlim( ( 0, 0.5 ) )
 ax.set_ylim( ( 0, 0.6 ) )
-ax.set_xlabel( r"$\frac{\theta}{\pi}$" )
+ax.set_xlabel( r"$\frac{\theta}{\pi}$" , fontsize=15 )
 ax.set_ylabel( r"Echo Exponent" )
-ax.legend( loc = 'upper left', frameon = False, prop = {'size':6}, ncol = 1, handlelength = 3 )
+ax.legend( loc = 'upper left', frameon = False, prop = {'size':10}, ncol = 1, handlelength = 3 )
 
 # plt.tight_layout()
 

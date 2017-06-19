@@ -109,9 +109,9 @@ for i in range( 0, len( inset_x ) ):
 
 ax.set_xlim( ( 0, 0.5 ) )
 ax.set_ylim( ( 0, 0.3 ) )
-ax.set_xlabel( r"$\frac{\theta}{\pi}$" )
+ax.set_xlabel( r"$\frac{\theta}{\pi}$" , fontsize=15)
 ax.set_ylabel( r"Fidelity Exponent" )
-ax.legend( loc = 'upper left', frameon = False, prop = {'size':6}, ncol = 1, handlelength = 3 )
+ax.legend( loc = 'upper left', frameon = False, prop = {'size':10}, ncol = 1, handlelength = 3 )
 
 # smaller font for inset
 for tick in ax2.xaxis.get_major_ticks():
