@@ -1,11 +1,11 @@
 
-The general constraint we can impose on an interface is that the momentum flow (or current flow if exists) should be continuous. An equivalent way of viewing it (and will be used later) is to fold one of the theories on top of the other. The interface now located on the boundary of the tensor theory becomes impenetrable, and momentum flow ends there. This folding picture leads to the concept of boundary states in the framework of boundary CFT\cite{cardy_boundary_2004,cardy_conformal_1984}. In the Boson theory we are interested in, the tensor theory has $c = 2$ and the general classification the boundary state is still an open questions\cite{affleck_quantum_2001}. 
+The general constraint we can impose on an interface is that the momentum flow (or current flow if exists) should be continuous. An equivalent way of viewing it (and will be used later) is to fold one of the theories on top of the other. The interface now located on the boundary of the tensor theory becomes impenetrable, and momentum flow ends there. This folding picture leads to the concept of boundary states in the framework of boundary CFT\cite{cardy_boundary_2004,cardy_conformal_1984}. In the boson theory we are interested in, the tensor theory has $c = 2$ and the general classification the boundary state is still an open questions\cite{affleck_quantum_2001}. 
 
 There are however many successful attempts to construct a subset of those bosonic boundary states. One way is to impose current operator rather than Virasoro generator constraints, which dates back to the idea of the Ishibashi state\cite{ishibashi_boundary_1989} and can be applied to the multi-component boson with a general compactification lattice\cite{affleck_quantum_2001,oshikawa_boundary_2010,quella_reflection_2007}. Other examples utilize the fusion algebra to generate new boundary states from the known ones\cite{affleck_quantum_2001,bachas_fusion_2008}. 
 
 We here follow the presentation in Ref.~\onlinecite{bachas_permeable_2002} that begins with a classical boundary condition and then quantizes it to give the boundary state. The interface obtained is actually the same as using the current algebra constraints\cite{affleck_quantum_2001,oshikawa_boundary_2010,quella_reflection_2007}, but we feel that scattering process derived here and its relation to the discrete lattice model in Sec.~\ref{sec_sub:free_boson_lattice} are more intuitive. 
 
-Assume two free Bosons fields $\phi^1$ and $\phi^2$ live on the left and right half planes respectively. Their interface located at $x = 0$ are characterized by the ``gluing condition"
+Assume two free bosons fields $\phi^1$ and $\phi^2$ live on the left and right half planes respectively. Their interface located at $x = 0$ are characterized by the ``gluing condition"
 \begin{equation}\begin{aligned}
 \label{eq:def_M}
 \begin{pmatrix}
@@ -15,7 +15,7 @@ Assume two free Bosons fields $\phi^1$ and $\phi^2$ live on the left and right h
 =M\begin{pmatrix}
 \partial_t\phi^2\\
 \partial_x\phi^2
-\end{pmatrix}
+\end{pmatrix},
 \end{aligned}\end{equation}
 where derivative should be understood in the appropriate left and right limits, for example $\partial_x \phi^1$ is evaluated at $ x = 0^-$. As argued, the momentum component of stress tensor is continuous across the interface. As a consequence $M$ is an element of the Lorentz group $O(1,1)$ and can be parameterized as
 \begin{equation}\begin{aligned}
@@ -24,12 +24,12 @@ M_1(\theta)=\pm
 \begin{bmatrix}
 \lambda^{-1} & 0 \\
 0 & \lambda
-\end{bmatrix}\quad
+\end{bmatrix},\quad
 M_2(\theta)=\pm
 \begin{bmatrix}
 0 & \lambda  \\
 \lambda^{-1} & 0 
-\end{bmatrix}
+\end{bmatrix},
 \end{aligned}\end{equation}
 where $\lambda=\tan\theta$ for $\theta\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$. 
 
@@ -50,7 +50,7 @@ The physical significance of $\theta$ will be manifest in the scattering process
 \begin{pmatrix}
 \partial_-\phi^1\\
 \partial_+\phi^2
-\end{pmatrix}
+\end{pmatrix},
 \end{aligned}\end{equation}
 and solve the $S$ matrix for the two cases of $M_1$ and $M_2$
 \begin{equation}\begin{aligned}
@@ -58,11 +58,11 @@ and solve the $S$ matrix for the two cases of $M_1$ and $M_2$
 S_1(\theta)=\begin{bmatrix}
 \cos 2\theta & \sin 2\theta \\
 \sin 2\theta & -\cos 2\theta
-\end{bmatrix}\quad
+\end{bmatrix},\
 S_2(\theta)=\begin{bmatrix}
 -\cos 2\theta & \sin 2\theta \\
 -\sin 2\theta & -\cos 2\theta
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}\end{equation}
 For generic values of $\theta$, the interface is partially-transmitting, whose transmission and reflection coefficients can be read off from the scattering matrices. The fact of their wavelength independence is an indication of scale invariance of the interface.
 \begin{figure}[h]
@@ -75,26 +75,27 @@ For generic values of $\theta$, the interface is partially-transmitting, whose t
 We now work in the folding picture as shown in Fig.~\ref{fig:folding_pic}. The boundary at $x=0$ becomes impenetrable for the folded system, and the resulting tensor theory admits a conformal boundary state. The folding sends $\phi^2(x)$ to $\phi^2(-x)$ and hence the gluing condition becomes
 \begin{equation}
 \begin{aligned}
-\partial_t(\sin\theta\phi^1-\cos\theta\phi^2)=0 \quad
-\partial_x(\cos\theta\phi^1+\sin\theta\phi^2)=0 
+\partial_t(\sin\theta\phi^1-\cos\theta\phi^2)=0, \quad
+\partial_x(\cos\theta\phi^1+\sin\theta\phi^2)=0, 
 \end{aligned}
 \end{equation}
 for the case $M = M_1(\theta)$. 
 
-If we quantize the Boson theory on the interface line $x = 0$, these gluing conditions become an operator identity for the boson creation and annihilation of the modes. We shall interpret these identities to be valid only when acting on the boundary states. The mode expansion of free boson on $x = 0$\cite{di_francesco_conformal_1997} is
-\begin{equation}
-\phi(z, \bar{z} ) = \phi_0 - \frac{i}{4\pi g } \pi_0 \ln z \bar{z}  + \frac{i}{\sqrt{4\pi g} } \sum_{n \ne 0 } \frac{1}{n} \left(a_n z^{-n} + \bar{a}_{n} \bar{z}^{-n}   \right)
-\end{equation}
+If we quantize the boson theory on the interface line $x = 0$, these gluing conditions become an operator identity for the boson creation and annihilation of the modes. We shall interpret these identities to be valid only when acting on the boundary states. The mode expansion of free boson on $x = 0$\cite{di_francesco_conformal_1997} is
+\begin{eqnarray}\begin{aligned}
+\phi(z, \bar{z} ) &= \phi_0 - \frac{i}{4\pi g } \pi_0 \ln z \bar{z} \\
+ \quad&+ \frac{i}{\sqrt{4\pi g} } \sum_{n \ne 0 } \frac{1}{n} \left(a_n z^{-n} + \bar{a}_{n} \bar{z}^{-n}   \right),
+\end{aligned}\end{eqnarray}
 where we take $T$ to be time period and the following choice of the holomorphic and anti-holomorphic coordinates
 \begin{equation}
-z= e^{ \frac{2\pi i(x - t)}{T} } \quad \bar{z} = e^{ \frac{2\pi i( x + t  )}{T} }
+z= e^{ \frac{2\pi i(x - t)}{T} }, \quad \bar{z} = e^{ \frac{2\pi i( x + t  )}{T} }.
 \end{equation}
 We end up with a set of operator identities for each mode
 \begin{equation}
 \begin{aligned}
 \label{eq:rotation_a_basis}
-\sin  \theta a^1_n - \cos \theta a^2_n  &= + \left( \sin  \theta \bar{a}^1_{-n} - \cos \theta \bar{a}^2_{-n} \right)\\
-\cos  \theta a^1_n + \sin \theta a^2_n  &= - \left( \cos  \theta \bar{a}^1_{-n} + \sin \theta \bar{a}^2_{-n} \right) 
+\sin  \theta a^1_n - \cos \theta a^2_n  &= + \left( \sin  \theta \bar{a}^1_{-n} - \cos \theta \bar{a}^2_{-n} \right),\\
+\cos  \theta a^1_n + \sin \theta a^2_n  &= - \left( \cos  \theta \bar{a}^1_{-n} + \sin \theta \bar{a}^2_{-n} \right), 
 \end{aligned}
 \end{equation}
 which is valid on the following boundary state
@@ -110,7 +111,7 @@ a_{-n}^2\\
 S_1( \theta )
 \begin{pmatrix}
 \bar{a}_{-n}^1  \bar{a}_{-n}^2
-\end{pmatrix} \Big\} |0\rangle
+\end{pmatrix} \Big\} |0\rangle,
 \end{aligned}
 \end{equation}
 where $S_1(\theta) $ is precisely the scattering matrix in Eq.~\eqref{eq:def_S}. The calculation for the case $M=M_2(\theta)$ is completely analogous. 
