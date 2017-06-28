@@ -1,7 +1,7 @@
 
 In this subsection, we relate the free energy to the amplitudes between boundary states and present the analytic results. 
 
-We notice that there is only one apparent length scale in these diagrams -- the finite size $L$ for fidelity and imaginary time $\tau$ for the Loschmidt echo. These are the characteristic size of the corner at the tip of the slit. If there is no regulator, however, a dilation transformation can rescale both to $1$ and get rid of their dependence. Therefore, regulators are necessary in keeping track of the scale dependence, and physically sensible when considering the lattice realization of the systems. 
+We notice that there is only one apparent length scale in these diagrams -- the finite size $L$ for fidelity and imaginary time $\tau$ for the Loschmidt echo. These are the characteristic size of the corner at the tip of the slit. Regulators are necessary in keeping track of the scale dependence, otherwise a dilation transformation can rescale both $L$ and $\tau$ to $1$ and get rid of their dependence. The introduction of regulators is also physically sensible when considering the lattice realization of the systems. 
 
 We thus add small semi-circles around the points where the bcc operators reside, followed by a series of conformal mapping. For the fidelity case, the regulators as well as conformal mapping are depicted in Fig.~\ref{fig:fidel-map}. 
 \begin{figure}[h]
@@ -20,7 +20,7 @@ The vertical line at $\text{Re} w = W$ (IR regulator) is mapped to $|z| = e^{\pi
 \end{equation}
 
 
-The Loschmidt echo can be evaluated in the same way. Again we introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulator and then perform the conformal transformation shown in Fig.~\ref{fig:H-tau_fold}. In the $\xi$ plane, we end up with the same diagram as fidelity. With one more conformal mapping, it becomes the cylinder partition function between the two boundary states. 
+The Loschmidt echo can be evaluated in the same way. Again we introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulators and then perform the conformal transformation shown in Fig.~\ref{fig:H-tau_fold}. In the $\xi$ plane, we end up with the same diagram as fidelity. With one more conformal mapping, the diagram becomes the cylinder partition function between the two boundary states. 
 
 \begin{figure}[htb]
 \centering
@@ -29,11 +29,11 @@ The Loschmidt echo can be evaluated in the same way. Again we introduce two semi
 \label{fig:H-tau_fold}
 \end{figure}
 
-The results of the general partition function $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and its free energy are evaluated in App.~\ref{app:lambda_12} to the leading order of cylinder width $\beta$. But one can't use these results na\"ively as we have tacitly introduced shifts in doing these conformal transformation. In fact, directly using the free energy given in App.~\ref{app:lambda_12} resulting in a power law surge of Loschmidt echo, which does not agree with the known results. One easy way to see the shift is that free energy is zero when $a,b,c$ are all periodic boundary conditions, hence there is a necessary shift
+The results of the general partition function $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and its free energy are evaluated in App.~\ref{app:lambda_12} to the leading order of cylinder width $\beta$. But one can not use these results na\"ively as we have tacitly introduced shifts in doing these conformal transformation. In fact, direct application of the free energy given in App.~\ref{app:lambda_12} will result in a power law surge of Loschmidt echo, which does not agree with the known results. One easy way to see the shift is that free energy is zero when $a,b,c$ are all periodic boundary conditions, hence there is a necessary shift
 \begin{equation}
 \mathcal{F} = - \ln Z_{ab} ( \beta ) + \frac{1}{12} \beta ,
 \end{equation}
-where $\frac{1}{12}\beta$ is the value of $ \ln Z_{ab} ( \beta )$ when $a = b = {\rm P}$. A more careful inspection is performed in App.~\ref{app:F_correction}, where the correction is found to be coming from the Schwartzian and outer circle regulator. 
+where $\frac{1}{12}\beta$ is the value of $ \ln Z_{ab} ( \beta )$ when $a = b = {\rm P}$. A more careful inspection is performed in App.~\ref{app:F_correction}, where the correction is found to come from the Schwartzian and outer circle regulator. 
 
 For the process ($c$ is assumed to be the same as $a$)
 \begin{equation}
