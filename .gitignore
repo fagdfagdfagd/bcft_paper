@@ -9,5 +9,11 @@ _region_*
 *.rel
 *.flt
 flatex
-tikz_pic/
+tikz_pic/*.pdf
+tikz_pic/*.aux
+tikz_pic/*.log
+tikz_pic/auto/
+tikz_pic/*.py
+tikz_pic/*.sh
+tikz_pic/makefile
 /*.pdf
