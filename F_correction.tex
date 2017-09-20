@@ -1,8 +1,14 @@
 
-In the course of derivation the free energy subject to various boundary conditions, we use conformal transformation to convert the spacetime diagram with slits to a cylinder diagram, where the boundary state (and ground state energy calculation in App.~\ref{app:gnd_dn_lambda}) is applicable. However, free energy is not invariant under the conformal transformation, because the boundaries partially break the conformal symmetry. In this Appendix, we point out two corrections -- one from the outer boundary regulator and the other from the inhomogeneous Schwartzian term -- to get the correct exponent of the fidelity and Loschmidt echo. 
+In the course of deriving the free energy subject to various boundary conditions, we use conformal transformation to convert the spacetime diagram with slits to a cylinder diagram, where the boundary state calculation in App.~\ref{app:lambda_12} (and ground state energy calculation in App.~\ref{app:gnd_dn_lambda}) is applicable. However, free energy is not invariant under the conformal transformation since the boundaries partially break the conformal symmetry. In this Appendix, we point out two corrections -- one from the outer boundary regulator and the other from the inhomogeneous Schwartzian term to get the correct exponent of the fidelity and Loschmidt echo. 
 
 % outer boundary correction
-It is discussed in Cardy and Peschel's pioneering work\cite{cardy_finite-size_1988} that boundary will contribute a logarithmic term in the free energy. The original of these term comes from the nonzero geodesic curvature of the boundary, which when adding back the bulk curvature term constitutes the trace anomaly. Here we demonstrate this principle using the disk free energy example in Ref.~\onlinecite{cardy_finite-size_1988}. Consider an annulus on flat space with inner radius $r_1$ and outer radius $r_2$. Its free energy is
+It is discussed in Cardy and Peschel's pioneering work\cite{cardy_finite-size_1988} that boundary will contribute a logarithmic term in the free energy,
+\begin{equation}
+F = - \frac{c}{6} \left( \int_M  K(x) d^2x + \int_{\partial M} k_g ds \right)  \ln L 
+\end{equation}
+where $M$ is a 2d smooth manifold, $K(x)$ is the Gaussian curvature, $k_g$ is the geodesic curvature of on the boundary of the manifold and $L$ is the system's characteristic length. 
+
+The boundary term was not previous noticed in the literature, but is actually important even in the simplest example of the disk free energy. Consider an annulus on flat space with inner radius $r_1$ and outer radius $r_2$. Its free energy is
 \begin{equation}
 F({\rm annulus}) = -  \frac{c}{6} \ln \frac{r_2}{r_1} .
 \end{equation}
@@ -10,29 +16,35 @@ On the other hand the free energy of a disk of radius $r_2$ is
 \begin{equation}
   F( {\rm disk} ) = - \frac{c}{6} \ln \frac{r_2}{a},
 \end{equation}
-where $a$ is the short distance regulator. The disk free energy is completely contributed by its outer boundary with other parts being conformal invariant. One can then interpret the annulus free energy as an additive contribution from its outer and inner surfaces as (which is also consistent with the geodesic curvature integral calculation),
+where $a$ is the short distance regulator. The disk free energy is completely contributed by its outer boundary with other parts being conformal invariant. In fact, $K = 0, k_g = \frac{1}{r}$ for disk, and so 
+\begin{equation}
+F( {\rm disk}  ) = - \frac{c}{6}  \left( \int_{\partial M} k_g ds \right)  \ln \frac{r_2}{a}  = - \frac{c}{6}  \ln \frac{r_2}{a}
+\end{equation}
+where $a$ is the short distance cut-off. 
+
+One can then interpret the annulus free energy as an additive contribution from its outer and inner surfaces as
 \begin{equation}
 F( {\rm annulus} ) = -  \frac{c}{6} \ln \frac{r_2}{a} +  \frac{c}{6} \ln \frac{r_1}{a} = - \frac{c}{6} \ln \frac{r_2}{r_1}.
 \end{equation}
-An annulus becomes a disk when its inner radius is of order $a$, and we can see that the contribution from the inner surface, because $\frac{c}{6} \ln \frac{r_1}{a}$ becomes negligible compared to the other term.  
+An annulus becomes a disk when its inner radius is of order $a$, and we can see that the contribution from the inner surface $\frac{c}{6} \ln \frac{r_1}{a}$ becomes negligible compared to the one from the outer surface.  
 
-A similar outer surface logarithmic term also appears in the conformation transformation from the slit diagram to the annulus in Fig.~\ref{fig:H-tau_fold}. In the slit diagram, the regulators all have radii that are at the order of the short distance cut-off. They will have negligible contributions to the free energy. However, after doing the conformal transformation, the outer surface will contribute $-\frac{c}{6} \ln \frac{r_2}{r_1}$ which should not be there. Using the cylinder parameters in App.~\ref{app:lambda_12}, the $\xi$ plane and $z$ plane free energy are related through
+A similar outer surface logarithmic term also appears in the conformal transformation from the slit diagram to the annulus in Fig.~\ref{fig:H-tau_fold}. In the slit diagram, the regulators all have radii that are at the order of the short distance cut-off. They will have negligible contributions to the free energy. However, after doing the conformal transformation, the outer surface radus is much larger than {\it the new short distance regulator} in the $\xi$ plane, which will contribute a $-\frac{c}{6} \ln \frac{r_2}{r_1}$ term that should not be there. Therefore using the cylinder parameters in App.~\ref{app:lambda_12}, the $\xi$ plane and $z$ plane free energy are related through
 \begin{equation}
-F_{\xi } = F_{z} + \frac{c}{6} \beta .
+F_{z} = F_{\xi} + \frac{c}{6} \beta .
 \end{equation}
 
 % staircase geometry correction
-The annulus on the $\xi$ plane is called staircase geometry in Ref.~\onlinecite{cardy_finite-size_1988} due to its angular time evolution. The traditional radial quantization however has radial direction to be the time. One can show that the Hamiltonian of the staircase and rectangle has a shift due to the Schwartzian\cite{cardy_finite-size_1988}
+The annulus on the $\xi$ plane is called staircase geometry in Ref.~\onlinecite{cardy_finite-size_1988} due to its evolution in angular direction . The traditional radial quantization however has radial direction to be the time. One can show that the Hamiltonian of the staircase and rectangle has a shift due to the Schwartzian\cite{cardy_finite-size_1988}
 \begin{equation}
-H_{w} = H_{\xi} - \frac{c}{24\pi} \beta .
+H_{\xi} = H_{w} - \frac{c}{24\pi} \beta .
 \end{equation}
 After the evolution for $2\pi$ (in the folding picture, the evolution is only $\pi$ but there are two bosons), the difference in the free energy is
 \begin{equation}
-F_w = F_{\xi} - \frac{c}{12} \beta .
+F_{\xi} = F_{w} - \frac{c}{12} \beta .
 \end{equation}
 Gathering the two terms, we obtain the missing correction $\frac{c}{12} \beta$ between the slit and cylinder diagram, 
 \begin{equation}
-F_{w} = F_z + \frac{c}{12}\beta.
+F_{z} = F_w + \frac{c}{12}\beta.
 \end{equation}
 
 
