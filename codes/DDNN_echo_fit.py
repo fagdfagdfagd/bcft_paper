@@ -130,7 +130,7 @@ x_analy = [this_x_analy-offset  for this_x_analy in x_analy]
 y_analy = (-1)*2 * ( np.square(x_analy) - x_analy )
 ax.plot( x_analy , y_analy , c = 'red' , label = r"analytical $2\left(\frac{\theta}{\pi} - \left(\frac{\theta}{\pi}\right)^2\right)$" )
 # ax.plot( x , [-this_slope for this_slope in slope] , 'o', markersize = 2, c = 'black', markeredgewidth=0.0 , label = "numerical" )
-(_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 2 , label = "numerical" ) 
+(_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 2.5, elinewidth=1 , label = "numerical" ) 
 for cap in caps:
   cap.set_markeredgewidth( 1 )
 # These are in unitless percentages of the figure size. (0,0 is bottom left)
@@ -151,7 +151,7 @@ ax.set_xlabel( r"$\frac{\theta}{\pi}$" , fontsize=15)
 ax.set_ylabel( r"Echo Exponent" )
 
 ax.legend( loc = 'upper left', frameon = False, prop = {'size':10}, ncol=1, handlelength=3 )
-
+ax.annotate('(a)', xy=(0.05, 0.55), xytext=(0.01, 0.56))
 # smaller font for inset
 for tick in ax2.xaxis.get_major_ticks():
     tick.label.set_fontsize( 8 )

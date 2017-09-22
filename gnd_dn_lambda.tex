@@ -44,12 +44,19 @@ The Casimir energy is the vacuum energy brought up by the finite size of the set
 \begin{equation}
 \begin{aligned}
 E_c &= \frac{1}{4} \sum_{n \in \mathbb{Z}} | k| = \frac{\pi}{2L} \left( \sum_{n \in \mathbb{Z}}  | n + x | + \sum_{n \in \mathbb{Z}}  | n - x |  \right) \\  
-&= \frac{\pi}{L} \Big[\sum_{n \ge 0 } ( n + x )^{-s} + \sum_{n \ge 0 }  ( n - x)^{-s}  +   x^{-s} \Big]\Big|_{s = -1} \\
-&= \frac{\pi}{L} \left[ \zeta_{\rm H}( -1, x ) + \zeta_{\rm H}( -1, x ) +  x \right] \\
+&= \frac{\pi}{L} \Big[\sum_{n \ge 0 } ( n + x )^{-s} + \sum_{n \ge 0 }  ( n - x)^{-s}  {\color{red}\bf-}  ({\color{red}\bf-}x)^{-s} \Big]\Big|_{s = -1} \\
+&= \frac{\pi}{L} \left[ \zeta_{\rm H}( -1, x ) + \zeta_{\rm H}( -1, {\color{red}\bf-}x ) +  x \right] \\
 &= \frac{1}{2} \left( - x^2 + x - \frac{1}{6}\right),
 \end{aligned}
 \end{equation}
-where we used the fact that the unfolded geometry has length $L=2\pi$. Thus the free energy in the large $\beta$ limit is
+where we used the fact that the unfolded geometry has length $L=2\pi$. 
+{\color{red}$
+\zeta_{\rm H}(s,x)$ is the Hurwitz zeta function defined as
+\begin{eqnarray}\begin{aligned}
+\zeta_{\rm H}(s,x) = \sum_{n=0}^\infty\frac{1}{(n+x)^s}
+\end{aligned}\end{eqnarray}
+}
+Thus the free energy in the large $\beta$ limit is
 \begin{equation}
 F = \beta E_c = - \frac{\beta}{2} B_2( x) ,
 \end{equation}

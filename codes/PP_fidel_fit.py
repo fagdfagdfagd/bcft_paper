@@ -93,7 +93,7 @@ y_analy = ( -np.square( x_analy - 0.25 ) + np.abs( x_analy - 0.25 ) )
 ax.plot( x_analy, y_analy, color = 'red' , label = r"analytical $\left|\frac{\theta}{\pi} - \frac{1}{4}\right| - \left(\frac{\theta}{\pi} - \frac{1}{4} \right)^2$" )
 
 # numerical results
-(_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 2, label = "numerical" ) 
+(_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 2.5, elinewidth=1 , label = "numerical" ) 
 for cap in caps:
     cap.set_markeredgewidth( 1 )
 
@@ -112,7 +112,7 @@ ax.set_ylim( ( 0, 0.3 ) )
 ax.set_xlabel( r"$\frac{\theta}{\pi}$" , fontsize=15)
 ax.set_ylabel( r"Fidelity Exponent" )
 ax.legend( loc = 'upper left', frameon = False, prop = {'size':10}, ncol = 1, handlelength = 3 )
-
+ax.annotate('(b)', xy=(0.05, 0.25), xytext=(0.01, 0.28))
 # smaller font for inset
 for tick in ax2.xaxis.get_major_ticks():
     tick.label.set_fontsize( 8 )

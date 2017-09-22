@@ -93,9 +93,9 @@ ax.plot( x_analy, y_analy, color = 'red' , label = r"analytical $\frac{\theta}{\
 ax.plot( x_analy, y_analy-1.0/8, color = 'green' , label = r"$\frac{\theta}{\pi} - \left(\frac{\theta}{\pi}\right)^2-\frac{1}{8}$" )
 
 # numerical results
-(_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 1, label = "numerical" ) 
+(_, caps, _) = ax.errorbar( x, slope, yerr = error, fmt='o', color = 'black', capsize = 1, markersize = 2.5, elinewidth=1 , label = "numerical" ) 
 for cap in caps:
-    cap.set_markeredgewidth( 0.5 )
+    cap.set_markeredgewidth( 1 )
 
 
 # ----------------------------------------------------------------------           
