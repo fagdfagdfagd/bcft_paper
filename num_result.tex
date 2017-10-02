@@ -6,7 +6,7 @@
 
 We use the lattice model introduced in Sec.~\ref{sec_sub:free_boson_lattice} to check the analytic results. Our numerical evaluations is based on a boson Bogoliubov transformation and the explicit form of the groundstates. The readers are referred to App.~\ref{app:comp_fid_echo} for the technical details. In all the figures, we present the coefficients of the logarithmic term $\frac{\mathcal{F}}{\ln L}$ and $\frac{\mathcal{F} }{\ln t}$ and call them fidelity and echo exponents respectively. 
 
-We start with the process in {\color{red}Eq.~\eqref{eq:DDDD}}, 
+{\color{red}We first consider the process in Eq.~\eqref{eq:DDDD} for a lattice with $3000$ sites}, 
 %\begin{equation}
 %\text{DD}+\text{DD}\rightarrow\lambda+\text{DD},
 %\end{equation}
@@ -16,13 +16,13 @@ We also calculated the companion process
 \begin{equation}
  \text{NN}+\text{NN}\rightarrow\lambda+\text{NN},
 \end{equation}
-and obtain identical exponents as shown in Fig.~\ref{fig:DDDD}. We avoid the technical subtlety of zero mode by adding a small mass regulator $m=10^{-8}$. While the short time decay pattern is different from the DD case, the long time behavior and exponents remain the same for both echo and fidelity. We therefore do not present the result here. 
+and obtain identical exponents as shown in Fig.~\ref{fig:DDDD}. We avoid the technical subtlety of zero mode by adding a small mass regulator $m=10^{-8}$. While the short time decay pattern is different from the DD case, the long-time behavior and exponents remain the same for both echo and fidelity. We therefore do not present the result here. 
 
-Next we analyze the more interesting $\theta$ dependent process {\color{red}described in Eq.~\eqref{eq:DNDN},}
+Next, we analyze the more interesting $\theta$ dependent process {\color{red}described in Eq.~\eqref{eq:DNDN},}
 %\begin{equation}
 %  \text{DN}+\text{DN}\rightarrow\lambda+\text{DN},
 %\end{equation}
-in which the joining boundary condition is determined by $S_1(\theta)$. A direct calculation with the mass regulator do not perform very well in the small $\theta$ regime: The exponent is slightly larger than the theoretical prediction. We therefore turn to another regulator that shift the far end boundary condition DN to $S_1( \delta \theta )$ and consider the following process
+in which the joining boundary condition is determined by $S_1(\theta)$. {\color{red}We worked with a system containing $35000$ sites.} A direct calculation with the mass regulator do not perform very well in the small $\theta$ regime: The exponent is slightly larger than the theoretical prediction. We therefore turn to another regulator that shift the far end boundary condition DN to $S_1( \delta \theta )$ and consider the following process
 \begin{eqnarray}\begin{aligned}
 \label{eq:approx_DNDN}
 S_1(0)+S_1(\delta\theta)\rightarrow S_1(\theta)+S_1(\delta\theta),
@@ -33,7 +33,7 @@ Since ${\rm DN} = S_1 (0 )$, taking smaller and smaller $\delta \theta$ should c
   \centering
 \includegraphics[width=1\columnwidth]{DDNN_fit.pdf}
 \includegraphics[width=1\columnwidth]{DDNN_fidel_fit.pdf}
-    \caption{The slope of the free energy for Loschmidt echo (a) and bipartite fidelity (b) {\color{red}for the process in Eq.~\eqref{eq:DNDN}.}The total system size is $N=35000$ sites with the same parameters as in Fig.~\ref{fig:DDDD}. The numerical value of exponents follow a quadratic relation as predicted. There is still visible deviation from the analytic results in (a) due to the subtlety of zero mode, see the discussion in the main text. Inset in (a): From the top to bottom, we show the power law decay of Loschmidt echo with $\theta=0.02\pi, 0.12\pi $ and $0.24\pi$. Finite size effect does not emerge before $t=10^{4}$. We use the same curve fitting method as described for Fig.~\ref{fig:DDDD}.}
+    \caption{The slope of the free energy for Loschmidt echo (a) and bipartite fidelity (b) {\color{red}for the process in Eq.~\eqref{eq:DNDN}.} The total system size is $N=35000$ sites with the same parameters as in Fig.~\ref{fig:DDDD}. The numerical value of exponents follow a quadratic relation as predicted. There is still visible deviation from the analytic results in (a) due to the subtlety of zero mode, see the discussion in the main text. Inset in (a): From the top to bottom, we show the power law decay of Loschmidt echo with $\theta=0.02\pi, 0.12\pi $ and $0.24\pi$. Finite size effect does not emerge before $t=10^{4}$. We use the same curve fitting method as described for Fig.~\ref{fig:DDDD}.}
       \label{fig:DDNN}
 \end{figure}
 
