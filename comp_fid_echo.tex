@@ -1,5 +1,5 @@
 
-In this appendix, we provide technical details about the numerical calculation of the bipartite fidelity and Loschmidt echo.  Our strategy takes advantage of the symplectic structure of the bosonic Bogoliubov transformation and explicitly construct the "BCS" like ground state. With slight modification\cite{blaizot_quantum_1986}, one can work out its fermionic version and apply to quadratic fermion models for example in Ref.~\onlinecite{vasseur_universal_2014,stephan_local_2011}.
+In this appendix, we provide technical details about the numerical calculation of the bipartite fidelity and Loschmidt echo.  Our strategy takes advantage of the symplectic structure of the bosonic Bogoliubov transformation and explicitly construct the "BCS" like ground state. With slight modification\cite{blaizot_quantum_1986}, one can work out its fermionic version and apply to quadratic fermion models in Ref.~\onlinecite{vasseur_universal_2014,stephan_local_2011}.
 
 During the course of derivation in this and other appendices, we will repeatedly use the combinatorial identity called McMahon Master theorem
 \begin{equation}
@@ -130,7 +130,7 @@ in which the Hamiltonian reads
 \end{aligned}\end{equation}
 It is not hard to check that $\mathcal{M}$ is real and symmetric. 
 
-The general solution diagonalization problem is hard\cite{arnold_mathematical_2010}, however the positive definite $\mathcal{M}$ (and hence $M$) can be solved by Williamson's theorem\cite{arnold_mathematical_2010,xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006}, which states the existence, uniqueness (up to reordering of eigenvalues) and explicit construction of the matrix $\mathcal{S}\in {\rm Sp}(2n \mathbb{R}) $ such that 
+The general solution of the diagonalization problem is hard\cite{arnold_mathematical_2010}, however the positive definite $\mathcal{M}$ (and hence $M$) case can be solved by Williamson's theorem\cite{arnold_mathematical_2010,xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006}, which states the existence, uniqueness (up to reordering of eigenvalues) and explicit construction of the matrix $\mathcal{S}\in {\rm Sp}(2n \mathbb{R}) $ such that 
 \begin{equation}\begin{aligned}
 \mathcal{M}=\mathcal{S}
 \begin{bmatrix}
@@ -178,7 +178,7 @@ we solve the groundstate
 \label{eq:boson_BCS_gnd}
 |0\rangle_{{\bf a}}&=\text{det}^{\frac{1}{4}}(1-T^\dagger T)\exp\left\{-\frac{1}{2}b_j^\dagger T_{jk}b_k^\dagger\right\}|0\rangle_{\bf b},\\
 \end{aligned}\end{equation}
-where the normalization is given by the McMahon Master theorem Eq.~\ref{eq:bosonic_McMahon}. Apply constraint in Eq.~\eqref{eq:constraint_1}, it simplifies to the top left corner of the symplectic matrix
+where the normalization is given by the McMahon Master theorem Eq.~\eqref{eq:bosonic_McMahon}. Apply constraint in Eq.~\eqref{eq:constraint_1}, it simplifies to the top left corner of the symplectic matrix
 \begin{equation}
 \text{det}^{\frac{1}{4}}(1-T^\dagger T) =|\text{det}(u)|^{-\frac{1}{2}}.
 \end{equation}

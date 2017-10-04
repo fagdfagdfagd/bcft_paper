@@ -64,15 +64,9 @@ S_2(\theta)=\begin{bmatrix}
 -\sin 2\theta & -\cos 2\theta
 \end{bmatrix}.
 \end{aligned}\end{equation}
-For generic values of $\theta$, the interface is partially-transmitting, 
-{\color{red}whose transmission coefficient
-%and reflection coefficients 
-can be read off from the scattering matrices
-\begin{eqnarray}\begin{aligned}
-t = \sin2\theta.
-\end{aligned}\end{eqnarray}
-}
-We note that the S-matrices are independent of the wavelength, which agrees with the fact that the interface is scale invariant. 
+For generic values of $\theta$, the interface is partially-transmitting, {\color{red}whose transmission coefficient is $\pm \sin 2 \theta$.}
+
+We note that the $S$-matrices are independent of the wavelength, which agrees with the fact that the interface is scale invariant. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.45\textwidth]{fig_folding_pic.pdf}
@@ -125,6 +119,14 @@ S_1( \theta )
 where $S_1(\theta) $ is precisely the scattering matrix in Eq.~\eqref{eq:def_S}. The calculation for the case $M=M_2(\theta)$ is completely analogous. 
 
 The boundary state expression in Eq.~\eqref{eq:bd_state} will be used extensively in the fidelity and Loschmidt echo calculation in Sec.~\ref{sec:analytic_numerics}. 
+
+So far the deviation is only for the non-compact bosons, where the interface is imposed by ``gluing conditions''. For the case of connecting compact bosons of different radii, we will need to generalize the relation in Eq.~\eqref{eq:rotation_a_basis} to the winding mode operator $a_0$. Because the winding mode lives on a compactification lattice, not all $\theta$ can satisfy Eq.~\eqref{eq:rotation_a_basis} for $a_0$. App.~\ref{app:compact_diff_boson} reviews the derivation about how the winding modes constrain the choice of $\theta$. For example, the $S_1(\theta)$ interface should satisfy
+\begin{equation}
+\lambda = \tan \theta = \frac{n_2 R_1}{n_1 R_2}
+\end{equation}
+for coprime integer $n_1$ and $n_2$. This also suggests that connecting two different CFTs will generate an interface whose transmission are determined by the CFTs on both sides. 
+
+The winding modes however do not contribute to the fidelity and echo exponent to the leader order, as shown in App.~\ref{app:compact_diff_boson}. So the derivations with the non-compact boson boundary state in Eq.~\eqref{eq:bd_state} holds true for the compact bosons.
 
 %%% Local Variables:
 %%% TeX-master: "bCFT_paper"

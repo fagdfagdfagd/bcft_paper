@@ -3,12 +3,17 @@ We use chemical reaction style to represent the change of boundary conditions. T
 \begin{equation}
 S_a( \theta_a ) + S_c( \theta_c) \rightarrow S_b( \theta_b )  + S_c( \theta_c ) .
 \end{equation}
-{\color{red} Analytic computation can be performed when we neglect the boundary condition $c$, assuming $L \gg \tau$. To remove the bcc operator from $c$ to $a$ at infinity, we take $a = c$ in the numerical calculation. Probably changed to: To remove the bcc operator from c to a at infinity, the analytic and numerical calculations are performed by taking $a=c$ and $L\gg\tau$.}
+\rev{In most cases of the following, we will consider taking $a = c$ to remove the bcc operator from $a$ to $c$ at infinity. And we will use the shorthand notation
+\begin{equation}
+S_a( \theta_a ) \rightarrow S_b( \theta_b )
+\end{equation}
+to remind ourselves that we are isolating the boundary condition change only on joint of the two chains. 
+}
 
 In the ``cut-and-join" protocol we considered, $a$ should be one of `DD', `DN', `ND', `NN', $b$ is taken to be $S_1( \theta )$ or $S_2( \theta )$. The physical situation of connecting two compact bosons (and our numerical simulation) corresponds to the choice of $S_1( \theta)$, and we reserve the notation $\lambda$ for this type of boundary condition. For instance, the notation for the process presented in Fig.~\ref{fig:echo} is
 \begin{equation}
 \label{eq:DNDN}
-{\rm DN }  + {\rm DN} \rightarrow \lambda + { \rm DN} .
+ {\rm DN} \rightarrow \lambda.
 \end{equation}
 Another interesting case is to take $a$ or $c$ to be completely transmitting interface, i.e. $S_2( \frac{\pi}{4} )$. This S-matrix corresponds to the traditional periodic boundary condition and we use symbol 'P' to denote it. 
 
