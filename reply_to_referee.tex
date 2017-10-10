@@ -17,6 +17,7 @@
 \newcommand{\vs}{\textit{vs.} } 
 \newcommand{\etal}{\textit{et al.} }
 \newcommand{\etc}{\textit{etc.} }
+\newcommand{\rev}[1]{{\color{red}#1}}
 
 \newcommand{\up}{\mathord{\uparrow}}
 \newcommand{\dn}{\mathord{\downarrow}}
@@ -85,17 +86,17 @@ We have added more descriptions in the text around Fig.5 and Fig.6 about the con
 
 (By the way, we add the semi-circle manually in the center of Fig. 5, which is in close analogy to the computation of the truncated cone and corner in the Cardy-Peschel paper. So to get the correct result, we should subtract its contribution to the free energy, which is exactly what we do in App. C.)
 
-The annulus diagrams in both Fig. 5 and Fig. 6 are strictly concentric to higher order corrections of $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$. To resolve this problem, (and maybe the worry the referee previously had), we notice the following fact
+The annulus diagrams in both Fig. 5 and Fig. 6 are \rev{not} strictly concentric to higher order corrections of $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$. To resolve this problem, (and maybe the worry the referee previously had), we notice the following fact
 \begin{itemize}
 \item the non-conformal mapping from the non-concentric circles to the cylinder diagram exists: this can be doing by first mapping the non-concentric circles to concentric circles and then use the $\ln z$ map. 
-\item the resulting width of the cylinder only depend on the cross ratio of the intersection points of the two circles w.r.t. the real axis. 
+\item the resulting width of the cylinder only depend on the cross ratio of the intersection points of the two circles w.r.t. the real axis.  \rev{still don't get why the map is non-conformal}
 \end{itemize}
 since the conformal mapping preserve the cross ratio, we can calculate the width of the cylinder in terms of the cross ratio in the non-concentric circles. The calculation we did use the first order approximation of the cross ratio, but is enough to get the leading order of the width of the cylinder correct. The higher order corrections are of order $\frac{\epsilon}{L}$ and $\frac{\epsilon}{\tau}$, which should not affect the power law scalings of the fidelity and echo. 
 
 This line of argument is also included in the main text below Fig. 6. 
 }
 
-For the Loschmidt echo, the starting point is again a strip of width L, as shown in Fig. 4. However, in the left part of Fig. 6 this width no longer appears. There is only a small remark in the text that L >> tau. But L is of significance, for finite L the ratio t/L enters, and in Ref. [25] this case could actually be treated. 
+For the Loschmidt echo, the starting point is again a strip of width L, as shown in Fig. 4. However, in the left part of Fig. 6 this width no longer appears. There is only a small remark in the text that $L \gg \tau$. But L is of significance, for finite L the ratio t/L enters, and in Ref. [25] this case could actually be treated. 
 
 \reply{We declared in the text (above Fig. 4) that we will take $L \gg \tau$ in all the echo computation. This keeps the problem with only one length scale. 
 
@@ -126,7 +127,7 @@ F &= - \ln \langle \text{blue boundary state 1} | e^{ - \beta H_{ab}} | \text{bl
 \end{equation}
 where the additional terms can be viewed as Affleck-Ludwig boundary entropy that is subleading (independent of $\beta$) in the free energy. 
 
-As far as the leading order (in beta) is concerned, the boundary conditions imposed on the blue line shouldn‚Äôt matter. We therefore take the simplest periodic boundary condition for the ease of computation. }
+As far as the leading order (in beta) is concerned, the boundary conditions imposed on the blue line shouldn‚Äôt matter. We therefore take the simplest periodic boundary condition for the ease of computation. \rev{Do we want to mention this somewhere in the text?}}
 
 (3) The calculation of the vacuum energy in equ.(E6) is not quite clear. Since the original expression diverges, a word about regularization would be in order. In the conversion of the sums into zeta functions (what does the index H mean ?) it seems to me that the n=0 terms are not handled correctly. The second function must be zeta(-1,-x). One could also imagine just giving a reference. 
 
@@ -135,7 +136,7 @@ A clarification is indeed necessary. We here use the Hurwitz zeta function regul
 
 The final results, after a careful check is correct, however, the $x^{-s}$ term should be $-(-x)^{-s)}$ if the $n = 0$ term is handled properly. Thanks for pointing this out!
 
-We labeled several minus signs to be red to remind future readers to be cautious. }
+We labeled several minus signs to be red to remind future readers to be cautious. \rev{Do we want to keep these highlights?}}
 
 I also think that Appendix E ("Alternative approach...") should come after the "actual" approach which is presented in Appendix F. There is also a typo in equ.(F9).
 
@@ -158,7 +159,7 @@ In another paragraph, we use the free lattice boson model to argue why the expon
 
 We remove the redundant boundary condition c in the some of the equations as long as it is equal to a. The simplified notation like $\text{DN} \rightarrow \lambda$ is better to be perceived as a single boundary condition changing process and the associated bcc operator. 
 
-Since the notation is shortened, we don‚Äôt let them occupy a single equation and instead put them inside a sentence. We believe that such redundancy can be tolerated given that the length of the this notation is comparable to the citation phrase ‚Äúin Eq.(XX)‚Äù, and the time it saves to look up. }
+Since the notation is shortened, we don'Äôt let them occupy a single equation and instead put them inside a sentence. We believe that such redundancy can be tolerated given that the length of the this notation is comparable to the citation phrase in Eq.(XX)Äù, and the time it saves to look up. }
 
 (7) All References appear twice with different numbers! This must also be the reason, why the numbering in the text starts at 48. I am astonished that the authors did not notice that.
 
@@ -170,7 +171,7 @@ But it is totally our fault not to check the number of references before submiss
 
 \reply{This point should be clarified in the introduction of the path-integral formalism(Sec. III. A.). All the path-integral spacetime diagrams are in the imaginary time. We only do analytic continuation to the final results of the imaginary time diagram.
 
-We talk about the analytic continuation procedure between Eq.(16) and Fig.4 and demonstrate in Eq. (17). Thereafter we uniformly use $t$ towards the end of the main text.}
+We talk about the analytic continuation procedure between Eq.(16) and Fig.4 and demonstrate in Eq. (17). Thereafter we uniformly use $t$ towards the end of the main text. \rev{This seems not to be the case.. Do we want to change that?}}
 
 (9) As the parameter theta determines the transmission through the defect, it would be useful to give the transmission coefficient below Equ.(4) explicitly.
 
@@ -199,11 +200,11 @@ We have dramatically change Fig. 5.
 
 - The system sizes in the numerics given in the captions are unclear to me. What does 30k or 35k mean? In Fig. 7, it says k=1 immediately after that. Is this the same k? If not, what is it? As with L, I think that such numbers should also appear in the text. If one is talking about 35.000 sites, one wonders why such a large number was taken.
 
-\reply{The k in the math mode font is the spring constant, while the $k$ after 30 and 35 means 1000. We didn't realize the conflict. We have changed 30k to 30000 and 35k to 35000. We take 35000 sites for reducing the finite size effect in Fig. 8 which is important for the theta value near zero. 
+\reply{The k in the math mode font is the spring constant, while the $k$ after 30 and 35 means 1000. We didn't realize the conflict. We have changed 30k to 30000 and 35k to 35000. We take 35000 sites for reducing the finite size effect in Fig. 8 which is important for the theta value near zero. }
 
 - Fig. 11 corresponds to the right piece of Fig. 6, but is rotated by 90¬∞. This is confusing, in particular since the corresponding Fig. 12 is not rotated. The lambda line on the left has to be dotted. Also confusing is the use of x and L in (E1) below.
 
-We didn't realize that the spatial coordinate $x$ and $x = \frac{\theta}{pi}$ have a conflict. We rotate the figure to use $y$ as coordinate and reserve $x = \frac{\theta}{pi}$. }
+\reply{We didn't realize that the spatial coordinate $x$ and $x = \frac{\theta}{pi}$ have a conflict. We rotate the figure to use $y$ as coordinate and reserve $x = \frac{\theta}{pi}$. }
  
 (11) In a number of places the English has to be corrected (missing articles or endings, missing or incorrect words).
 
@@ -247,7 +248,7 @@ We have made changes in paragraph 4 accordingly and also some texts in the end o
 
 4) After Eq. (17) it is stated that the boundary condition "c" is neglected. Isn't it taken to be "a" instead?
 
-\reply{This statement is incorrect. It is taken to be a and changing it will influence the result even in the large L limit. So we didn‚Äôt neglect ‚Äòc‚Äô but taking it to be ‚Äòa‚Äô. We also take a simpler notation for this case after Eq. (17) }
+\reply{This statement is incorrect. It is taken to be a and changing it will influence the result even in the large L limit. So we did noÄôt neglect cÄ but taking it to be aÄô. We also take a simpler notation for this case after Eq. (17) }
 
 5) Now we come to the main result of the paper, Eq. (23), that will yield all the exponents which will then be numerically verified. Despite this equation being the main results, its derivation is hidden away in an appendix. In fact all the calculations in this paper are demoted to be part of one of the numerous Appendix sections. I believe, that at least the main result should be given some space in the main text. I don't think this would compromise readability or accessibility of the results, in fact it think it would improve on it.
 
@@ -259,7 +260,7 @@ App. B/C are supplements to analytic results. Other appendices are for the numer
 
 6) The last sentence before Sec. 4 states that the analytical (incorrect) and numerical curves "merge" at theta=0. In fact, these two curves are quite different and clearly the analytical curve cannot reproduce the numerics at all, as expected. To me it seems like that the green curve coincides with the dots in Fig. 10 only by chance. I'm not sure what the relevance of this curve is or mentioning that at theta=0 the numerics and the (incorrect) analytics "merge." This merging is simply because theta=0 is the no-quench point, when the pre- and post-quench setup is the same.
 
-\reply{We have remove the sentence of ``merging'' at theta = 0. That is as the referee said only a calibrating point. But we do want to reserve the green curve as we (subjectively) believe the collapse is not a coincidence. The difference ‚Öõ is a magic number that is twice of the majorana operator dimension, maybe indicating the structure of the 3-point function (the bcc operators between each pair of  a, b, c). We didn't write this speculation for the lack of evidence but do want to reveal this coincidence to inspire the readers.}
+\reply{We have remove the sentence of ``merging'' at theta = 0. That is as the referee said only a calibrating point. But we do want to reserve the green curve as we (subjectively) believe the collapse is not a coincidence. The difference $1/8$õ is a magic number that is twice of the majorana operator dimension, maybe indicating the structure of the 3-point function (the bcc operators between each pair of  a, b, c). We didn't write this speculation for the lack of evidence but do want to reveal this coincidence to inspire the readers.}
 
 7) The references appear in duplicate.
 
