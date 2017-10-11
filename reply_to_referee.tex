@@ -68,13 +68,15 @@ We thank the referee for pointing out this sign error, in fact we used the $w \r
 
 Nevertheless we hold our opinion of using these two corrections to account for the missing $\frac{1}{12}\beta$. Let us reiterate our arguments. 
 
-The first correction comes from mapping the slit diagram to the annulus. Before doing this conformal transformation, the short distance regulator is small on the $z$ plane. Hence the contribution of the free energy coming from introducing the two blue lines are small. However, after the transformation, we implicitly choose another regulator which is small on the $\xi$ plane. But by the change of this short distance cutoff, the $\xi$ plane erroneously contribute a $- \frac{c}{6} \ln \frac{r_2}{r_1}$ term from the outer surface. The compensation $+\frac{c}{6} \ln \frac{r_2}{r_1} = \frac{c}{6}\beta$ is the correction we are talking about. 
+The first correction comes from mapping the slit diagram to the annulus (in Fig. 6).  Before doing this conformal transformation, the short distance regulator is small on the $z$ plane. Hence the contribution of the free energy coming from introducing the two blue lines are small. However, after the transformation, we implicitly choose another regulator which is small on the $\xi$ plane. But by the change of this short distance cutoff, the $\xi$ plane erroneously contribute a $- \frac{c}{6} \ln \frac{r_2}{r_1}$ term from the outer surface. The compensation $+\frac{c}{6} \ln \frac{r_2}{r_1} = \frac{c}{6}\beta$ is the correction we are talking about. 
 
 The is the lesson we learned from the Cardy-Peschel paper, where there are two explicit examples of computing the free energies of a corner and a cone. Both objects should be regarded as infinitely extended without boundaries at certain radii. The authors computed the correct results by conformally mapping the geometry to whole plane (or upper half plane) and contrasted with the calculation of the truncated corner and cone with both short and long distance regulators. They found that the discrepancies of the truncated cone and corner w.r.t. to the correct results come from the outer boundary contribution. By subtracting this otherwise nonexistent contribution using their proposed geodesic curvature formula, they are able to recover the correct result. We believe that the mapping from the $z$ to $\xi$ plane result in the same situation here. 
 
-The staircase geometry Hamiltonian and the plane Hamiltonian is differed by the Schwartzian term in the transformation rule of the stress tensor, which gives $-\frac{c}{12} \beta $ correction. By gathering the two terms, we do get the desired $\frac{c}{12}\beta$ correction. 
+We also change Fig 5, where in the left panel there is no vertical line IR regulator. So after doing the $\exp$ conformal transformation, the center diagram should be the upper half plane minus the small circle around $\xi = 1$. This is also an extended object, much the same way as the cone and corner in the Cardy-Peschel paper. To evaluate this extended diagram, we manually add another big semi-circle centered at $\xi = 1$ with radius $R_{\xi } \gg 1$. This will introduce a $-\frac{c}{6} \beta $ term that should not be there. 
 
-We request the referee to reconsider the presented arguments.
+Then we move on to the $\xi$ to $w$ plane transformation. The staircase geometry Hamiltonian and the plane Hamiltonian is differed by the Schwartzian term in the transformation rule of the stress tensor, which gives $-\frac{c}{12} \beta $ correction. By gathering the two terms, we do get the desired $\frac{c}{12}\beta$ correction. 
+
+The content of this reply is supplemented in App. C. We request the referee to reconsider the presented arguments.
 }
 
 (2) I also find the whole presentation of the mapping unsatisfactory. In part, this has to with the fact that no lengths are indicated in the figures.
@@ -84,11 +86,11 @@ For the fidelity, one maps in Fig. 5 the initial strip to an annulus with inner 
 \reply{
 We have added more descriptions in the text around Fig.5 and Fig.6 about the conformal mappings used there. One major change is Fig 5. We do not impose IR regulator(previously a vertical line at $x = W$)  on the left panel of the slit diagram, but do add the small semi-circle. After doing the conformal mapping to the center diagram, we end up with a truncated corner centered at $z = 1$. To evaluate this diagram, we add another semi-circle centered at $z = 1$ with radius $R$. This should avoid the problem the referee was worried about. 
 
-(By the way, we add the semi-circle manually in the center of Fig. 5, which is in close analogy to the computation of the truncated cone and corner in the Cardy-Peschel paper. So to get the correct result, we should subtract its contribution to the free energy, which is exactly what we do in App. C.)
+(We add the semi-circle manually in the center of Fig. 5, which is incidentally in close analogy to the computation of the truncated cone and corner in the Cardy-Peschel paper. So to get the correct result, we should subtract its contribution to the free energy, which is exactly what we do in App. C.)
 
-The annulus diagrams in both Fig. 5 and Fig. 6 are \rev{not} strictly concentric to higher order corrections of $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$. To resolve this problem, (and maybe the worry the referee previously had), we notice the following fact
+The annulus diagrams in both Fig. 5 and Fig. 6 are not strictly concentric to higher order corrections of $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$. To resolve this problem, (which the referee maybe worried about), we notice the following fact
 \begin{itemize}
-\item the non-conformal mapping from the non-concentric circles to the cylinder diagram exists: this can be doing by first mapping the non-concentric circles to concentric circles and then use the $\ln z$ map. 
+\item the conformal mapping from the non-concentric circles to the cylinder diagram exists: this can be done by first mapping the non-concentric circles to concentric circles and then use the $\ln z$ map. 
 \item the resulting width of the cylinder only depend on the cross ratio of the intersection points of the two circles w.r.t. the real axis.  \rev{still don't get why the map is non-conformal}
 \end{itemize}
 since the conformal mapping preserve the cross ratio, we can calculate the width of the cylinder in terms of the cross ratio in the non-concentric circles. The calculation we did use the first order approximation of the cross ratio, but is enough to get the leading order of the width of the cylinder correct. The higher order corrections are of order $\frac{\epsilon}{L}$ and $\frac{\epsilon}{\tau}$, which should not affect the power law scalings of the fidelity and echo. 
@@ -100,7 +102,7 @@ For the Loschmidt echo, the starting point is again a strip of width L, as shown
 
 \reply{We declared in the text (above Fig. 4) that we will take $L \gg \tau$ in all the echo computation. This keeps the problem with only one length scale. 
 
-  We are aware that such geometry with both finite $t$ and $L$ can be mapped to the upper half plane by the Schwarz-Christoffel mappings, as demonstrated in Ref.[25]. But the conformal interface, the dashed line, will be inside the upper half plane and we don;t know how to calculate its OPE with the stress tensor. So in this paper, we only aim to understand the leading order behavior and its relation to the transmission coefficient. }
+  We are aware that such geometry with both finite $t$ and $L$ can be mapped to the upper half plane by the Schwarz-Christoffel mappings, as demonstrated in Ref.[25]. But the conformal interface, the dashed line, will be inside the upper half plane and we don't know how to calculate its OPE with the stress tensor. So in this paper, we only aim to understand the leading order behavior and its relation to the transmission coefficient. }
 
 
 In the center part, there are two half-circles around the origin, which supposedly are the images of those on the left. But their radii (which determine the parameter beta) are not given anywhere. 
@@ -127,16 +129,14 @@ F &= - \ln \langle \text{blue boundary state 1} | e^{ - \beta H_{ab}} | \text{bl
 \end{equation}
 where the additional terms can be viewed as Affleck-Ludwig boundary entropy that is subleading (independent of $\beta$) in the free energy. 
 
-As far as the leading order (in beta) is concerned, the boundary conditions imposed on the blue line shouldn’t matter. We therefore take the simplest periodic boundary condition for the ease of computation. \rev{Do we want to mention this somewhere in the text?}}
+As far as the leading order (in beta) is concerned, the boundary conditions imposed on the blue line should not matter. We therefore take the simplest periodic boundary condition for the ease of computation.} 
 
 (3) The calculation of the vacuum energy in equ.(E6) is not quite clear. Since the original expression diverges, a word about regularization would be in order. In the conversion of the sums into zeta functions (what does the index H mean ?) it seems to me that the n=0 terms are not handled correctly. The second function must be zeta(-1,-x). One could also imagine just giving a reference. 
 
 \reply{
 A clarification is indeed necessary. We here use the Hurwitz zeta function regularization and so H stands for Hurwitz. 
 
-The final results, after a careful check is correct, however, the $x^{-s}$ term should be $-(-x)^{-s)}$ if the $n = 0$ term is handled properly. Thanks for pointing this out!
-
-We labeled several minus signs to be red to remind future readers to be cautious. \rev{Do we want to keep these highlights?}}
+The final results, after a careful check is correct, however, the $x^{-s}$ term should be $-(-x)^{-s}$ if the $n = 0$ term is handled properly. Thanks for pointing this out!}
 
 I also think that Appendix E ("Alternative approach...") should come after the "actual" approach which is presented in Appendix F. There is also a typo in equ.(F9).
 
@@ -171,7 +171,7 @@ But it is totally our fault not to check the number of references before submiss
 
 \reply{This point should be clarified in the introduction of the path-integral formalism(Sec. III. A.). All the path-integral spacetime diagrams are in the imaginary time. We only do analytic continuation to the final results of the imaginary time diagram.
 
-We talk about the analytic continuation procedure between Eq.(16) and Fig.4 and demonstrate in Eq. (17). Thereafter we uniformly use $t$ towards the end of the main text. \rev{This seems not to be the case.. Do we want to change that?}}
+We talk about the analytic continuation procedure between Eq.(16) and Fig.4 and demonstrate in Eq. (17). When referring to the imaginary path integral diagram, we use $\tau$ because that's the scale on Fig. 5 and Fig. 6. When representing the final result for Loschmidt echo, we do analytic continuation as Eq. (17). }
 
 (9) As the parameter theta determines the transmission through the defect, it would be useful to give the transmission coefficient below Equ.(4) explicitly.
 
@@ -252,7 +252,11 @@ We have made changes in paragraph 4 accordingly and also some texts in the end o
 
 5) Now we come to the main result of the paper, Eq. (23), that will yield all the exponents which will then be numerically verified. Despite this equation being the main results, its derivation is hidden away in an appendix. In fact all the calculations in this paper are demoted to be part of one of the numerous Appendix sections. I believe, that at least the main result should be given some space in the main text. I don't think this would compromise readability or accessibility of the results, in fact it think it would improve on it.
 
-\reply{The derivation of Eq.(23) is contained in the original App. F, which is mainly the evaluation of partition function using a determinant identity with no physical arguments. In fact we believe moving App. F back to the main text will still make it isolated to the surrounding physical discussion.  However, in order to improve readability, we have rearranged the appendices and make explicit references in the main text for the derivation.
+\reply{The derivation of Eq.(23) is contained in the original App. F, which is mainly the evaluation of partition function using a determinant identity with no physical arguments. 
+
+In order to improve readability, we first setup the calculation in the main text by explicitly spelling out the boundary states and the Hamiltonian in terms of the bosonic operators. We end up with an vacuum amplitude with three exponential of bilinears of bosonic operators in between. Such an expression can be evaluated using the determinant identity in the appendix. And we defer the detailed technical calculation in App. A. 
+
+In fact, we have rearranged the orders of the appendices for better accessibility. 
 
 App. A is the calculation for the main analytic results. The reader shall only need this appendix to reproduce Eq.(23). 
 
@@ -264,9 +268,13 @@ App. B/C are supplements to analytic results. Other appendices are for the numer
 
 7) The references appear in duplicate.
 
+\reply{This is really embarrassing. We had 47 citations in our local version of manuscripts but 94 on the submitted. We find that this is because our submission script flatex inserted all the input tex files (since the submission is easier with a single tex file) as well as all bbl files, resulting in the duplication of references. 
+
+But it is totally our fault not to check the number of references before submission. We have fixed it in this submission. }
+
 8) Additionally, there are typos throughout the text that should be corrected (e.g. like "the this"), I suggest the manuscript to be proofread carefully before resubmission. 
 
-
+\reply{We have proofread the paper before the resubmission and (hopefully) corrected those grammatical/spelling errors.}
 
 \end{document}
 %%% Local Variables: 

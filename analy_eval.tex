@@ -5,8 +5,6 @@ We notice that there is only one apparent length scale in these diagrams -- the 
 
 We thus add small semi-circles around the points where the bcc operators reside, and then apply a series of conformal mapping. 
 
-\rev{Tian ci: Proofread this part for the conformal map}
-
 For the fidelity case, the regulators as well as the conformal mappings are depicted in Fig.~\ref{fig:fidel-map}. 
 \begin{figure}[h]
 \centering
@@ -14,8 +12,9 @@ For the fidelity case, the regulators as well as the conformal mappings are depi
 \caption{Mapping from a strip to the upper half plane $\xi  = \exp( \frac{\pi z}{L} ) $. The two black dots represent possible locations of boundary condition changing (bcc) operators. The dot inside the blue semi-circle is at coordinate $\xi = 1$, which is the image of the point connecting $a$ and $b$ boundaries. The other dot is at $\xi = 0$ and corresponds to the connection between $a$ and $c$ boundaries at $- \infty$. To evaluate the diagram, we add the outer blue semi-circle centered at $\xi = 1$ to be the IR cut-off and map it to the cylinder with $w = \ln(\xi - 1)$}
 \label{fig:fidel-map}
 \end{figure}
-We add a small blue semi-circle to the folded strip in Fig.~\ref{fig:fidel} as the UV regulator and map it to the upper half plane using $\xi  = \exp( \frac{\pi z}{L} )$. Then both of $\xi = 0$ and $1$ can host bcc operators. We assume $a = c$ such that there is only one bcc operator on the real axis enclosed by the blue semi-circle at $\xi = 1$. In order to evaluate this diagram, we add another semi-circle centered at $\xi = 1$ with radius $R_{\xi}$ (this will introduce a correction as explained in App.~\ref{app:F_correction}), and map it to the cylinder diagram on the right by $w = \ln ( \xi- 1)$. Finally the cylinder diagram can be viewed as path integral amplitude between the boundary state $b$ and $a$
+We add a small blue semi-circle to the folded strip in Fig.~\ref{fig:fidel} as the UV regulator and map it to the upper half plane using $\xi  = \exp( \frac{\pi z}{L} )$. Then both $\xi = 0$ and $1$ can host bcc operators. We assume $a = c$ such that there is only one bcc operator on the real axis enclosed by the blue semi-circle around $\xi = 1$. In order to evaluate this diagram, we add another semi-circle centered around $\xi = 1$ with radius $R_{\xi}$ (this will introduce a correction as explained in App.~\ref{app:F_correction}), and map it to the cylinder diagram on the right by $w = \ln ( \xi- 1)$. Finally the cylinder diagram can be viewed as path integral amplitude between the boundary state $b$ and $a$
 \begin{equation}
+\label{eq:partition_fun}
 Z_{ab} = \langle a | e^{-\pi H } |b \rangle.
 \end{equation}
 
@@ -50,9 +49,76 @@ One subtlety of the above description is that the two semi-circles in the center
 \end{equation}
 Hence the width of the cylinder is $\ln \frac{\sqrt{ \eta } - 1}{\sqrt{ \eta} + 1}$. Since conformal transformation preserves the cross ratio, the result is the same if we use the cross ratio of the slightly non-concentric diagrams of Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold}. The calculation in Eq.~\eqref{eq:fidel_cyd_width} and Eq.~\eqref{eq:echo_cyd_width} equivalently used the leading order approximation to $\eta$ in the respective geometry and thus get the leading order term in the width of the cylinder. The slight deviation to the precise concentric geometry will only bring $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$ corrections to the width parameter and will not affect the fidelity and echo exponents. 
 
-Since the fidelity and Loschmidt echo are both square of the amplitude, we should set the width of the cylinder $\beta = 2 \ln L$ or $ 4 \ln \tau$ after obtaining the partition function on it. 
+Since the fidelity and Loschmidt echo are both square of the amplitude, we should set the width of the cylinder $\beta = 2 \ln L$ or $ 4 \ln \tau$ after obtaining the partition function on it.
 
-In App.~\ref{app:lambda_12}, we performed the calculation of the general partition function $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and its free energy to the leading order of cylinder width $\beta$. A na\"ive application of the result however will lead to an apparent contradiction. One notable example is that when $a = b  = {\rm P}$, the free energy given by App.~\ref{app:lambda_12} is $- \frac{1}{12}\beta$, which should actually be {\it zero} because this is the (regularized) free energy on a plane without any interface. Physically this corresponds to the situation that the boundary condition does not change after joining the two chains. Hence the Loschmidt echo will stay at $1$ and the free energy is $0$. This motivates a shift to the free energy
+The actual boundary conditions on the blue lines -- the regulators in Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold} are not important in the leading order. Taking Fig.~\ref{fig:H-tau_fold} for example, we can alternatively view the right panel as the amplitude between the two blue boundary states by a Hamiltonian with boundary condition $a$ and $b$
+\begin{equation}
+Z_{ab} =  \langle 1 | e^{ - \beta H_{ab}} | 2 \rangle  .
+\end{equation}
+Since $\beta$ --the width of the cylinder is large in this problem, we expect that the imaginary time evolution to project out only the groundstate $|0_{ab}\rangle $. Hence the free energy
+\begin{equation}
+\begin{aligned}
+F &=  - \ln Z_{ab}  \sim - \ln \langle 1 |0_{ab} \rangle \langle   0_{ab}  |e^{ - \beta H_{ab}}|0_{ab} \rangle \langle 0_{ab} | 2 \rangle \\
+&= \beta  E_c - \ln \langle 1| 0_{ab} \rangle  - \ln \langle 0_{ab}  |2 \rangle,
+\end{aligned}
+\end{equation}
+where $E_c$ is the groundstate energy of $H_{ab}$. We see that different choice of the boundary conditions only change the term independent of $\beta$. Thus in the leading order we can choose any boundary condition. The one we pick is the simplest one: the periodic boundary condition that identifies the two blue lines. 
+
+Here we set up the partition function calculation of the general process $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and leave the technical details to App.~\ref{app:lambda_12}. We define a set of bosonic operators related to the $a^i_n$s in Eq.~\eqref{eq:di_mode_expansion} through
+\begin{equation}
+\begin{aligned}
+b^i_n &= \frac{a^i_n}{\sqrt{n}} \quad (b^i_n)^{\dagger} &= \frac{a^i_{-n}}{\sqrt{n}} \\
+\bar{b}^i_n &= \frac{\bar{a}^i_n}{\sqrt{n}} \quad (\bar{b}^i_n)^{\dagger} &= \frac{\bar{a}^i_{-n}}{\sqrt{n}} \\
+\end{aligned}
+\end{equation}
+for $n > 0 , i = 1, 2$, and group them compactly with the vector notation
+\begin{equation}
+\begin{aligned}
+\vec{b}_i &= ( b^i_1, b^i_2, \cdots )^T, \quad \vec{\bar{b}}_i = ( \bar{b}^i_1, \bar{b}^i_2, \cdots )^T\\
+\vec{b}^\dagger_i &= ( (b^i_1)^\dagger, (b^i_2)^\dagger, \cdots )^T, \quad\vec{\bar{b}}^{\dagger}_i = ( (\bar{b}^i_1)^\dagger, (\bar{b}^i_2)^\dagger, \cdots )^T .
+\end{aligned}
+\end{equation}
+The boundary state in Eq.~\eqref{eq:bd_state} is then 
+\begin{equation}
+\exp\Big\{  (\vec{b}_1^{\dagger} \vec{b}_2^{\dagger} ) R_a( \theta )   
+\begin{pmatrix}
+  \vec{\bar{b}}_1^{\dagger}\\
+  \vec{\bar{b}}_2^{\dagger}
+\end{pmatrix}\Big\}  |0  \rangle ,
+\end{equation}
+where $R_a( \theta ) = -S_a \times \mathbb{I}$. Using even a lazier notation $\vec{b} = ( \vec{b}_1, \vec{b}_2 )$, we have
+\begin{equation}
+|a \rangle = \exp\Big\{  \vec{b}^{\dagger} R_a( \theta )    \vec{\bar{b}}^{\dagger} \Big\} |0 \rangle .
+\end{equation}
+
+The Hamiltonian of the folding picture has the mode expansion in terms of the $b_n$ (with periodic boundary conditions)
+\begin{equation}
+\begin{aligned}
+  H &= \frac{2\pi}{\beta} (L_0 + \bar{L}_0) =  \frac{4\pi}{\beta}  L_0 \\
+  &= \frac{4\pi}{\beta}\sum_{n > 0, i=1,2 }  n (b^i_n)^{\dagger} b^i_n \\
+  &=  \frac{1}{\pi}(\vec{b}_1^{\dagger} \vec{b}_2^{\dagger} ) (\mathbb{I}_2  \otimes M)
+\begin{pmatrix}
+  \vec{{b}_1}\\
+  \vec{{b}_2}
+\end{pmatrix}\\
+ &= \frac{1}{\pi} \vec{b}^{\dagger}  (\mathbb{I}_2  \otimes M)  \vec{b} ,
+\end{aligned}
+\end{equation}
+where $L_0+ \bar{L}_0$ are the dilation operator in CFT and we have used the condition $L_0 = \bar{L}_0$ when restricted to the space of the boundary states. The infinite dimensional matrix $M$ is
+\begin{equation}
+M =  \frac{4\pi^2}{\beta} \text{diag}( 1, 2, \cdots ).
+\end{equation}
+The partition function is
+\begin{equation}
+\label{eq:Zab-bd}
+\begin{aligned}
+Z_{ab} =& \langle b | e^{-\pi H} | a \rangle \\
+=& \langle 0 | \exp\Big\{  \vec{b} R_b( \theta )    \vec{\bar{b}} \Big\}  \exp\Big\{ -\vec{b}^{\dagger}  (\mathbb{I}_2  \otimes M)  \vec{b} \Big\} \\
+&\exp\Big\{  \vec{b}^{\dagger} R_a( \theta )    \vec{\bar{b}}^{\dagger} \Big\} | 0\rangle .
+\end{aligned}
+\end{equation}
+
+In App.~\ref{app:lambda_12}, we obtained the leading order term in the free energy associated with Eq.~\eqref{eq:Zab-bd}. A na\"ive application of the result however will lead to an apparent contradiction. One notable example is that when $a = b  = {\rm P}$, the free energy given by App.~\ref{app:lambda_12} is $- \frac{1}{12}\beta$, which should actually be {\it zero} because this is the (regularized) free energy on a plane without any interface. Physically this corresponds to the situation that the boundary condition does not change after joining the two chains. Hence the Loschmidt echo will stay at $1$ and the free energy is $0$. This motivates a shift to the free energy
 \begin{equation}
 \mathcal{F} = - \ln Z_{ab} ( \beta ) + \frac{1}{12} \beta ,
 \end{equation}

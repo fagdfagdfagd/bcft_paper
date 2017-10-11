@@ -6,41 +6,34 @@
 \label{fig:fig_lambda_1_lambda_2}
 \end{figure}
 
-In this appendix, we calculate the amplitude between general boundary states (\cf  Eq.~\eqref{eq:bd_state})
+In this appendix, we calculate the amplitude between general boundary states defined in Eq.~\eqref{eq:Zab-bd}
 \begin{equation}
-\exp\Big\{  \vec{b}^{\dagger} S_a( \theta )   \vec{\bar{b}}^{\dagger}\Big\}  |0  \rangle ,
+\begin{aligned}
+Z_{ab} &= \langle 0 | \exp\Big\{  \vec{b} R_b( \theta )    \vec{\bar{b}} \Big\}  \exp\Big\{ -\vec{b}^{\dagger}  (\mathbb{I}_2  \otimes M)  \vec{b} \Big\} \\
+&\exp\Big\{  \vec{b}^{\dagger} R_a( \theta )    \vec{\bar{b}}^{\dagger} \Big\} | 0\rangle 
+\end{aligned}
 \end{equation}
-where we have used the vector notations for the set of bosons. The $S$ matrices therein can be any one of the two types in Eq.~\eqref{eq:S1_S2}. 
-
-Let the cylinder height to be $\pi$ and width to be $\beta \gg 1 $, the partition function between the two boundary states is
-\begin{equation}
-Z_{ab} =  \langle a | e^{ - \pi H } |b \rangle ,
-\end{equation}
-where the Hamiltonian is
-\begin{equation}
-H = \frac{2\pi}{\beta} (L_0 + \bar{L}_0) =  \frac{4\pi}{\beta}  L_0 = \frac{4\pi}{\beta}\sum_{n > 0 }  n b_n^{\dagger} b_n. 
-\end{equation}
-We have used the condition $L_n = \bar{L}_n$ valid for the boundary state. The partition function then becomes
-\begin{eqnarray}\begin{aligned}
-Z_{ab} &= \langle 0 | e^{ \vec{b} S_a^* \vec{\bar{b}} } e^{ - \vec{b}^{\dagger} \mathbb{I}_2 \otimes M  \vec{b} } e^{  \vec{b}^{\dagger} S_b  \vec{\bar{b}}^{\dagger} }  |0  \rangle  \\
-&= \frac{1}{\det ( 1 - S^{\dagger} _a  e^{- \mathbb{I}_2 \otimes M} S_b) } ,
-%Z_{ab} &= \langle 0 | \exp\Big\{ \vec{b} S_a^* \vec{\bar{b}}\Big\} \exp\Big\{ - \vec{b}^{\dagger} \mathbb{I}_2 \otimes M  \vec{b} \Big\}   \exp\Big\{  \vec{b}^{\dagger} S_b  \vec{\bar{b}}^{\dagger}\Big\}  |0  \rangle  \\
-%&= \frac{1}{\det ( 1 - S^{\dagger} _a  e^{- \mathbb{I}_2 \otimes M} S_b) }
-\end{aligned}\end{eqnarray}
 where
 \begin{equation}
-M =  \frac{4\pi^2}{\beta} \text{diag}( 1, 2, \cdots ), \quad  \mathbb{I}_2 = \text{diag}( 1, 1) .
+\begin{aligned}
+M &=  \frac{4\pi^2}{\beta} \text{diag}( 1, 2, \cdots ), \quad  \mathbb{I}_2 = \text{diag}( 1, 1) \\
+R_i &= S_i( \theta ) \otimes \mathbb{I}
+\end{aligned}
 \end{equation}
-Using the fact that $|\det( S_a S_b^{\dagger})|  = 1$, free energy becomes
+Using the identity Eq.~\eqref{eq:second_id_in_app_pf_of_id} proven in App.~\ref{app:pf_of_id}, we have
 \begin{equation}
-F = - \ln |Z_{ab}| = \ln |\det ( S_a S_b^{\dagger} - e^{- \mathbb{I}_2 \otimes M} )| .
+Z_{ab} = \frac{1}{\det(1 - R_a^{\dagger} ( \mathbb{I}_2 \otimes M ) R_b )}
+\end{equation}
+From $|\det( R_a R_b^{\dagger})|  = 1$, free energy becomes
+\begin{equation}
+F = - \ln |Z_{ab}| = \ln |\det ( R_a R_b^{\dagger} - e^{- \mathbb{I}_2 \otimes M} )| .
 \end{equation}
 There are two cases to be considered, and we only take out the leading order term in $\beta$. 
 \begin{itemize}
 \item {\it case 1: }$S_1( \theta_1 ) \rightarrow S_2 ( \theta_2 ) $, the free energy is
 \begin{equation}
 \begin{aligned}
-F & = \ln |\det ( S_1( \theta_1 )  S_2^{\dagger}( \theta_2 )  - e^{- \mathbb{I}_2 \otimes M} )| \\
+F & = \ln |\det ( R_1( \theta_1 )  R_2^{\dagger}( \theta_2 )  - e^{- \mathbb{I}_2 \otimes M} )| \\
   & = \ln \left| \det
 \begin{bmatrix}
 -\cos 2 \Delta \theta \mathbb{I} - e^{-M}   & -\sin 2 \Delta \theta \mathbb{I}\\
