@@ -1,7 +1,7 @@
 
 In this subsection, we relate the free energy to the amplitudes between boundary states and present the analytic results. 
 
-We notice that there is only one apparent length scale in these diagrams -- the finite size $L$ for fidelity and imaginary time $\tau$ for the Loschmidt echo. These are the characteristic size of the corner at the tip of the slit. Regulators are necessary in keeping track of the scale dependence, otherwise a dilation transformation can rescale both $L$ and $\tau$ to $1$ and get rid of their dependence. The introduction of regulators is also physically sensible when considering the lattice realization of the systems. 
+We notice that there is only one apparent length scale in these diagrams -- the finite size $L$ for fidelity and imaginary time $\tau$ for the Loschmidt echo. These are the characteristic size of the corners at the tip of the slits. Regulators are necessary in keeping track of the scale dependence, otherwise a dilation transformation can rescale both $L$ and $\tau$ to $1$ and get rid of their dependence. The introduction of regulators is also physically sensible when considering the lattice realization of the systems. 
 
 We thus add small semi-circles around the points where the bcc operators reside, and then apply a series of conformal mapping. 
 
@@ -9,20 +9,19 @@ For the fidelity case, the regulators as well as the conformal mappings are depi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{fig_fidel-map.pdf}
-\caption{Mapping from a strip to the upper half plane $\xi  = \exp( \frac{\pi z}{L} ) $. The two black dots represent possible locations of boundary condition changing (bcc) operators. The dot inside the blue semi-circle is at coordinate $\xi = 1$, which is the image of the point connecting $a$ and $b$ boundaries. The other dot is at $\xi = 0$ and corresponds to the connection between $a$ and $c$ boundaries at $- \infty$. To evaluate the diagram, we add the outer blue semi-circle centered at $\xi = 1$ to be the IR cut-off and map it to the cylinder with $w = \ln(\xi - 1)$}
+\caption{Mapping from a strip to the upper half plane $\xi  = \exp( \frac{\pi z}{L} ) $. The two black dots represent possible locations of boundary condition changing (bcc) operators. The dot inside the blue semi-circle has coordinate $\xi = 1$, which is the image of the point connecting $a$ and $b$ boundaries. The other dot $\xi = 0$ corresponds to the connection between $a$ and $c$ boundaries at $- \infty$. To evaluate the diagram, we add the outer blue semi-circle centered at $\xi = 1$ to be the IR cut-off and map it to the cylinder with $w = \ln(\xi - 1)$}
 \label{fig:fidel-map}
 \end{figure}
-We add a small blue semi-circle to the folded strip in Fig.~\ref{fig:fidel} as the UV regulator and map it to the upper half plane using $\xi  = \exp( \frac{\pi z}{L} )$. Then both $\xi = 0$ and $1$ can host bcc operators. We assume $a = c$ such that there is only one bcc operator on the real axis enclosed by the blue semi-circle around $\xi = 1$. In order to evaluate this diagram, we add another semi-circle centered around $\xi = 1$ with radius $R_{\xi}$ (this will introduce a correction as explained in App.~\ref{app:F_correction}), and map it to the cylinder diagram on the right by $w = \ln ( \xi- 1)$. Finally the cylinder diagram can be viewed as path integral amplitude between the boundary state $b$ and $a$
+We add a small blue semi-circle to the folded strip in Fig.~\ref{fig:fidel} as the UV regulator and map it to the upper half plane using $\xi  = \exp( \frac{\pi z}{L} )$. Then both $\xi = 0$ and $1$ can host bcc operators. We assume $a = c$ such that the only bcc operator on the real axis is the one enclosed by the blue semi-circle around $\xi = 1$. In order to evaluate this diagram, we add another semi-circle centered around $\xi = 1$ with radius $R_{\xi}$ (this will introduce a correction as explained in App.~\ref{app:F_correction}), and map it to the cylinder diagram on the right by $w = \ln ( \xi- 1)$. Finally the cylinder diagram can be viewed as path integral amplitude between the boundary state $b$ and $a$
 \begin{equation}
 \label{eq:partition_fun}
 Z_{ab} = \langle a | e^{-\pi H } |b \rangle.
 \end{equation}
-
-The height of the cylinder is $\pi$. The two end points of the $\epsilon$ radius semi-circle on the $z$ plane are mapped to
+where the height of the cylinder is $\pi$. The two end points of the $\epsilon$ radius semi-circle on the $z$ plane are mapped to
 \begin{equation}
 \exp( \pm \pi \frac{\epsilon}{ L}  ) \sim 1 \pm \pi \frac{\epsilon}{L} .
 \end{equation}
-The bigger blue semi-circle intersects the real axis at $1 \pm R_{\xi}$. So the width of the cylinder is 
+The bigger blue semi-circle intersects the real axis at $1 \pm R_{\xi}$ such that the width of the cylinder is 
 \begin{equation}
 \label{eq:fidel_cyd_width}
 \ln R_{\xi} - \ln \frac{\pi \epsilon}{L} = \ln L + \text{constant}.
@@ -30,7 +29,7 @@ The bigger blue semi-circle intersects the real axis at $1 \pm R_{\xi}$. So the 
 
 The Loschmidt echo can be evaluated in the same way. Again, we introduce two semi-circles (blue in Fig.~\ref{fig:H-tau_fold}) as regulators and then perform the conformal transformation shown in Fig.~\ref{fig:H-tau_fold}. From $z$ plane to the $\xi$ plane, we use $\xi = \frac{z}{\tau - z}$ to map the two slits to half of an annulus, which is the same as the fidelity case. With one more conformal mapping $w = \ln \xi$, the diagram becomes the cylinder partition function between the two boundary states. 
 
-The height of the cylinder is still $\pi$ because of folding. In the $\xi$ plane, the two end points of the small semi-circle are at $\frac{\pm \epsilon}{ \tau \mp \epsilon} \sim \frac{\pm \epsilon}{ \tau }$. The end points of the larger semi-circle are at $\mp \frac{\tau \pm \epsilon}{\epsilon} \sim \frac{\mp \tau}{\epsilon}$. Hence the width of the cylinder is
+The height of the cylinder is still $\pi$ because of folding. In the $\xi$ plane, the coordinates of the two end points of the small semi-circle are $\frac{\pm \epsilon}{ \tau \mp \epsilon} \sim \frac{\pm \epsilon}{ \tau }$, while those of the larger semi-circle are $\mp \frac{\tau \pm \epsilon}{\epsilon} \sim \frac{\mp \tau}{\epsilon}$. Hence the width of the cylinder is
 \begin{equation}
 \label{eq:echo_cyd_width}
 \ln \frac{\tau}{\epsilon} - \ln \frac{\epsilon}{\tau } = 2 \ln \tau + \text{constant}.  
@@ -39,23 +38,23 @@ The height of the cylinder is still $\pi$ because of folding. In the $\xi$ plane
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\columnwidth]{fig_H-tau_fold}
-\caption{Left: Diagram of Loschmidt echo that reduces to a partition function, where imaginary time is the horizontal direction, the dashed (solid) lines are open (gluing) boundary conditions. Red arrows are the directions of Hamiltonian flow that propagates the dashed line boundary state to the solid line boundary state. The blue semi-circles of radius $\epsilon$ are the UV regulators and they are identified as periodic boundaries in the direction perpendicular to the red arrow (equal time slice). Middle: Image of the map $\xi = \frac{z}{\tau - z}$. The two semi-circles have radii $({\tau}/{\epsilon})^{\pm1}$ respectively.  Right: Image of $w = \ln \xi$. It is a cylinder by identifying the blue lines and the standard radial quantization procedure can be applied. }
+\caption{Left: Diagram of Loschmidt echo that reduces to a partition function, where imaginary time is the horizontal direction, the dashed (solid) lines are gluing (open) boundary conditions. Red arrows are the directions of Hamiltonian flow that propagates the dashed line boundary state to the solid line boundary state. The blue semi-circles of radius $\epsilon$ are the UV regulators and they are identified as periodic boundaries in the direction perpendicular to the red arrow (equal time slice). Middle: Image of the map $\xi = \frac{z}{\tau - z}$. The two semi-circles have radii $({\tau}/{\epsilon})^{\pm1}$ respectively.  Right: Image of $w = \ln \xi$. It is a cylinder by identifying the blue lines and the standard radial quantization procedure can be applied. }
 \label{fig:H-tau_fold}
 \end{figure}
 
-One subtlety of the above description is that the two semi-circles in the center diagrams of Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold} are not precisely concentric. This can be resolved by the following observation. There exists conformal mappings $\zeta(\xi)$ that map the non-concentric circles to two standard concentric circles of radii $1$ and $R$ ($R>1$) on the $\zeta$ plane\cite{brown_complex_2009}. Then the logarithmic map $w = \ln \zeta$ produces a cylinder of width $\ln R$. In our case, the width of the cylinder is a conformal invariant that only depends on the cross ratio of the half annulus. The four intersection points of two standard concentric circles on $\zeta$ plane are $(\pm 1,0)$ and $(\pm R,0)$, whose cross ratio is
+One subtlety of the above description is that the two semi-circles in the center diagrams of Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold} are not precisely concentric. This can be resolved by the following observation. There exists conformal mappings $\zeta(\xi)$ that map the non-concentric circles to two standard concentric circles of radii $1$ and $R$ ($R>1$) on the $\zeta$ plane\cite{brown_complex_2009}. Then the logarithmic map $w = \ln \zeta$ produces a cylinder of width $\ln R$. In our case, since the height of the cylinder is always $\pi$, the width of the cylinder is a conformal invariant that only depends on the cross ratio of the half annulus. The four intersection points of two standard concentric circles on $\zeta$ plane are $(\pm 1,0)$ and $(\pm R,0)$, whose cross ratio is
 \begin{equation}
 \eta = \frac{(1 + R)^2}{(1 - R)^2}. 
 \end{equation}
-Hence the width of the cylinder is $\ln \frac{\sqrt{ \eta } - 1}{\sqrt{ \eta} + 1}$. Since conformal transformation preserves the cross ratio, the result is the same if we use the cross ratio of the slightly non-concentric diagrams of Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold}. The calculation in Eq.~\eqref{eq:fidel_cyd_width} and Eq.~\eqref{eq:echo_cyd_width} equivalently used the leading order approximation to $\eta$ in the respective geometry and thus get the leading order term in the width of the cylinder. The slight deviation to the precise concentric geometry will only bring $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$ corrections to the width parameter and will not affect the fidelity and echo exponents. 
+Hence the width of the cylinder is $\ln \frac{\sqrt{ \eta } - 1}{\sqrt{ \eta} + 1}$. Since conformal transformation preserves the cross ratio, the result is the same if we use the cross ratio of the slightly non-concentric diagrams of Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold}. The calculation in Eq.~\eqref{eq:fidel_cyd_width} and Eq.~\eqref{eq:echo_cyd_width} equivalently used the leading order approximation to $\eta$ in the respective geometries and thus get the leading order term in the width of the cylinders. The slight deviation to the precise concentric geometry will only bring $\frac{\epsilon}{L}, \frac{\epsilon}{\tau}$ corrections to the width parameter and will not affect the fidelity and echo exponents. 
 
-Since the fidelity and Loschmidt echo are both square of the amplitude, we should set the width of the cylinder $\beta = 2 \ln L$ or $ 4 \ln \tau$ after obtaining the partition function on it.
+\rev{Check this and the following paragraph} For the rest of this section, we should denote the width of the cylinder as $\beta$. After obtaining the partition function for the cylinder, we should set $\beta = 2 \ln L$ or $ 4 \ln \tau$ because the fidelity and Loschmidt echo are both square of the amplitudes.
 
-The actual boundary conditions on the blue lines -- the regulators in Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold} are not important in the leading order. Taking Fig.~\ref{fig:H-tau_fold} for example, we can alternatively view the right panel as the amplitude between the two blue boundary states by a Hamiltonian with boundary condition $a$ and $b$
+The actual boundary conditions on the blue lines, which are the regulators in Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold}, are not important in the leading order. Taking Fig.~\ref{fig:fidel-map} for example, rather than using Eq.~\eqref{eq:partition_fun}, we can alternatively view the right panel as the amplitude between the two blue boundary states $|1\rangle$ and $|2\rangle$
 \begin{equation}
-Z_{ab} =  \langle 1 | e^{ - \beta H_{ab}} | 2 \rangle  .
+Z_{ab} =  \langle 1 | e^{ - \beta H_{ab}} | 2 \rangle  , 
 \end{equation}
-Since $\beta$ --the width of the cylinder is large in this problem, we expect that the imaginary time evolution to project out only the groundstate $|0_{ab}\rangle $. Hence the free energy
+where $H_{ab}$ is the Hamiltonian with boundary condition $a$ and $b$. Since $\beta$ is taken to be large, we expect that the imaginary time evolution (which is horizontally in this case) to project out only the groundstate $|0_{ab}\rangle $. Hence the free energy reads
 \begin{equation}
 \begin{aligned}
 F &=  - \ln Z_{ab}  \sim - \ln \langle 1 |0_{ab} \rangle \langle   0_{ab}  |e^{ - \beta H_{ab}}|0_{ab} \rangle \langle 0_{ab} | 2 \rangle \\
@@ -63,6 +62,21 @@ F &=  - \ln Z_{ab}  \sim - \ln \langle 1 |0_{ab} \rangle \langle   0_{ab}  |e^{ 
 \end{aligned}
 \end{equation}
 where $E_c$ is the groundstate energy of $H_{ab}$. We see that different choice of the boundary conditions only change the term independent of $\beta$. Thus in the leading order we can choose any boundary condition. The one we pick is the simplest one: the periodic boundary condition that identifies the two blue lines. 
+
+%Since the fidelity and Loschmidt echo are both square of the amplitude, we should set the width of the cylinder $\beta = 2 \ln L$ or $ 4 \ln \tau$ after obtaining the partition function on it.
+
+%The actual boundary conditions on the blue lines -- the regulators in Fig.~\ref{fig:fidel-map} and Fig.~\ref{fig:H-tau_fold} are not important in the leading order. Taking Fig.~\ref{fig:H-tau_fold} for example, we can alternatively view the right panel as the amplitude between the two blue boundary states by a Hamiltonian with boundary condition $a$ and $b$
+%\begin{equation}
+%Z_{ab} =  \langle 1 | e^{ - \beta H_{ab}} | 2 \rangle  .
+%\end{equation}
+%Since $\beta$ --the width of the cylinder is large in this problem, we expect that the imaginary time evolution to project out only the groundstate $|0_{ab}\rangle $. Hence the free energy
+%\begin{equation}
+%\begin{aligned}
+%F &=  - \ln Z_{ab}  \sim - \ln \langle 1 |0_{ab} \rangle \langle   0_{ab}  |e^{ - \beta H_{ab}}|0_{ab} \rangle \langle 0_{ab} | 2 \rangle \\
+%&= \beta  E_c - \ln \langle 1| 0_{ab} \rangle  - \ln \langle 0_{ab}  |2 \rangle,
+%\end{aligned}
+%\end{equation}
+%where $E_c$ is the groundstate energy of $H_{ab}$. We see that different choice of the boundary conditions only change the term independent of $\beta$. Thus in the leading order we can choose any boundary condition. The one we pick is the simplest one: the periodic boundary condition that identifies the two blue lines. 
 
 Here we set up the partition function calculation of the general process $S_a( \theta_1 ) \rightarrow S_b( \theta_2)$ and leave the technical details to App.~\ref{app:lambda_12}. We define a set of bosonic operators related to the $a^i_n$s in Eq.~\eqref{eq:di_mode_expansion} through
 \begin{equation}
@@ -108,7 +122,7 @@ where $L_0+ \bar{L}_0$ are the dilation operator in CFT and we have used the con
 \begin{equation}
 M =  \frac{4\pi^2}{\beta} \text{diag}( 1, 2, \cdots ).
 \end{equation}
-The partition function is
+The partition function in Eq.~\eqref{eq:partition_fun} becomes
 \begin{equation}
 \label{eq:Zab-bd}
 \begin{aligned}
