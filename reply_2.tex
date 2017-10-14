@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing,shapes,shapes.multipart,arrows,shapes.misc,intersections,positioning}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage[autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{{./}}
+
+\newcommand{\cf}{\textit{cf.} }
+\newcommand{\ie}{\textit{i.e.} } 
+\newcommand{\eg}{\textit{e.g.} }
+\newcommand{\vs}{\textit{vs.} } 
+\newcommand{\etal}{\textit{et al.} }
+\newcommand{\etc}{\textit{etc.} }
+\newcommand{\rev}[1]{{\color{red}#1}}
+
+\newcommand{\up}{\mathord{\uparrow}}
+\newcommand{\dn}{\mathord{\downarrow}}
+\newcommand{\I}{\mathbb{I}}
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\qed}[0]{$\blacksquare$}
+
+\newcommand{\reply}[1]{{\color{black}#1}}
+
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.2in
+\parindent = 0.0in
+
+% \definecolor{darkblue}{rgb}{0.1,0.2,0.6} \definecolor{darkred}{rgb}{0.8,0.1,0.2}
+% \usepackage[colorlinks,citecolor=darkblue,linkcolor=darkred,urlcolor=darkblue]{hyperref}
+
+\begin{document}
+\large
+\color{blue}
+{\bf \color{black} Report of the Second Referee -- BF13677/Zhou}
+
+In the manuscript "Bipartite Fidelity and Loschmidt Echo of Bosonic Conformal Interface" the authors report on results concerning the finite volume decay exponent of the fidelity and long time exponent of the Loschmidt echo after joining two bosonic boundary CFTs. As they point out such exponents could potentially be observed in certain quantum wire experiments. The results appear to be correct and they are supported by independent numerical calculations coming from a harmonic lattice model.
+
+I think the paper is interesting enough and sufficiently well written to be published in Physical Review B, but before acceptance I would like the authors to consider my remarks below and make the necessary modifications.
+
+\reply{We thank the referee for the positive review and reply to the comments below.}
+
+1) The introduction overestimates the results that are actually presented in the main text. In the fourth paragraph it is claimed that the paper studies joining two different CFTs, when in fact only a very special case is treated: joining two identical massless free boson theories, with arbitrary (but identical) boundary conditions though. It should be clarified in the introduction that we will only see results for this special case. In fact, paragraph 4 is not at all clear, it should be rewritten.
+
+\reply{We agree that this paper only deals with 2d bosonic CFTs. However these CFTs can be different, e.g. having different compactification radii. The relation between lambda and the the different compactification radii are nevertheless hidden in the last appendix of the paper, which makes it hardly accessible to the readers. We also didn't explicitly point out the derivation (and physical interpretation) of this relation in one of the references we cited. 
+
+On the other hand, the boundary conditions on the sites that later connected are different. For example, the notation DN means that one end of the chain has Dirichlet and the other end that connects to it has Neumann boundary conditions, see Fig. 3.
+
+After connection, normally one should assume it's a periodic boundary condition (after folding) which gives transmission coefficient 1. However, in the text we consider more general conformal interface that can have arbitrary transmission coefficient between 0 and 1. Such interface can indeed be realized by connecting two boson theories with different compactification radii.
+
+To clarify this issue, we have rewritten paragraph 4 in the introduction that made the following changes 
+\begin{itemize}
+\item We rephrase what we did as ``generalization to interface that is partially transmissive''.
+\item We list the examples we talked about in this paper: the harmonic chain example(non-compact boson), the two different 1+1 bosonic CFT with different radii.
+\item We also explicitly mention the the dependence of lambda w.r.t. the different compactification at the end of Sec. II. A
+\end{itemize}
+}
+
+2) In this 4th paragraph of the introduction (also recurring in some places later) it is mentioned that the parameter lambda is controlled by the ratio of compactification radii. Is this so? This point is never discussed in the main text (or the appendices). Doesn't lambda describe the interface after joining the two CFTs and the compactification radii are the same in the two theories? At least in the case considered in the main text.
+
+\reply{It is our fault that the relation of lambda and ratio of the compactification radii are not pointed out explicitly in the main text. 
+We have made changes in paragraph 4 accordingly and also some texts in the end of Sec.II.A to discuss the generalization to compact bosons (with different radii)}
+
+3) In section 3 after Eq. (16) twist fields are mentioned but these were never introduced before, therefore the statement "The tip of the slit is no longer a twist field..." doesn't seem to be self-contained.
+
+\reply{We avoid the use the phrase ``twist field'' and change it to corner singularity and cite Cardy1988 for its treatment.}
+
+4) After Eq. (17) it is stated that the boundary condition "c" is neglected. Isn't it taken to be "a" instead?
+
+\reply{Our statement is incorrect. It is taken to be a and changing it will influence the result even in the large L limit. So we did no€™t neglect c€ but taking it to be a€™. We also take a simpler notation for this case after Eq. (17) }
+
+5) Now we come to the main result of the paper, Eq. (23), that will yield all the exponents which will then be numerically verified. Despite this equation being the main results, its derivation is hidden away in an appendix. In fact all the calculations in this paper are demoted to be part of one of the numerous Appendix sections. I believe, that at least the main result should be given some space in the main text. I don't think this would compromise readability or accessibility of the results, in fact it think it would improve on it.
+
+\reply{The derivation of Eq.(23) is contained in the original App. F, which is mainly the evaluation of partition function using a determinant identity with no physical arguments. 
+
+In order to improve readability, we first setup the calculation in the main text by explicitly spelling out the boundary states and the Hamiltonian in terms of the bosonic operators. We end up with an vacuum amplitude with three exponentials of bilinears bosonic operators in between. Such an expression can be evaluated using the determinant identity in the appendix. And we defer the detailed technical calculation in App. A. 
+
+In fact, we have rearranged the orders of the appendices for better accessibility. 
+
+App. A is the calculation for the main analytic results. The reader shall only need this appendix to reproduce Eq.(23). 
+
+App. B/C are supplements to analytic results. Other appendices are for the numerical models and calculational details. We have also mentioned these structural changes in the end of the introduction.}
+
+6) The last sentence before Sec. 4 states that the analytical (incorrect) and numerical curves "merge" at theta=0. In fact, these two curves are quite different and clearly the analytical curve cannot reproduce the numerics at all, as expected. To me it seems like that the green curve coincides with the dots in Fig. 10 only by chance. I'm not sure what the relevance of this curve is or mentioning that at theta=0 the numerics and the (incorrect) analytics "merge." This merging is simply because theta=0 is the no-quench point, when the pre- and post-quench setup is the same.
+
+\reply{We have remove the sentence of ``merging'' at theta = 0. That is as the referee said only a calibrating point. But we do want to reserve the green curve as we (subjectively) believe the collapse is not a coincidence. The difference $1/8$› is a magic number that is twice of the majorana operator dimension, maybe indicating the structure of the 3-point function (the bcc operators between each pair of  a, b, c). We didn't write this speculation for the lack of evidence but do want to reveal this coincidence to inspire the readers.}
+
+7) The references appear in duplicate.
+
+\reply{This is really embarrassing. We had 47 citations in our local version of manuscripts but 94 on the submitted. We find that this is because our submission script flatex inserted all the input tex files (since the submission is easier with a single tex file) as well as all bbl files, resulting in the duplication of references. 
+
+But it is totally our fault not to check the number of references before submission. We have fixed it in this submission. }
+
+8) Additionally, there are typos throughout the text that should be corrected (e.g. like "the this"), I suggest the manuscript to be proofread carefully before resubmission. 
+
+\reply{We have proofread the paper before the resubmission and (hopefully) corrected those grammatical/spelling errors.}
+
+\end{document}
+%%% Local Variables: 
+%%% TeX-PDF-mode: t
+%%% End:
+
+
+%%% Local Variables: 
+%%% TeX-PDF-mode: t
+%%% End: 

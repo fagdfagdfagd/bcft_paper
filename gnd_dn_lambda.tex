@@ -2,7 +2,7 @@
 \begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{fig_gnd_dn_lambda.pdf}
-\caption{Partition function of Hamiltonian with DN and $\lambda$ boundary conditions. The width of the strip is $\pi$ due to folding. We unfold the cylinder and the new stripe have $N$ and $D$ boundary conditions on the left and right plus a $\lambda$ junction in the middle. }
+\caption{Partition function of Hamiltonian with DN and $\lambda$ boundary conditions. We unfold the cylinder and the new stripe have N and D boundary conditions on the top and bottom plus a $\lambda$ junction in the middle. The length $L$ here is the height of the unfolded cylinder $2\pi$. }
 \label{fig:Fig_gnd_dn_lambda}
 \end{figure}
 
@@ -27,7 +27,7 @@ k = \frac{2\pi}{L}\left( n \pm \frac{\theta}{\pi} \right),  \quad n\in\mathbb{Z}
 \end{equation}
 It is evident that the momentum $k$ is shifted from integer multiple of $\frac{2\pi}{L}$ due to the $\lambda$ boundary condition in the middle. 
 
-The normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as orthonormal basis in the mode expansion, we thus have the 
+The normalized eigenfunctions in Eq.~\eqref{eq:normalized_f} serves as an orthonormal basis in the mode expansion, we thus have
 \begin{equation}
 \label{eq:H_in_gnd_dn_lambda}
 H = \frac{1}{2} \sum_{n \in \mathbb{Z} } |k|  \left(a^{\dagger}_n a_n + \frac{1}{2} \right) ,
@@ -40,13 +40,13 @@ a^{\dagger}_n = \frac{1}{\sqrt{2}} \left( \sqrt{ |k|g} \phi_n - \frac{i }{\sqrt{
 \end{aligned}
 \end{equation}
 
-The Casimir energy is the vacuum energy brought up by the finite size of the setup. From Eq.~\eqref{eq:H_in_gnd_dn_lambda} and use $x\equiv \frac{\theta}{\pi}$ in Eq.~\eqref{eq:momentum_gnd_dn_lambda}, we have
+The Casimir energy is the vacuum energy brought up by the finite size of the setup. From Eq.~\eqref{eq:H_in_gnd_dn_lambda} and using $x\equiv \frac{\theta}{\pi}$ in Eq.~\eqref{eq:momentum_gnd_dn_lambda}, we have
 \begin{equation}
 \begin{aligned}
 E_c &= \frac{1}{4} \sum_{n \in \mathbb{Z}} | k| = \frac{\pi}{2L} \left( \sum_{n \in \mathbb{Z}}  | n + x | + \sum_{n \in \mathbb{Z}}  | n - x |  \right) \\
 &= \frac{\pi}{2L} \Bigg( \sum_{n\ge 0 }  ( n + x ) + \sum_{n< 0 }  ( -n - x )  \\
 &\quad \quad + \sum_{n \le 0}  (- n + x ) + \sum_{n > 0} ( n- x )  \Bigg) \\
-&= \frac{\pi}{2L} \left( 2\sum_{n\ge 0 }  ( n + x ) + 2\sum_{n > 0} ( n- x )  \right)
+&= \frac{\pi}{2L} \left( 2\sum_{n\ge 0 }  ( n + x ) + 2\sum_{n > 0} ( n- x )  \right).
 \end{aligned}
 \end{equation}
 We use Hurwitz zeta function

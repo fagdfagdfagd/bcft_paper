@@ -1,7 +1,7 @@
 
 In this section, we define the fidelity and Loschmidt echo and present their corresponding imaginary time path integral diagrams.  We will see that these path integrals are just the free energy of boson with conformal interfaces (or boundaries). 
 
-Fidelity is the square of the overlap of the groundstates of two Hamiltonians, 
+Fidelity is the square of the overlap of the groundstates of the two Hamiltonians, 
 \begin{equation}
 {\rm fidelity} \equiv |\langle \psi_1 |\psi_2  \rangle |^2 .
 \end{equation}
@@ -16,20 +16,20 @@ For the systems we considered, $|\psi_1 \rangle$ is the groundstate of the two d
 \label{fig:fidel}
 \end{figure}
 
-The Loschmidt echo is also the (square of the) overlap of two wavefunctions. One of the them is the groundstate of the disconnected chains and the other is the groundstate evolved by the Hamiltonian of the connected chains
+The Loschmidt echo is also the (square of the) overlap of two wavefunctions. One of them is the groundstate of the disconnected chains and the other is the groundstate evolved by the Hamiltonian of the connected chains
 \begin{equation}
 \mathcal{L}( t )  \equiv |\langle \psi_{\rm gnd}  | e^{-i H t } | \psi_{\rm gnd} \rangle|^2 .
 \end{equation}
-The imaginary time version $\mathcal{L}( \tau  ) = |\langle \psi_{\rm gnd}  | e^{-H \tau } | \psi_{\rm gnd} \rangle|^2$ has a path integral definition similar to Fig.~\ref{fig:cut-and-join}, but to be consistent with the fidelity diagram, we take the horizontal axis as imaginary time and present it in Fig.~\ref{fig:echo}. Viewing the diagram as a partition function subject to the switching of boundary conditions, the logarithmic Loschmidt echo is also the associated free energy. After obtaining the free energy in imaginary time, we can analytically continue back to real time and get the $t$ dependence. For simplicity and comparison with the fidelity result, we will take the length of both of the chains to be $L$ and set $L \gg t$, leaving $t$ the only length scaling in the echo calculation (Fig.~\ref{fig:H-tau_fold}). The dependence on nonzero $\frac{t}{L}$ and the asymmetry of the lengths of the chains will not be discussed here (see their treatment in Ref.~\onlinecite{stephan_local_2011} for special values of $\lambda$).
+The imaginary time version $\mathcal{L}( \tau  ) = |\langle \psi_{\rm gnd}  | e^{-H \tau } | \psi_{\rm gnd} \rangle|^2$ has a path integral definition similar to Fig.~\ref{fig:cut-and-join}, but to be consistent with the fidelity diagram, we take the horizontal axis as imaginary time and present it in Fig.~\ref{fig:echo}. Viewing the diagram as a partition function subject to the switching of boundary conditions, the logarithmic Loschmidt echo is also the associated free energy. After obtaining the free energy in imaginary time, we can analytically continue back to real time to get the $t$ dependence. For simplicity and comparison with the fidelity result, we will take the length of both of the chains to be $L$ and set $L \gg t$, leaving $t$ the only length scale in the echo calculation (Fig.~\ref{fig:H-tau_fold}). The dependence on nonzero $\frac{t}{L}$ and the asymmetry of the lengths of the chains will not be discussed here (see the treatment in Ref.~\onlinecite{stephan_local_2011} for special values of $\lambda$).
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\columnwidth]{fig_echo-DN-lambda-folding.pdf}
-\caption{Loschmidt echo of connecting two CFTs. Evolution along the two infinitely extended sides produces the groundstate of the disconnected chain Hamiltonians. They sandwich the evolution of the connected chains. In the folding picture at the right, a,b,c represent the most general boundary conditions of the chains (for example, $a$ and $c$ are DN according to the left figure). See the discussion in main text.}
+\caption{Loschmidt echo of connecting two CFTs. Evolution along the two infinitely extended sides produces the groundstate of the disconnected chain Hamiltonians. They sandwich the evolution of the connected chains. In the folding picture at the right, $a,b,c$ represent the most general boundary conditions of the chains (for example, $a$ and $c$ are DN according to the left figure).}
 \label{fig:echo}
 \end{figure}
 
-If the interface is completely transparent, i.e. at the special point of $\lambda = 1$, the tip of the slit can be regarded as a corner singularity. According to Cardy and Peschel\cite{cardy_finite-size_1988}, the singularity will contribute to a term that is logarithmic of the corner's characteristic size, which is $\ln L$ in fidelity and $\ln \tau$ in Loschmidt echo. One would expect the fidelity and echo to have power law decay with respect to these scales in the long wavelength limit. In fact, the computations have been done in Ref.~\onlinecite{stephan_logarithmic_2013,stephan_local_2011,vasseur_universal_2014,vasseur_crossover_2013,kennes_universal_2014} using either the Cardy-Peschel formula or integration of the Ward identity. If the slits boundary conditions are taken to be Dirichlet, we have the universal behavior for the leading term \cite{stephan_logarithmic_2013,stephan_local_2011}
+If the interface is completely transparent, i.e. at the special point of $\lambda = 1$, the tip of the slit can be regarded as a corner singularity. According to Cardy and Peschel\cite{cardy_finite-size_1988}, the singularity will contribute to a term that is logarithmic of the corner's characteristic size, which is $\ln L$ in the fidelity and $\ln \tau$ in the Loschmidt echo. One would expect the fidelity and echo to have power law decay with respect to these scales in the long wavelength limit. In fact, the computations have been done in Ref.~\onlinecite{stephan_logarithmic_2013,stephan_local_2011,vasseur_universal_2014,vasseur_crossover_2013,kennes_universal_2014} using either the Cardy-Peschel formula or the integration version of the Ward identity. If the slits boundary conditions are taken to be Dirichlet, we have the universal behavior for the leading term \cite{stephan_logarithmic_2013,stephan_local_2011}
 \begin{equation}
 \label{eq:full-pass}
 \begin{aligned}
@@ -39,7 +39,7 @@ If the interface is completely transparent, i.e. at the special point of $\lambd
 \end{equation}
 where we have performed analytic continuation $\tau \rightarrow it + \epsilon$ with $\epsilon \rightarrow 0$ for echo.
 
-With the presence of the conformal interface, the tip of the slit is no longer a corner singularity\cite{cardy_finite-size_1988} . Its nature is clearer in the folding picture shown in Fig.~\ref{fig:fidel} and Fig.~\ref{fig:echo} where the lower half plane is flipped up on top of the upper half plane on both fidelity and echo diagram. From the boundary CFT point of view, the change of boundary condition can be regarded as inserting a primary field which is a bcc operator. The diagrams for fidelity and echo then become the one point or two point functions of the bcc operators respectively, and the free energy logarithmic term extracts their scaling dimensions. 
+With the presence of the conformal interface, the tip of the slit is no longer a corner singularity\cite{cardy_finite-size_1988} . Its nature is clearer in the folding picture shown in Fig.~\ref{fig:fidel} and Fig.~\ref{fig:echo} where the lower half plane is flipped up on top of the upper half plane on both the fidelity and echo diagrams. From the boundary CFT point of view, the change of boundary conditions can be regarded as inserting a bcc operator. The diagrams for the fidelity and echo then become the one point or two point functions of the bcc operators respectively, and the free energy's leading logarithmic term extracts their scaling dimensions. 
 
 
 %%% Local Variables:

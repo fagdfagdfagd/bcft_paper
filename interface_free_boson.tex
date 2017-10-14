@@ -26,19 +26,20 @@ where the matrix $\Sigma$ parameterizes the two-site interaction between site 0 
  \quad 
 \end{equation}
 where $a$ is the lattice constant. The solution on both semi-infinite chains are gapless with the dispersion relation $\omega = \left|2\sin\frac{ka}{2}\right|$. The $S$ matrix connecting them can be found by relating the incoming and outgoing amplitudes
-\begin{widetext}
+
 \begin{equation}
 \label{eq:discrete_S}
+\begin{aligned}
 \begin{pmatrix}
 A_{+} \\
 B_{-}\\
 \end{pmatrix}
-=-
+=&-
 \begin{bmatrix}
 \Sigma_{11} +e^{ika} & \Sigma_{12}\\
 \Sigma_{21} & \Sigma_{22} + e^{ika}
-\end{bmatrix}^{-1}
-\begin{bmatrix}
+\end{bmatrix}^{-1} \\
+&\begin{bmatrix}
 \Sigma_{11} + e^{-ika} & \Sigma_{12} \\
 \Sigma_{21} & \Sigma_{22}  + e^{-ika}  \\
 \end{bmatrix}
@@ -46,8 +47,10 @@ B_{-}\\
 A_{-}\\
 B_{+}\\
 \end{pmatrix},
+\end{aligned}
 \end{equation}
 and the explicit expression is
+\begin{widetext}
 \begin{equation}
   S = \frac{-1}{ \det \Sigma  + e^{-ika} \text{tr} \Sigma   + e^{-2ika}}
 \begin{bmatrix}

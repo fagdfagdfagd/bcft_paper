@@ -5,7 +5,7 @@ In this appendix, we provide more details for calculating the amplitude $Z_{ab}$
 e^{- \vec{b}^{\dagger} M \vec{b} } e^{ \vec{b}^{\dagger} R \bar{\vec{b}}^{\dagger} }  = e^{ \vec{b}^{\dagger} e^{-M}  R \bar{\vec{b}}^{\dagger} } e^{- \vec{b}^{\dagger} M \vec{b} } ,
 %\exp\Big\{- \vec{b}^{\dagger} M \vec{b}  \Big\} \exp \Big\{ \vec{b}^{\dagger} R \bar{\vec{b}}^{\dagger}  \Big\}  = \exp \Big\{ \vec{b}^{\dagger} e^{-M}  R \bar{\vec{b}}^{\dagger}  \Big\} \exp\Big\{- \vec{b}^{\dagger} M \vec{b}  \Big\} 
 \end{equation}
-where ${\bf b}$ and $\bar{\bf b}$ are vectors of bosonic operators. The matrix notation here should be understand as a bilinear expression. For example, $\vec{b}^{\dagger} R \bar{\vec{b}}^{\dagger}$ should really mean $\sum_{ij}b^\dagger_iR_{ij}\bar{b}_j^\dagger$ where the dagger does not transpose the vector.  
+where ${\bf b}$ and $\bar{\bf b}$ are vectors of bosonic operators. The matrix notation here should be understood as a bilinear expression as explained below Eq.~\eqref{eq:bd_state_matrix}.  
 
 To prove Eq.~\eqref{eq:first_id_app_pf_of_id}, we first consider the special case where $R=\mathbb{I}$. We diagonalize $M = O^{T} \Lambda O $ and rotate the two sets of boson operators to the diagonal basis
 \begin{equation}
@@ -46,11 +46,13 @@ A direct consequence of Eq.~\eqref{eq:first_id_app_pf_of_id} is the following
 Z_{ab} = \langle 0 | e^{ \vec{b} R_a^* \vec{\bar{b}} } e^{ - \vec{b}^{\dagger} M  \vec{b} } e^{  \vec{b}^{\dagger} R_b  \vec{\bar{b}}^{\dagger} }  |0  \rangle  = \frac{1}{\det( 1- R_a^{\dagger} e^{-M} R_b )} ,
 %Z_{ab} = \langle 0 | \exp\Big\{ \vec{b} R_a^* \vec{\bar{b}}\Big\} \exp\Big\{ - \vec{b}^{\dagger} M  \vec{b} \Big\}   \exp\Big\{  \vec{b}^{\dagger} R_b  \vec{\bar{b}}^{\dagger}\Big\}  |0  \rangle  = \frac{1}{\det( 1- R_a^{\dagger} e^{-M} R_b )} 
 \end{equation}
-where $|0\rangle$ is the vacuum for ${\bf b}$ and $\bar{\bf b}$. Using the identity we have just proved
+where $|0\rangle$ is the vacuum for ${\bf b}$ and $\bar{\bf b}$. 
+
+One can use the identity in Eq.~\eqref{eq:first_id_app_pf_of_id} to reduce $Z_{ab}$ to 
 \begin{equation}
-Z_{ab} =   \langle 0 | \exp\Big\{ \vec{b} R_a^* \vec{\bar{b}}\Big\}  \exp \Big\{ \vec{b}^{\dagger} e^{-M}  R_b \bar{\vec{b}}^{\dagger}  \Big\}  |0 \rangle ,
+Z_{ab} =   \langle 0 | \exp\Big\{ \vec{b} R_a^* \vec{\bar{b}}\Big\}  \exp \Big\{ \vec{b}^{\dagger} e^{-M}  R_b \bar{\vec{b}}^{\dagger}  \Big\}  |0 \rangle, 
 \end{equation}
-a direct application of the MacMahon master theorem
+then a direct application of the MacMahon master theorem
 \begin{equation}
   \langle 0 | \exp \Big\{ \vec{b}_1 X \vec{b}_2 \Big\}  \exp \Big\{ \vec{b}^{\dagger}_1 Y \vec{b}^{\dagger}_2 \Big\}|0  \rangle 
  = \frac{1}{\det(1 - X^T Y )}
