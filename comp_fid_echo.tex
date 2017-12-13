@@ -1,7 +1,7 @@
 
 In this appendix, we provide technical details about the numerical calculation of the bipartite fidelity and Loschmidt echo.  Our strategy takes advantage of the symplectic structure of the bosonic Bogoliubov transformation and explicitly construct the "BCS" like ground state. With slight modification\cite{blaizot_quantum_1986}, one can work out its fermionic version and apply to quadratic fermion models in Ref.~\onlinecite{vasseur_universal_2014,stephan_local_2011}.
 
-During the course of derivation in this and other appendices, we will repeatedly use the combinatorial identity called McMahon Master theorem
+During the course of derivation in this and other appendices, we will repeatedly use the combinatorial identity called the McMahon master theorem
 \begin{equation}
 \label{eq:bosonic_McMahon}
 \langle0|\exp\left\{\frac{1}{2}b_iX_{ij}b_j\right\}\exp\left\{\frac{1}{2}b^\dagger_iY_{ij}b^\dagger_j\right\}|0\rangle=\text{det}^{-\frac{1}{2}}(1-XY),
@@ -26,7 +26,7 @@ B & -A^* \\
 \end{bmatrix},
 \end{aligned}
 \end{equation}
-where ${\bf b}\equiv(b_{1},...,b_{n})^T$ is a vector of bosonic annihilation operators. The matrix $M$ consists of a $n\times n$ Hermitian block $A$ which plays the role of single particle Hamiltonian in the fermionic case and symmetric block $B$ of the pairing interaction. 
+where ${\bf b}\equiv(b_{1},...,b_{n})^T$ is a vector of bosonic annihilation operators. The matrix $M$ consists of a $n\times n$ Hermitian block $A$ which plays the role of a single particle Hamiltonian in the fermionic case and symmetric block $B$ of the pairing interaction. 
 
 We want to do a Bogoliubov transformation, which uses a $2n \times 2n$ matrix $S$ to define a diagonal basis 
 \begin{equation}\begin{aligned}
@@ -155,12 +155,12 @@ S\equiv C\mathcal{S}^TC^{-1}
 \end{aligned}\end{equation*}
 is the required symplectic matrix in the complex basis. 
 
-We will not elaborate on Williamson's theorem and its proof (see proofs in Ref.~\onlinecite{xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006} and also a recent application in entanglement entropy context\cite{coser_contour_2017}). Instead we will show in App.~\ref{app_sub:harmonic_chain} that for the problem of harmonic chain we are interested in, the diagonalization can be easily done without using the general recipe in the Williamson theorem. 
+We will not elaborate on Williamson's theorem and its proof (see proofs in Ref.~\onlinecite{xiao_theory_2009,pirandola_correlation_2009,gosson_symplectic_2006} and also a recent application in the entanglement entropy context\cite{coser_contour_2017}). Instead we will show in App.~\ref{app_sub:harmonic_chain} that for the problem of the harmonic chain we are interested in, the diagonalization can be easily done without using the general recipe in the Williamson theorem. 
 
 
 \subsection{Groundstate in $b$ Basis}
 
-Suppose we have obtained the required matrix $S$, the ground state will be the vacuum of the annihilation operators defined in Eq.~\eqref{eq:def_a} and in $b$ basis it satisfies
+Suppose we have obtained the required matrix $S$, the ground state will be the vacuum of the annihilation operators defined in Eq.~\eqref{eq:def_a} and in the $b$ basis it satisfies
 \begin{equation}\begin{aligned}
 \label{eq:a_vacuum_condition}
 (b_iu_{ij}+b_i^\dagger v_{ij})|0\rangle_{{\bf a}}=0.
@@ -178,7 +178,7 @@ we solve the groundstate
 \label{eq:boson_BCS_gnd}
 |0\rangle_{{\bf a}}&=\text{det}^{\frac{1}{4}}(1-T^\dagger T)\exp\left\{-\frac{1}{2}b_j^\dagger T_{jk}b_k^\dagger\right\}|0\rangle_{\bf b},\\
 \end{aligned}\end{equation}
-where the normalization is given by the McMahon Master theorem Eq.~\eqref{eq:bosonic_McMahon}. Apply constraint in Eq.~\eqref{eq:constraint_1}, it simplifies to the top left corner of the symplectic matrix
+where the normalization is given by the McMahon master theorem Eq.~\eqref{eq:bosonic_McMahon}. Apply constraint in Eq.~\eqref{eq:constraint_1}, it simplifies to the top left corner of the symplectic matrix
 \begin{equation}
 \text{det}^{\frac{1}{4}}(1-T^\dagger T) =|\text{det}(u)|^{-\frac{1}{2}}.
 \end{equation}
@@ -190,7 +190,7 @@ Eq.~\eqref{eq:boson_BCS_gnd} takes a similar form as the superconducting ground 
 
 Fidelity is defined as the (squared) overlap of groundstates of two different bosonic Hamiltonians. 
 
-We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in ${\bf b}$ basis, as in Eq.~\eqref{eq:quadratic_boson_H}. From the discussion in App.~\ref{app_sub:boson_BdG}, we are able to diagonalize it in ${\bf a}$ basis for positive definite $M$. At $t=0$, the Hamiltonian becomes $\hat{H}_1$, which is still written in ${\bf b}$ basis, but is diagonalized in a new basis ${\bf c}$. The corresponding Bogoliubov transformations read
+We start with a quadratic bosonic Hamiltonian $\hat{H}_0$ in the ${\bf b}$ basis, as in Eq.~\eqref{eq:quadratic_boson_H}. From the discussion in App.~\ref{app_sub:boson_BdG}, we are able to diagonalize it in the ${\bf a}$ basis for positive definite $M$. At $t=0$, the Hamiltonian becomes $\hat{H}_1$, which is still written in the ${\bf b}$ basis, but is diagonalized in a new basis ${\bf c}$. The corresponding Bogoliubov transformations read
 \begin{equation}\begin{aligned}
 \label{eq:two_BdG}
 ({\bf b} , {\bf b}^\dagger)S_0=({\bf a} , {\bf a}^\dagger),\quad
@@ -240,7 +240,7 @@ It is evident that the evolved state $|0\rangle_{{\bf a}(t)}$ is related to the 
 \subsection{Harmonic chain} 
 \label{app_sub:harmonic_chain}
 
-In this subsection, we explicitly construct the matrix $\mathcal{S}$ for the case of harmonic chain introduced in Sec.~\ref{sec_sub:free_boson_lattice}. In the basis defined in Eq.~\eqref{eq:real_basis}, the Hamiltonian for 1D harmonic chain is
+In this subsection, we explicitly construct the matrix $\mathcal{S}$ for the case of the harmonic chain introduced in Sec.~\ref{sec_sub:free_boson_lattice}. In the basis defined in Eq.~\eqref{eq:real_basis}, the Hamiltonian for 1D harmonic chain is
 \begin{equation}\begin{aligned}
 \hat{H}
 =\frac{1}{2}
@@ -267,7 +267,7 @@ In this subsection, we explicitly construct the matrix $\mathcal{S}$ for the cas
 \end{aligned}\end{equation}
 where $\mathcal{V}$ is real symmetric matrix that can be diagonalized as $\mathcal{V}=\mathcal{O}D^2\mathcal{O}^T$. The matrix $\mathcal{V}$ depends on the boundary condition, but positive definiteness is the only requirement here. 
 
-The matrix $\mathcal{S}$ that diagonalize $\mathcal{M}$
+The matrix $\mathcal{S}$ that diagonalizes $\mathcal{M}$
 \begin{equation}
 \begin{aligned}
 \mathcal{M}=\mathcal{S}

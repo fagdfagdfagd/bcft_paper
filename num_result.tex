@@ -4,23 +4,23 @@
 \label{fig:DDDD}
 \end{figure}
 
-We use the lattice model introduced in Sec.~\ref{sec_sub:free_boson_lattice} to check the analytic results. Our numerical calculations are based on a boson Bogoliubov transformation and the explicit form of the groundstates. The readers are referred to App.~\ref{app:comp_fid_echo} for the technical details. In all the figures, we present the coefficients of the logarithmic term $\frac{\mathcal{F}}{\ln L}$ and $\frac{\mathcal{F} }{\ln t}$ and call them fidelity and echo exponents respectively. 
+We use the lattice model introduced in Sec.~\ref{sec_sub:free_boson_lattice} to check the analytic results. Our numerical calculations are based on a boson Bogoliubov transformation and the explicit form of the groundstates. The readers are referred to App.~\ref{app:comp_fid_echo} for the technical details. In all the figures, we present the coefficients of the logarithmic terms $\frac{\mathcal{F}}{\ln L}$ and $\frac{\mathcal{F} }{\ln t}$ and call them fidelity and echo exponents respectively. 
 
 We first consider the process ${\rm DD} \rightarrow \lambda$
 %in Eq.~\eqref{eq:DDDD}
 %\begin{equation}
 %\text{DD}+\text{DD}\rightarrow\lambda+\text{DD},
 %\end{equation}
-and show its Loschmidt echo of system size 30000 sites in Fig.~\ref{fig:DDDD}. The inset is a typical Loschmidt echo diagram, whose linearly decreasing behavior in the log-log scale indicates the expected power law decay. We also provide the analytic prediction $\mathcal{L}(t)\sim t^{-0.25}$ (\cf Eq.~\eqref{eq:result_DDDD} as contrast). The exponent (negative of the slope of the line in log-log plot) is calculated by fitting such diagrams for $\theta = 0.01n \pi$, $n = 1,...,50 $. The fitting is performed before the finite size revival surges and error is estimated by assuming independent and identical Gaussian distribution for each point. We see that the exponents all match with the $\frac{1}{4}$ theoretical line within error. 
+and show its Loschmidt echo of system size 30000 sites in Fig.~\ref{fig:DDDD}. The inset is a typical Loschmidt echo diagram, whose linearly decreasing behavior in the log-log scale indicates the expected power law decay. We also provide the analytic prediction $\mathcal{L}(t)\sim t^{-0.25}$ (\cf Eq.~\eqref{eq:result_DDDD} as contrast). The exponent (negative of the slope of the line in the log-log plot) is calculated by fitting such diagrams for $\theta = 0.01n \pi$, $n = 1,...,50 $. The fitting is performed before the finite size revival surges and error is estimated by assuming independent and identical Gaussian distribution for each point. We see that the exponents all match with the $\frac{1}{4}$ theoretical line within error. 
 
-We also calculated the companion process ${\rm NN} \rightarrow \lambda$ and obtain identical exponents as in Fig.~\ref{fig:DDDD}. We avoid the technical subtlety of zero mode by adding a small mass regulator $m=10^{-8}$. While the short time decay pattern is different from the DD case, the long-time behavior and exponents remain the same for both echo and fidelity. We therefore do not present the result here. 
+We also calculated the companion process ${\rm NN} \rightarrow \lambda$ and obtain identical exponents as in Fig.~\ref{fig:DDDD}. We avoid the technical subtlety of the zero mode by adding a small mass regulator $m=10^{-8}$. While the short time decay pattern is different from the DD case, the long-time behavior and exponents remain the same for both echo and fidelity. We therefore do not present the result here. 
 
 Next, we analyze the more interesting $\theta$ dependent process ${\rm DN} \rightarrow \lambda$
 %in Eq.~\eqref{eq:DNDN}
 %\begin{equation}
 %  \text{DN}+\text{DN}\rightarrow\lambda+\text{DN},
 %\end{equation}
-in which the boundary condition after joining is determined by $S_1(\theta)$. We worked with a system containing $35000$ sites. A direct calculation with the mass regulator do not perform very well in the small $\theta$ regime: the exponent is slightly larger than the theoretical prediction. We therefore turn to another regulator that shift the far end boundary condition DN to $S_1( \delta \theta )$ and consider the following process (see the full notation in Eq.~\eqref{eq:Full_notation_rand()})
+in which the boundary condition after joining is determined by $S_1(\theta)$. We worked with a system containing $35000$ sites. A direct calculation with the mass regulator does not perform very well in the small $\theta$ regime: the exponent is slightly larger than the theoretical prediction. We therefore turn to another regulator that shift the far end boundary condition DN to $S_1( \delta \theta )$ and consider the following process (see the full notation in Eq.~\eqref{eq:Full_notation_rand()})
 \begin{eqnarray}\begin{aligned}
 \label{eq:approx_DNDN}
 S_1(0)+S_1(\delta\theta)\rightarrow S_1(\theta)+S_1(\delta\theta).
